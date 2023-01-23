@@ -7,26 +7,23 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Nina
+    internal class Nina : Character
     {
-        private int _Max_HP;
-        private int _Phys_Atk;
-        private int _Phys_Def;
-        private int _Accuracy;
-        private int _Critical_Chance;
-        private int _Critical_Puiss;
-
-        private int _Max_SP;
-        private int _Elem_Atk;
-        private int _Elem_Def;
-        private int _Speed;
-        private int _Evasion;
 
         public Nina() 
         {
+            _Max_HP = 80;
+            _HP = _Max_HP;
+            _Phys_Atk = 80;
+            _Phys_Def = 70;
+            _Accuracy = 90;
+            _Critical_Chance = 10;
+            _Critical_Puiss = 2;
 
+            _Max_SP = 90;
+            _Elem_Atk = 90;
+            _Elem_Def = 95;
+            _Speed = 90;
         }
-
-
     }
 }
