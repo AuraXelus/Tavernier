@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Item
+    internal class Arme
     {
-
     }
 }

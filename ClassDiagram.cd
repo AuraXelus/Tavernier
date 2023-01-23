@@ -1,41 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Tavernier.Nina">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Nina.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tavernier.Character">
-    <Position X="4.75" Y="1.25" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAoAAAAAAQAAAAJAAECAAAAAAAAACAAABAAEAQAAg=</HashCode>
+      <HashCode>AAAAoAAAAAAQAAAAJAAECAAAAAAAAACAAABAgEAQAAg=</HashCode>
       <FileName>Personnage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tavernier.Program" Collapsed="true">
-    <Position X="10.25" Y="1.25" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tavernier.Thran">
-    <Position X="6.75" Y="3.25" Width="1.5" />
+    <Position X="4.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Thran.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tavernier.Goblin" Collapsed="true">
-    <Position X="4.75" Y="6.25" Width="1.5" />
-    <InheritanceLine Type="Tavernier.Character" ManuallyRouted="true" FixedFromPoint="true">
+    <Position X="2.5" Y="5.5" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" ManuallyRouted="true">
       <Path>
-        <Point X="5.5" Y="5.305" />
-        <Point X="5.5" Y="5.95" />
-        <Point X="5.5" Y="5.95" />
-        <Point X="5.5" Y="6.25" />
+        <Point X="3.25" Y="4.747" />
+        <Point X="3.25" Y="5.2" />
+        <Point X="3.25" Y="5.2" />
+        <Point X="3.25" Y="5.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>

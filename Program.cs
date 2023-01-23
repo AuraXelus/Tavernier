@@ -14,7 +14,8 @@
             do {
                 Thran.attack(Nina);
                 testHpNina = Nina.getHP();
-                Console.WriteLine("PV : {int}", testHpNina);
+                Console.WriteLine("PV : {0}", testHpNina);
+                Console.Read();
             } while (testHpNina > 0);
 
 

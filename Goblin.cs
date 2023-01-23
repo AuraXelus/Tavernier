@@ -4,18 +4,18 @@
     {
         public Goblin()
         {
-            _Max_HP = 80;
+            _Max_HP = 50;
             _HP = _Max_HP;
-            _Phys_Atk = 80;
-            _Phys_Def = 70;
-            _Accuracy = 90;
+            _Phys_Atk = 40;
+            _Phys_Def = 30;
+            _Accuracy = 70;
             _Critical_Chance = 10;
             _Critical_Puiss = 2;
 
-            _Max_SP = 90;
-            _Elem_Atk = 90;
-            _Elem_Def = 95;
-            _Speed = 90;
+            _Max_SP = 40;
+            _Elem_Atk = 50;
+            _Elem_Def = 55;
+            _Speed = 70;
         }
     }
 }
