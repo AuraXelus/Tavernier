@@ -21,14 +21,22 @@ namespace Tavernier
         protected int _Elem_Def;
         protected int _Speed;
 
+        Item Arme1 = new Item();
+
+
         public Character() 
         {
         
         }
 
-        public virtual void receveDammage(int degat)
+        public virtual void attack(Character cible)
         {
-            _HP -= degat;
+            cible.receveDammage(_Phys_Atk);
+        }
+
+        public virtual void receveDammage(int degats)
+        {
+            _HP -= (degats - _Phys_Def);
         }
 
         //Get
@@ -38,3 +46,5 @@ namespace Tavernier
         }
     }
 }
+
+//Objet (armes) potions vie, mana, 

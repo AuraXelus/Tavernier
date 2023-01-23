@@ -10,7 +10,7 @@
   <Class Name="Tavernier.Character">
     <Position X="4.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAoAAAAAAQAAAAJAAECAAAAAAAAAAAAABAAEAQAAg=</HashCode>
+      <HashCode>AAAAoAAAAAAQAAAAJAAECAAAAAAAAACAAABAAEAQAAg=</HashCode>
       <FileName>Personnage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -26,6 +26,21 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Thran.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tavernier.Goblin" Collapsed="true">
+    <Position X="4.75" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="5.5" Y="5.305" />
+        <Point X="5.5" Y="5.95" />
+        <Point X="5.5" Y="5.95" />
+        <Point X="5.5" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Goblin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
