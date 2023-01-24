@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Tavernier.Character" Collapsed="true">
-    <Position X="11" Y="0.5" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAoAAAAAAQAAAAJAAECAAgQAAAgACAAABAAAAQAAg=</HashCode>
+      <HashCode>AAAAgAAAAAAQAAAAJAAECAAgQAAAgAAAAAAAAAAAAAg=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -35,13 +35,6 @@
       <FileName>Thran.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Tavernier.Ennemy1" Collapsed="true">
-    <Position X="12" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Ennemy1.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Tavernier.Magicienne" Collapsed="true">
     <Position X="6" Y="1.75" Width="1.5" />
     <TypeIdentifier>
@@ -49,15 +42,8 @@
       <FileName>Magicienne.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Tavernier.Ennemy2" Collapsed="true">
-    <Position X="14" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Ennemy2.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Tavernier.Dragon" Collapsed="true">
-    <Position X="16" Y="1.75" Width="1.5" />
+    <Position X="14" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Dragon.cs</FileName>
@@ -73,8 +59,29 @@
   <Class Name="Tavernier.Armors" Collapsed="true">
     <Position X="2" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAoAAAAAAYAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAgQAAgAAAAAAAAAAAIAAAAACAAAAAAAQAKAAAAAA=</HashCode>
       <FileName>Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tavernier.Ennemy" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoAAAAAAQAAAAJAAECAAAAAAAAAAAAABAAAAAAAg=</HashCode>
+      <FileName>Ennemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tavernier.GoblinM" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoblinM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tavernier.GoblinP" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoblinP.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

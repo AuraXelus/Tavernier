@@ -18,9 +18,6 @@ namespace Tavernier
             _Phys_Atk = 85;
             _Elem_Atk = 30;
 
-            _Phys_Def = 40;
-            _Elem_Def = 30;
-
             _Accuracy = 90;
             _Critical_Chance = 8;
             _Critical_Dmg = 2;

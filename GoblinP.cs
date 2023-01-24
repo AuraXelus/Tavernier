@@ -1,8 +1,8 @@
 ﻿namespace Tavernier
 {
-    internal class Ennemy1 : Character
+    internal class GoblinP : Ennemy
     {
-        public Ennemy1()
+        public GoblinP()
         {
             _Max_HP = 50;
             _HP = _Max_HP;

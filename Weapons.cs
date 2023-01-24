@@ -20,8 +20,6 @@ namespace Tavernier
         protected int _Water_Dmg = 0;
         protected int _Nature_Dmg = 0;
 
-
-
         public Weapons()
         {
 
@@ -48,20 +46,41 @@ namespace Tavernier
                     _Fire_Dmg = 40;
                     break;
 
+                //*************************//
+
                 //1ère arme de Nina
-                case "épée":
+                case "épée elfique":
                     _Name = weapon_Wanted;
-                    _Damage = 20;
-                    _Critical_Chance = 35;
-                    _Slash_Dmg = 30;
+                    _Damage = 15;
+                    _Critical_Chance = 40;
+                    _Slash_Dmg = 20;
                     break;
 
                 //2nd arme de Nina
-                case "Lance":
+                case "Lance épineuse":
                     _Name = weapon_Wanted;
-                    _Damage = 30;
-                    _Critical_Chance = 35;
+                    _Damage = 10;
+                    _Critical_Chance = 3;
                     _Thrust_Dmg = 50;
+                    _Nature_Dmg = 40;
+                    break;
+
+                //*************************//
+
+                //1ère arme de Magicienne
+                case "Baguette de sourcier":
+                    _Name = weapon_Wanted;
+                    _Damage = 5;
+                    _Critical_Chance = 2;
+                    _Water_Dmg = 100;
+                    break;
+
+                //2nd arme de Magicienne
+                case "Baton de feu":
+                    _Name = weapon_Wanted;
+                    _Damage = 15;
+                    _Critical_Chance = 3;
+                    _Fire_Dmg = 80;
                     break;
 
                 default:

@@ -1,6 +1,6 @@
 ﻿namespace Tavernier
 {
-    internal class Dragon : Character
+    internal class Dragon : Ennemy
     {
         public Dragon()
         {

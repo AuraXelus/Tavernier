@@ -15,9 +15,6 @@ namespace Tavernier
         protected int _Phys_Atk;
         protected int _Elem_Atk;
 
-        protected int _Phys_Def;
-        protected int _Elem_Def;
-
         protected int _Accuracy;
         protected int _Critical_Chance;
         protected int _Critical_Dmg;
@@ -29,15 +26,15 @@ namespace Tavernier
 
         }
 
-        public virtual void attack(Character target)
-        {
-            target.receveDammage(_Phys_Atk);
-        }
+        //public virtual void attack(Character target)
+        //{
+        //    target.receveDammage(_Phys_Atk);
+        //}
 
-        public virtual void receveDammage(int damage)
-        {
-            _HP -= (damage - _Phys_Def);
-        }
+        //public virtual void receveDammage(int damage)
+        //{
+        //    _HP -= (damage - _Phys_Def);
+        //}
 
         //Get
         public int Max_HP { get => _Max_HP; set => _Max_HP = value; }
