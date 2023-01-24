@@ -29,6 +29,8 @@ namespace Tavernier
         {
             switch (weapon_Wanted)
             {
+                //**********| THRAN |**********//
+
                 //1ère arme de Thran
                 case "Hache de guerre":
                     _Name = weapon_Wanted;
@@ -46,7 +48,7 @@ namespace Tavernier
                     _Fire_Dmg = 40;
                     break;
 
-                //*************************//
+                //**********| NINA |**********//
 
                 //1ère arme de Nina
                 case "épée elfique":
@@ -65,7 +67,7 @@ namespace Tavernier
                     _Nature_Dmg = 40;
                     break;
 
-                //*************************//
+                //**********| MAGICIENNE |**********//
 
                 //1ère arme de Magicienne
                 case "Baguette de sourcier":

@@ -27,9 +27,61 @@ namespace Tavernier
         {
             switch (armor_Wanted)
             {
-                case "Marteeau de guerre":
-                    _Name = armor_Wanted;
+                //**********| THRAN |**********//
 
+                //Tête
+                case "Casque lourd":
+                    _Name = armor_Wanted;
+                    break;
+
+                //Torse
+                case "Plastron lourd":
+                    _Name = armor_Wanted;
+                    break;
+
+                //Jambière
+                case "Jambière lourde":
+                    _Name = armor_Wanted;
+                    break;
+
+                //**********| NINA |**********//
+
+                //Tête
+                case "Capuche sylvestre":
+                    _Name = armor_Wanted;
+         
+                    break;
+
+                //Torse
+                case "Cuirasse sylvestre":
+                    _Name = armor_Wanted;
+                   
+                    break;
+
+                //Jambière
+                case "Pantalon sylvestre":
+                    _Name = armor_Wanted;
+                   
+                    break;
+
+                //**********| MAGICIENNE |**********//
+
+                //Tête
+                case "Capuchon ensorcelée":
+                    _Name = armor_Wanted;
+                  
+                    break;
+
+                //Torse
+                case "Tunique ensorcelée":
+                    _Name = armor_Wanted;
+                   
+                    break;
+
+                //Jambière
+                case "Chausse ensorcelée":
+                    _Name = armor_Wanted;
+                  
                     break;
 
                 default:
