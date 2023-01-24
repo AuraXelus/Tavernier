@@ -33,7 +33,10 @@ namespace Tavernier
             }
             Console.WriteLine("                                                                                                          /\\_[]_/\\\r\n                                                                                                         |] _||_ [|\r\n                                                                                                  ___     \\/ || \\/\r\n                                                                                                 /___\\       ||\r\n                                                                                                (|0 0|)      ||\r\n                                                                                              __/{\\U/}\\_ ___/vvv\r\n                                                                                             / \\  {~}   / _|_P|\r\n                                                                                             | /\\  ~   /_/   []\r\n                                                                                             |_| (____)        \r\n                                                                                             \\_]/______\\               \r\n                                                                                                _\\_||_/_           \r\n                                                                                               (_,_||_,_)");
             Console.WriteLine("");
-            Console.WriteLine("                                                                                           |{0}|    -    |HP : {1}|", player.Name, player.HP);
+            Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}|", player.Name, player.HP);
+            Console.WriteLine("");
+            Console.WriteLine("                                                                                       |Attaquer         |Compétence");
+            Console.WriteLine("                                                                                       |Sac              |Fuire");
         }
     }
 }
