@@ -47,6 +47,17 @@ namespace Tavernier
                     _Strike_Dmg = 0;
                     break;
 
+                case "Magmarteau":
+                    _Name = weapon_Wanted;
+                    _Phys_Atk = 10;
+                    _Phys_Elem = 0;
+                    _Critical_Chance = 10;
+                    _Slash_Dmg = 0;
+                    _Thrust_Dmg = 0;
+                    _Strike_Dmg = 40;
+
+                    break;
+
                 default:
                     break;
             }
