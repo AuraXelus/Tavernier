@@ -35,8 +35,8 @@ namespace Tavernier
             Console.WriteLine("");
             Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}|", player.Name, player.HP);
             Console.WriteLine("");
-            Console.WriteLine("                                                                                       |Attaquer         |Compétence");
-            Console.WriteLine("                                                                                       |Sac              |Fuire");
+            Console.WriteLine("                                             |Attaquer         |Compétence");
+            Console.WriteLine("                                             |Sac              |Fuire");
         }
     }
 }
