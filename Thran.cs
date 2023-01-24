@@ -11,6 +11,8 @@ namespace Tavernier
 
         public Thran() 
         {
+            _Name = "Thran";
+
             _Max_HP = 100;
             _HP = _Max_HP;
             _Phys_Atk = 70;

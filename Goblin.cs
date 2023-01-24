@@ -4,6 +4,8 @@
     {
         public Goblin()
         {
+            _Name= "Goblin";
+
             _Max_HP = 50;
             _HP = _Max_HP;
             _Phys_Atk = 40;

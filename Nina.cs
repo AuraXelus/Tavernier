@@ -12,6 +12,8 @@ namespace Tavernier
 
         public Nina() 
         {
+            _Name = "Nina";
+
             _Max_HP = 80;
             _HP = _Max_HP;
             _Phys_Atk = 80;

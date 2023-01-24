@@ -9,6 +9,8 @@ namespace Tavernier
 {
     internal class Character
     {
+        protected string _Name = "None";
+
         protected int _Max_HP;
         protected int _HP;
         protected int _Phys_Atk;
@@ -46,6 +48,7 @@ namespace Tavernier
         }
 
         //Get
+        public string Name { get => _Name; set => _Name = value; }
         public int Max_HP { get => _Max_HP; set => _Max_HP = value; }
         public int HP { get => _HP; set => _HP = value; }
         public int Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
