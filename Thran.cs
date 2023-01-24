@@ -22,7 +22,7 @@ namespace Tavernier
             _Elem_Def = 70;
 
             _Accuracy = 80;
-            _Critical_Chance = 6;
+            _Critical_Chance = 5;
             _Critical_Dmg = 2;
 
             _Speed = 70;
