@@ -23,6 +23,9 @@ namespace Tavernier
             _Elem_Atk = 50;
             _Elem_Def = 70;
             _Speed = 70;
+
+            _Name_First_Weapon = "Hache Durandil";
+            _First_Weapon.chose_Weapon(_Name_First_Weapon);
         }
     }
 }

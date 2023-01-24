@@ -24,6 +24,9 @@ namespace Tavernier
             _Elem_Atk = 90;
             _Elem_Def = 95;
             _Speed = 90;
+
+            _Name_First_Weapon = "Epee elfique";
+            _First_Weapon.chose_Weapon("Epee elfique");
         }
     }
 }

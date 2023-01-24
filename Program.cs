@@ -1,4 +1,6 @@
-﻿namespace Tavernier
+﻿using System.Net;
+
+namespace Tavernier
 {
     internal class Program
     {
@@ -10,20 +12,22 @@
 
             Thran Thran = new Thran();
             int testHpNina;
-            testHpNina = Nina.getHP();
+            testHpNina = Nina.Max_HP;
+
+            int atkThran = Thran.Phys_Atk + Thran.First_Weapon.Atk_Phy;
             do {
+                Console.WriteLine("Attaque Thran {0}", atkThran);
                 Thran.attack(Nina);
-                testHpNina = Nina.getHP();
-                Console.WriteLine("PV : {0}", testHpNina);
-                Console.Read();
+                testHpNina = Nina.HP;
+                Console.ReadKey(true);
             } while (testHpNina > 0);
 
 
 
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("        _   ,_,   _\r\n       / `'=) (='` \\\r\n      /.-.-.\\ /.-.-.\\ \r\n      `      \"      `");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("        _   ,_,   _\r\n       / `'=) (='` \\\r\n      /.-.-.\\ /.-.-.\\ \r\n      `      \"      `");
 
         }
     }
