@@ -11,7 +11,7 @@ namespace Tavernier
             Thran Thran = new Thran();
             Goblin Goblin = new Goblin();
             Game_State FirstFight= new Game_State();
-            //FirstFight.run(Thran, Goblin);
+            FirstFight.run(Thran, Goblin);
         }
     }
 }
