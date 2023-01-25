@@ -1,6 +1,6 @@
 ﻿namespace Tavernier
 {
-    internal class GoblinP : Ennemy
+    internal class GoblinP : Character
     {
         public GoblinP()
         {
