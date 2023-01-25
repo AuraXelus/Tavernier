@@ -46,20 +46,22 @@ namespace Tavernier
                                 if (_Attack == true)
                                 {
                                     choiceAttack(player, ennemy);
+                                    _Round_Finish = true;
                                 }
                                 else if (_Skill == true)
                                 {
-                                    choiceSkill(player, ennemy);
+                                    choiceSkill(player, ennemy);//Directement dans choiceSkil
                                 }
                                 else if (_Bag == true)
                                 {
                                     choiceBag(player);
+                                    _Round_Finish = true;//Temporaire
                                 }
                                 else if (_Escape == true)
                                 {
                                     choiceEscape(player, ennemy);
+                                    _Round_Finish = true;
                                 }
-                                _Round_Finish = true;
                                 break;
                             case ConsoleKey.LeftArrow:
                                 if (_Skill == true) { _Skill = false; _Attack = true; }
@@ -207,22 +209,24 @@ namespace Tavernier
                     case ConsoleKey.Enter:
                         if (skill1 == true)
                         {
-                            if(player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 1); }
+                            if(player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 1); _Round_Finish = true; }
                             else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
                         }
                         else if (skill2 == true)
                         {
-                            if (player.Second_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 2); }
+                            if (player.Second_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 2); _Round_Finish = true; }
                             else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
                         }
                         else if (skill3 == true)
                         {
-                            if (player.Third_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 3); }
-                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
+                            if (player.Third_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 3); _Round_Finish = true; }
+                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
                         }
                         else if (back == true)
                         {
                             choiceSkillOk = true;
+                            Console.Clear();
+                            return;
                         }
                         break;
                     case ConsoleKey.LeftArrow:

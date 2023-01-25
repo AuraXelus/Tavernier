@@ -20,12 +20,12 @@ namespace Tavernier
             _SP = _Max_SP;
 
             _Phys_Atk = 30;
-            _Elem_Atk = 50;
-            _Phys_Def = 100;
-            _Elem_Def = 70;
+            _Elem_Atk = 30;
+            _Phys_Def = 20;
+            _Elem_Def = 10;
 
-            _Accuracy = 80;
-            _Critical_Chance = 10;
+            _Accuracy = 90;
+            _Critical_Chance = 2;
             _Critical_Puiss = 2;
             _Speed = 70;
 

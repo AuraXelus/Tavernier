@@ -22,7 +22,7 @@ namespace Tavernier
         {
             switch (weapon_Wanted)
             {
-                case "Hache Durandil":
+                case "Beagener's Axe":
                     _Name = weapon_Wanted;
                     _Phys_Atk = 15;
                     _Elem_Atk = 0;
