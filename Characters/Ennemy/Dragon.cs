@@ -1,4 +1,4 @@
-﻿namespace Tavernier
+﻿namespace Tavernier.Characters.Ennemy
 {
     internal class Dragon : Character
     {

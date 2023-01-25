@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tavernier
+namespace Tavernier.Item
 {
     internal class Armors : Item
     {

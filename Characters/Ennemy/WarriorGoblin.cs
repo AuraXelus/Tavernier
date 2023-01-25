@@ -1,4 +1,4 @@
-﻿namespace Tavernier
+﻿namespace Tavernier.Characters.Ennemy
 {
     internal class WarriorGoblin : Character
     {
