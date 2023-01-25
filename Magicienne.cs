@@ -15,7 +15,7 @@ namespace Tavernier
             _HP = _Max_HP;
 
             _Max_SP = 100;
-            _Phys_Atk = 30;
+            _Phys_Atk = 20;
             _Elem_Atk = 50;
 
             _Phys_Def = 10;
