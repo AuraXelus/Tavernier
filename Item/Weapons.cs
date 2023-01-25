@@ -36,6 +36,7 @@ namespace Tavernier
                 //1ère arme de Thran
                 case "Hache de guerre":
                     _Name = weapon_Wanted;
+
                     _Phys_Atk = 25;
                     _Strike_Dmg = true;
 
@@ -44,8 +45,10 @@ namespace Tavernier
                 //2nd arme de Thran
                 case "Magmarteau":
                     _Name = weapon_Wanted;
+
                     _Phys_Atk = 10;
                     _Elem_Atk = 10;
+
                     _Strike_Dmg = true;
                     _Fire_Dmg = true;
 
@@ -65,9 +68,9 @@ namespace Tavernier
 
                     break;
 
-                //**********| MAGICIENNE |**********//
+                //**********| Benoit |**********//
 
-                //1ère arme de Magicienne
+                //1ère arme de Benoit
                 case "Baton de feu":
                     _Name = weapon_Wanted;
                     _Elem_Atk = 25;
@@ -75,14 +78,28 @@ namespace Tavernier
 
                     break;
 
-                //2nd arme de Magicienne
+                //2nd arme de Benoit
                 case "Baguette de sourcier":
                     _Name = weapon_Wanted;
                     _Elem_Atk = 40;
                     _Ice_Dmg = true;
 
                     break;
-                
+
+                //**********| Ailphynna |**********//
+
+                //1ère arme de Ailphynna
+                case "Branche de bouleau":
+                    _Name = weapon_Wanted;
+
+                    break;
+
+                //2nd arme de Ailphynna
+                case "Sapin":
+                    _Name = weapon_Wanted;
+
+                    break;
+
                 default:
                     break;
             }

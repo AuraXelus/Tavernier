@@ -76,7 +76,7 @@ namespace Tavernier
 
                     break;
 
-                //**********| MAGICIENNE |**********//
+                //**********| Benoit |**********//
 
                 //Tête
                 case "Capuchon ensorcelée":
@@ -99,6 +99,25 @@ namespace Tavernier
                     _Name = armor_Wanted;
                     _Thrust_Res = 10;
                     _Water_Res = 30;
+
+                    break;
+
+                //**********| Ailphynna |**********//
+
+                //Tête
+                case "Bois de cerf":
+                    _Name = armor_Wanted;
+                    break;
+
+                //Torse
+                case "Tunique de Druide":
+                    _Name = armor_Wanted;
+
+                    break;
+
+                //Jambière
+                case "Braies de Druide":
+                    _Name = armor_Wanted;
 
                     break;
 
