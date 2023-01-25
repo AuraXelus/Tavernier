@@ -15,10 +15,10 @@ namespace Tavernier
         private bool _Bag = false;
         private bool _Escape = false;
         private bool _Round_Finish = false;
-        private int _Meter;    //Si c'est paire c'est à nous de jouer
+        private int _CharacterTurn;    //Si c'est paire c'est à nous de jouer
 
         private bool _Escape_Succes = false;
-        public Fight_State() 
+        public Fight_State()
         {
 
         }
@@ -26,14 +26,13 @@ namespace Tavernier
         public void run(Character player, Character ennemy)
         {
             //Init Fight
-            if (player.Speed >= ennemy.Speed) { _Meter = 0; }
-            else { _Meter = 1; }
+            if (player.Speed >= ennemy.Speed) { _CharacterTurn = 0; }
+            else { _CharacterTurn = 1; }
 
             //Fight
             do
             {
-                _Meter++;
-                if (_Meter % 2 == 0)
+                if (_CharacterTurn % 2 == 0)
                 {
                     _Round_Finish = false;
                     do
@@ -84,13 +83,16 @@ namespace Tavernier
                         Console.SetCursorPosition(0, 0);
                     } while (_Round_Finish != true);
                 }
-                else if (_Meter % 2 == 1) 
+                else if (_CharacterTurn % 2 == 1)
                 {
+                    display(player, ennemy);
+                    Console.ReadKey(true);
                     Console.WriteLine("L'ennemi vous attaque, avec une attaque physqieu, l'IA n'est pas faites il vous attaque comme ça en boucle le con");
                     ennemy.attack(player);
                     Console.ReadKey(true);
                     Console.Clear();
                 }
+                _CharacterTurn++;
             } while ((player.Alive == true && ennemy.Alive == true) && _Escape_Succes != true);
 
             //End Fight
@@ -102,14 +104,16 @@ namespace Tavernier
         {
             Console.WriteLine("         |{0}|    -    |HP : {1}|", ennemy.Name, ennemy.HP);
             Console.WriteLine("        _   ,_,   _\r\n       / `'=) (='` \\\r\n      /.-.-.\\ /.-.-.\\ \r\n      `      \"      `");
-            for (int i = 0;i < 5; i++) 
+            for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine("");
             }
             Console.WriteLine("                                                                                                          /\\_[]_/\\\r\n                                                                                                         |] _||_ [|\r\n                                                                                                  ___     \\/ || \\/\r\n                                                                                                 /___\\       ||\r\n                                                                                                (|0 0|)      ||\r\n                                                                                              __/{\\U/}\\_ ___/vvv\r\n                                                                                             / \\  {~}   / _|_P|\r\n                                                                                             | /\\  ~   /_/   []\r\n                                                                                             |_| (____)        \r\n                                                                                             \\_]/______\\               \r\n                                                                                                _\\_||_/_           \r\n                                                                                               (_,_||_,_)");
             Console.WriteLine("");
-            Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}/{2}|", player.Name, player.HP,player.Max_HP);
-            if(_Attack == true)
+            Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}/{2}|", player.Name, player.HP, player.Max_HP);
+            if (_CharacterTurn%2 == 0)
+            {
+            if (_Attack == true)
             {
                 Console.WriteLine("");
                 Console.WriteLine("                                             |*Attack          |Skill");
@@ -117,9 +121,9 @@ namespace Tavernier
             }
             else if (_Skill == true)
             {
-            Console.WriteLine("");
-            Console.WriteLine("                                             |Attack           |*Skill");
-            Console.WriteLine("                                             |Bag              |Escape");
+                Console.WriteLine("");
+                Console.WriteLine("                                             |Attack           |*Skill");
+                Console.WriteLine("                                             |Bag              |Escape");
             }
             else if (_Bag == true)
             {
@@ -132,6 +136,12 @@ namespace Tavernier
                 Console.WriteLine("");
                 Console.WriteLine("                                             |Attack           |Skill");
                 Console.WriteLine("                                             |Bag              |*Escape");
+            }
+            }
+            else if (_CharacterTurn % 2 == 1)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("                                             |Ennmy turn");
             }
         }
 
@@ -184,4 +194,3 @@ namespace Tavernier
         }
     }
 }
-                                           

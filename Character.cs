@@ -14,22 +14,25 @@ namespace Tavernier
         protected int _Max_HP;
         protected int _HP;
         protected int _Max_SP;
+        protected int _SP;
+
+        private int _Exp;
+        protected int _Lvl;
 
         protected int _Phys_Atk;
+        protected int _Elem_Atk;
         protected int _Phys_Def;
+        protected int _Elem_Def;
+
         protected int _Accuracy;
         protected int _Critical_Chance;
         protected int _Critical_Puiss;
-
-        protected int _Elem_Atk;
-        protected int _Elem_Def;
         protected int _Speed;
 
         protected string _Name_First_Weapon = "None";
         protected Weapon _First_Weapon = new Weapon();
 
         protected Skill _First_Skill = new Skill();
-
         protected Skill _Second_Skill = new Skill();
 
         protected bool _Alive = true;
@@ -41,14 +44,16 @@ namespace Tavernier
 
         public virtual void attack(Character target)
         {
-            int damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - target._Phys_Def;
-            target.receveDammage(damage);
+            double damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - target._Phys_Def;
+            damage *= 1.2;
+            int finalDamage = (int)damage;
+            target.receveDammage(finalDamage);
         }
 
-        public virtual void useSkill(Character target, int numerSkill)
+        public virtual void useSkill(Character target, int numberSkill)
         {
-            int damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - target._Phys_Def;
-            switch (numerSkill)
+            double damage = (_Phys_Atk + _First_Weapon.Atk_Phy);
+            switch (numberSkill)
             {
                 case 1:
                     damage *= (_First_Skill.Modif_dmg / 100);
@@ -57,7 +62,10 @@ namespace Tavernier
                 default:
                     break;
             }
-            target.receveDammage(damage);
+            damage *= 1.2;
+            int finalDamage = (int)damage; //Round celling floor
+            finalDamage -= target._Phys_Def;
+            target.receveDammage(finalDamage);
         }
 
         public virtual void receveDammage(int damage)
@@ -71,6 +79,10 @@ namespace Tavernier
         public string Name { get => _Name; set => _Name = value; }
         public int Max_HP { get => _Max_HP; set => _Max_HP = value; }
         public int HP { get => _HP; set => _HP = value; }
+
+        protected int Exp { get => _Exp; set => _Exp = value; }
+        protected int Lvl { get => _Lvl; set => _Lvl = value; }
+
         public int Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public int Speed { get => _Speed; set => _Speed = value; }
         public Weapon First_Weapon { get => _First_Weapon; set => _First_Weapon = value; }

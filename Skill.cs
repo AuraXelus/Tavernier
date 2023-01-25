@@ -14,7 +14,7 @@ namespace Tavernier
 
         private bool _Phys_Atk = false;
         private bool _Elem_Atk = false;
-        private int _Modif_dmg = 0;
+        private float _Modif_dmg = 0;
 
         public Skill() { }
 
@@ -35,7 +35,14 @@ namespace Tavernier
 
                             _Modif_dmg = 120;
                             break;
-                        case 2:
+                        case 2: //60% degats mais à tous les ennemies 
+                            _Name = "Tourbillon";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 40;
+                            _Phys_Atk = true;
+                            _Elem_Atk = false;
+
+                            _Modif_dmg = 60;
                             break;
                         default:
                             break;
@@ -52,6 +59,6 @@ namespace Tavernier
         public int Point_SP { get => _Point_SP; set => _Point_SP = value; }
         public bool Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public bool Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
-        public int Modif_dmg { get => _Modif_dmg; set => _Modif_dmg = value; }
+        public float Modif_dmg { get => _Modif_dmg; set => _Modif_dmg = value; }
     }
 }

@@ -24,7 +24,7 @@ namespace Tavernier
             {
                 case "Hache Durandil":
                     _Name = weapon_Wanted;
-                    _Atk_Phy = 30;
+                    _Atk_Phy = 15;
                     _Atk_Elem = 0;
                     break;
 
