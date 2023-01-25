@@ -9,8 +9,8 @@ namespace Tavernier
     internal class Weapon : Item
     {
         protected string _Name = "None";
-        protected int _Atk_Phy = 0;
-        protected int _Atk_Elem = 0;
+        protected int _Phys_Atk = 0;
+        protected int _Elem_Atk = 0;
         protected int _Critcal = 0;
 
         public Weapon() 
@@ -24,14 +24,14 @@ namespace Tavernier
             {
                 case "Hache Durandil":
                     _Name = weapon_Wanted;
-                    _Atk_Phy = 15;
-                    _Atk_Elem = 0;
+                    _Phys_Atk = 15;
+                    _Elem_Atk = 0;
                     break;
 
                 case "Epee eflfique":
                     _Name = weapon_Wanted;
-                    _Atk_Phy = 20;
-                    _Atk_Elem = 10;
+                    _Phys_Atk = 20;
+                    _Elem_Atk = 10;
                     break;
 
                 default:
@@ -40,6 +40,7 @@ namespace Tavernier
         }
 
         //Get
-        public int Atk_Phy { get => _Atk_Phy; set => _Atk_Phy = value; }
+        public int Phy_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
+        public int Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
     }
 }

@@ -45,7 +45,7 @@ namespace Tavernier
 
         public virtual void attack(Character target)
         {
-            double damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - target._Phys_Def;
+            double damage = (_Phys_Atk + _First_Weapon.Phy_Atk) - target._Phys_Def;
             damage *= 1.2;
             int finalDamage = (int)damage;
             target.receveDammage(finalDamage);
@@ -53,7 +53,7 @@ namespace Tavernier
 
         public virtual void useSkill(Character target, int numberSkill)
         {
-            double damage = (_Phys_Atk + _First_Weapon.Atk_Phy);
+            double damage = (_Phys_Atk + _First_Weapon.Phy_Atk);
             switch (numberSkill)
             {
                 case 1:

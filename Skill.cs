@@ -26,7 +26,7 @@ namespace Tavernier
                 case "Thran":
                     switch (numberSkill)
                     {
-                        case 1: //Ele fera 75% de degats mais stun l'ennemie 1T
+                        case 1: //Maintenant 120%. Ele fera 75% de degats mais stun l'ennemie 1T
                             _Name = "Charge";
                             _Number_Skill = numberSkill;
                             _Point_SP = 20;
@@ -35,7 +35,7 @@ namespace Tavernier
 
                             _Modif_dmg = 120;
                             break;
-                        case 2: //60% degats mais à tous les ennemies 
+                        case 2: //60% degats à tous les ennemies
                             _Name = "Tourbillon";
                             _Number_Skill = numberSkill;
                             _Point_SP = 40;
@@ -57,6 +57,7 @@ namespace Tavernier
         public string Name { get => _Name; set => _Name = value; }
         public int Number_Skill { get => _Number_Skill; set => _Number_Skill = value; }
         public int Point_SP { get => _Point_SP; set => _Point_SP = value; }
+
         public bool Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public bool Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
         public float Modif_dmg { get => _Modif_dmg; set => _Modif_dmg = value; }

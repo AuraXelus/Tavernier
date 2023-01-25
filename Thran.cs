@@ -29,7 +29,7 @@ namespace Tavernier
             _Critical_Puiss = 2;
             _Speed = 70;
 
-            _Name_First_Weapon = "Hache Durandil";
+            _Name_First_Weapon = "Beagener's Axe";
             _First_Weapon.chose_Weapon(_Name_First_Weapon);
 
             _First_Skill.setSkill("Thran", 1);
