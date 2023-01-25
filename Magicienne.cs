@@ -11,7 +11,7 @@ namespace Tavernier
     {
         public Magicienne()
         {
-            _Max_HP = 60;
+            _Max_HP = 70;
             _HP = _Max_HP;
 
             _Max_SP = 100;
