@@ -81,13 +81,14 @@ namespace Tavernier
                             default:
                                 break;
                         }
-                        Console.Clear();
+                        Console.SetCursorPosition(0, 0);
                     } while (_Round_Finish != true);
                 }
                 else if (_Meter % 2 == 1) 
                 {
                     Console.WriteLine("L'ennemi vous attaque, avec une attaque physqieu, l'IA n'est pas faites il vous attaque comme ça en boucle le con");
                     ennemy.attack(player);
+                    Console.ReadKey(true);
                     Console.Clear();
                 }
             } while ((player.Alive == true && ennemy.Alive == true) && _Escape_Succes != true);
@@ -107,7 +108,7 @@ namespace Tavernier
             }
             Console.WriteLine("                                                                                                          /\\_[]_/\\\r\n                                                                                                         |] _||_ [|\r\n                                                                                                  ___     \\/ || \\/\r\n                                                                                                 /___\\       ||\r\n                                                                                                (|0 0|)      ||\r\n                                                                                              __/{\\U/}\\_ ___/vvv\r\n                                                                                             / \\  {~}   / _|_P|\r\n                                                                                             | /\\  ~   /_/   []\r\n                                                                                             |_| (____)        \r\n                                                                                             \\_]/______\\               \r\n                                                                                                _\\_||_/_           \r\n                                                                                               (_,_||_,_)");
             Console.WriteLine("");
-            Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}|", player.Name, player.HP);
+            Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}/{2}|", player.Name, player.HP,player.Max_HP);
             if(_Attack == true)
             {
                 Console.WriteLine("");
@@ -150,10 +151,12 @@ namespace Tavernier
         {
             Console.Clear();
             Console.WriteLine("                                             ANIMATION DE FOU");
-            Console.WriteLine("                                             MESSAGE DE CE QUE CA FAIS");
-            Console.WriteLine("                                             Ouais ba pour l'instant y a pas de skill donc temps pi tu paire ton tour");
+            Console.WriteLine("                                             Tu utilise ta première compétence (FDP)");
+
             Console.ReadKey(true);
             Console.Clear();
+
+            player.useSkill(ennemy, 1);
         }
 
         public void choiceBag(Character player)

@@ -28,6 +28,8 @@ namespace Tavernier
 
             _Name_First_Weapon = "Hache Durandil";
             _First_Weapon.chose_Weapon(_Name_First_Weapon);
+
+            _First_Skill.setSkill("Thran", 1);
         }
     }
 }

@@ -28,6 +28,10 @@ namespace Tavernier
         protected string _Name_First_Weapon = "None";
         protected Weapon _First_Weapon = new Weapon();
 
+        protected Skill _First_Skill = new Skill();
+
+        protected Skill _Second_Skill = new Skill();
+
         protected bool _Alive = true;
 
         public Character() 
@@ -35,10 +39,25 @@ namespace Tavernier
         
         }
 
-        public virtual void attack(Character cible)
+        public virtual void attack(Character target)
         {
-            int damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - cible._Phys_Def;
-            cible.receveDammage(damage);
+            int damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - target._Phys_Def;
+            target.receveDammage(damage);
+        }
+
+        public virtual void useSkill(Character target, int numerSkill)
+        {
+            int damage = (_Phys_Atk + _First_Weapon.Atk_Phy) - target._Phys_Def;
+            switch (numerSkill)
+            {
+                case 1:
+                    damage *= (_First_Skill.Modif_dmg / 100);
+                    break;
+
+                default:
+                    break;
+            }
+            target.receveDammage(damage);
         }
 
         public virtual void receveDammage(int damage)
