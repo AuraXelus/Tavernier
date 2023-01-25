@@ -27,4 +27,5 @@ namespace Tavernier
             _Speed = 40;
 
         }
+    }
 }

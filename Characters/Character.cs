@@ -10,8 +10,9 @@ namespace Tavernier
     {
         protected int _Max_HP;
         protected int _HP;
-
         protected int _Max_SP;
+        protected int _SP;
+
         protected int _Phys_Atk;
         protected int _Elem_Atk;
 

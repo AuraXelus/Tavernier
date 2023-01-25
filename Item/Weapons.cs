@@ -38,6 +38,7 @@ namespace Tavernier
                     _Name = weapon_Wanted;
 
                     _Phys_Atk = 25;
+
                     _Strike_Dmg = true;
 
                     break;
@@ -60,18 +61,28 @@ namespace Tavernier
                 case "épée elfique":
                     _Name = weapon_Wanted;
 
+                    _Phys_Atk = 0;
+
+                    _Slash_Dmg = true;
+
                     break;
 
                 //2nd arme de Nina
                 case "Lance épineuse":
                     _Name = weapon_Wanted;
 
+                    _Phys_Atk = 0;
+                    _Elem_Atk = 0;
+
+                    _Thrust_Dmg = true;
+                    _Nature_Dmg = true;
+
                     break;
 
                 //**********| Benoit |**********//
 
                 //1ère arme de Benoit
-                case "Baton de feu":
+                case "Orbe de feu":
                     _Name = weapon_Wanted;
                     _Elem_Atk = 25;
                     _Fire_Dmg = true;
@@ -92,11 +103,19 @@ namespace Tavernier
                 case "Branche de bouleau":
                     _Name = weapon_Wanted;
 
+                    _Elem_Atk = 25;
+
+                    _Nature_Dmg = true;
+
                     break;
 
                 //2nd arme de Ailphynna
                 case "Sapin":
                     _Name = weapon_Wanted;
+
+                    _Elem_Atk = 25;
+
+                    _Nature_Dmg = true;
 
                     break;
 

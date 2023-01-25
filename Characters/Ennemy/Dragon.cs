@@ -6,8 +6,9 @@
         {
             _Max_HP = 150;
             _HP = _Max_HP;
-
             _Max_SP = 80;
+            _SP = _Max_SP;
+
             _Phys_Atk = 50;
             _Elem_Atk = 60;
 
