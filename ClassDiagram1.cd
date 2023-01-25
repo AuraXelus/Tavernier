@@ -119,18 +119,89 @@
       <FileName>Characters\Ennemy\Ogre.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Tavernier.Orc" Collapsed="true">
-    <Position X="6.5" Y="3.75" Width="1.5" />
+  <Class Name="Tavernier.Dryade" Collapsed="true">
+    <Position X="2.5" Y="5" Width="1.5" />
     <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
       <Path>
         <Point X="5.25" Y="2.062" />
-        <Point X="5.25" Y="4.125" />
-        <Point X="6.5" Y="4.125" />
+        <Point X="5.25" Y="5.375" />
+        <Point X="4" Y="5.375" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Characters\Ennemy\Orc.cs</FileName>
+      <FileName>Characters\Player\Dryade.cs</FileName>
+      <NewMemberFileName>Characters\Player\Pyromancien.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+    <Position X="2.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="5.375" />
+        <Point X="4" Y="5.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Player\Dryade.cs</FileName>
+      <NewMemberFileName>Characters\Player\Pyromancien.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+    <Position X="2.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="5.375" />
+        <Point X="4" Y="5.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Player\Dryade.cs</FileName>
+      <NewMemberFileName>Characters\Player\Pyromancien.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+    <Position X="2.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="5.375" />
+        <Point X="4" Y="5.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Player\Dryade.cs</FileName>
+      <NewMemberFileName>Characters\Player\Pyromancien.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+    <Position X="2.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="5.375" />
+        <Point X="4" Y="5.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Player\Dryade.cs</FileName>
+      <NewMemberFileName>Characters\Player\Pyromancien.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+    <Position X="2.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="5.375" />
+        <Point X="4" Y="5.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Player\Dryade.cs</FileName>
+      <NewMemberFileName>Characters\Player\Pyromancien.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tavernier.Troll" Collapsed="true">
@@ -173,6 +244,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Characters\Player\Pyromancien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tavernier.Orc" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="4.125" />
+        <Point X="6.5" Y="4.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Ennemy\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
