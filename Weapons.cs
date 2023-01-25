@@ -36,12 +36,17 @@ namespace Tavernier
                 //1ère arme de Thran
                 case "Hache de guerre":
                     _Name = weapon_Wanted;
+                    _Phys_Atk = 15;
+                    _Strike_Dmg = true;
 
                     break;
 
                 //2nd arme de Thran
                 case "Magmarteau":
                     _Name = weapon_Wanted;
+                    _Phys_Atk = 0;
+                    _Elem_Atk = 0;
+                    _Strike_Dmg = true;
 
                     break;
 
