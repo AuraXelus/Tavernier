@@ -116,26 +116,26 @@ namespace Tavernier
             if (_Attack == true)
             {
                 Console.WriteLine("");
-                Console.WriteLine("                                             |*Attack          |Skill");
-                Console.WriteLine("                                             |Bag              |Escape");
+                Console.WriteLine("                                             |*Attack          |Skill ");
+                Console.WriteLine("                                             |Bag              |Escape ");
             }
             else if (_Skill == true)
             {
                 Console.WriteLine("");
-                Console.WriteLine("                                             |Attack           |*Skill");
-                Console.WriteLine("                                             |Bag              |Escape");
+                Console.WriteLine("                                             |Attack           |*Skill ");
+                Console.WriteLine("                                             |Bag              |Escape ");
             }
             else if (_Bag == true)
             {
                 Console.WriteLine("");
-                Console.WriteLine("                                             |Attack           |Skill");
-                Console.WriteLine("                                             |*Bag             |Escape");
+                Console.WriteLine("                                             |Attack           |Skill ");
+                Console.WriteLine("                                             |*Bag             |Escape ");
             }
             else if (_Escape == true)
             {
                 Console.WriteLine("");
-                Console.WriteLine("                                             |Attack           |Skill");
-                Console.WriteLine("                                             |Bag              |*Escape");
+                Console.WriteLine("                                             |Attack           |Skill ");
+                Console.WriteLine("                                             |Bag              |*Escape ");
             }
             }
             else if (_CharacterTurn % 2 == 1)
@@ -159,14 +159,97 @@ namespace Tavernier
 
         public void choiceSkill(Character player, Character ennemy)
         {
+            bool choiceSkillOk = false;
+            bool skill1 = true;
+            bool skill2 = false;
+            bool skill3 = false;
+            bool back = false;
             Console.Clear();
-            Console.WriteLine("                                             ANIMATION DE FOU");
-            Console.WriteLine("                                             Tu utilise ta première compétence (FDP)");
+            do
+            {
+                //Display
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine("         |{0}|    -    |HP : {1}|", ennemy.Name, ennemy.HP);
+                Console.WriteLine("        _   ,_,   _\r\n       / `'=) (='` \\\r\n      /.-.-.\\ /.-.-.\\ \r\n      `      \"      `");
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine("");
+                }
+                Console.WriteLine("                                                                                                          /\\_[]_/\\\r\n                                                                                                         |] _||_ [|\r\n                                                                                                  ___     \\/ || \\/\r\n                                                                                                 /___\\       ||\r\n                                                                                                (|0 0|)      ||\r\n                                                                                              __/{\\U/}\\_ ___/vvv\r\n                                                                                             / \\  {~}   / _|_P|\r\n                                                                                             | /\\  ~   /_/   []\r\n                                                                                             |_| (____)        \r\n                                                                                             \\_]/______\\               \r\n                                                                                                _\\_||_/_           \r\n                                                                                               (_,_||_,_)");
+                Console.WriteLine("");
+                Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}/{2}|", player.Name, player.HP, player.Max_HP);
+                //Display skill
+                if(skill1 == true)
+                {
+                    Console.WriteLine("                                             |*Skill n°1        |Skill n°2 ");
+                    Console.WriteLine("                                             |Skill n°3         |Back ");
+                }
+                else if (skill2 == true)
+                {
+                    Console.WriteLine("                                             |Skill n°1         |*Skill n°2 ");
+                    Console.WriteLine("                                             |Skill n°3         |Back ");
+                }
+                else if (skill3 == true)
+                {
+                    Console.WriteLine("                                             |Skill n°1         |Skill n°2 ");
+                    Console.WriteLine("                                             |*Skill n°3        |Back ");
+                }
+                else if (back == true)
+                {
+                    Console.WriteLine("                                             |Skill n°1         |Skill n°2 ");
+                    Console.WriteLine("                                             |Skill n°3         |*Back ");
+                }
 
+                //Choose and action
+                ConsoleKey key = Console.ReadKey(true).Key;
+                switch (key)
+                {
+                    case ConsoleKey.Enter:
+                        if (skill1 == true)
+                        {
+                            if(player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 1); }
+                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
+                        }
+                        else if (skill2 == true)
+                        {
+                            if (player.Second_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 2); }
+                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
+                        }
+                        else if (skill3 == true)
+                        {
+                            if (player.Third_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 3); }
+                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
+                        }
+                        else if (back == true)
+                        {
+                            choiceSkillOk = true;
+                        }
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        if (skill2 == true) { skill2 = false; skill1 = true; }
+                        if (back == true) { back = false; skill3 = true; }
+                        break;
+                    case ConsoleKey.UpArrow:
+                        if (skill3 == true) { skill3 = false; skill1 = true; }
+                        if (back == true) { back = false; skill2 = true; }
+                        break;
+                    case ConsoleKey.RightArrow:
+                        if (skill1 == true) { skill1 = false; skill2 = true; }
+                        if (skill3 == true) { skill3 = false; back = true; }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        if (skill1 == true) { skill1 = false; skill3 = true; }
+                        if (skill2 == true) { skill2 = false; back = true; }
+                        break;
+                    default:
+                        break;
+                }
+                } while (choiceSkillOk != true) ;
+            Console.Clear();
+            Console.WriteLine("             |Vous utiliser votre compétence|");
             Console.ReadKey(true);
             Console.Clear();
 
-            player.useSkill(ennemy, 1);
         }
 
         public void choiceBag(Character player)

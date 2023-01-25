@@ -34,6 +34,7 @@ namespace Tavernier
 
         protected Skill _First_Skill = new Skill();
         protected Skill _Second_Skill = new Skill();
+        protected Skill _Third_Skill = new Skill();
 
         protected bool _Alive = true;
 
@@ -86,8 +87,11 @@ namespace Tavernier
         public int Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public int Speed { get => _Speed; set => _Speed = value; }
         public Weapon First_Weapon { get => _First_Weapon; set => _First_Weapon = value; }
-
         public bool Alive { get => _Alive; set => _Alive = value; }
+
+        public Skill First_Skill { get => _First_Skill; set => _First_Skill = value; }
+        public Skill Second_Skill { get => _Second_Skill; set => _Second_Skill = value; }
+        public Skill Third_Skill { get => _Third_Skill;set => _Third_Skill = value; }
     }
 }
 
