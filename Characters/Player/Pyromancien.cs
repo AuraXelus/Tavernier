@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Magicienne : Character
+    internal class Pyromancien : Character
     {
-        public Magicienne()
+        public Pyromancien()
         {
             _Max_HP = 100;
             _HP = _Max_HP;

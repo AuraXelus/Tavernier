@@ -19,7 +19,7 @@ namespace Tavernier
         protected bool _Strike_Dmg = false;
 
         protected bool _Fire_Dmg = false;
-        protected bool _Water_Dmg = false;
+        protected bool _Ice_Dmg = false;
         protected bool _Nature_Dmg = false;
 
         public Weapons()
@@ -36,7 +36,7 @@ namespace Tavernier
                 //1ère arme de Thran
                 case "Hache de guerre":
                     _Name = weapon_Wanted;
-                    _Phys_Atk = 15;
+                    _Phys_Atk = 25;
                     _Strike_Dmg = true;
 
                     break;
@@ -44,9 +44,10 @@ namespace Tavernier
                 //2nd arme de Thran
                 case "Magmarteau":
                     _Name = weapon_Wanted;
-                    _Phys_Atk = 0;
-                    _Elem_Atk = 0;
+                    _Phys_Atk = 10;
+                    _Elem_Atk = 10;
                     _Strike_Dmg = true;
+                    _Fire_Dmg = true;
 
                     break;
 
@@ -67,14 +68,18 @@ namespace Tavernier
                 //**********| MAGICIENNE |**********//
 
                 //1ère arme de Magicienne
-                case "Baguette de sourcier":
+                case "Baton de feu":
                     _Name = weapon_Wanted;
+                    _Elem_Atk = 25;
+                    _Fire_Dmg = true;
 
                     break;
 
                 //2nd arme de Magicienne
-                case "Baton de feu":
+                case "Baguette de sourcier":
                     _Name = weapon_Wanted;
+                    _Elem_Atk = 40;
+                    _Ice_Dmg = true;
 
                     break;
                 

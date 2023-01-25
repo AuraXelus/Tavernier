@@ -21,32 +21,11 @@
       <FileName>Dragon.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Tavernier.GoblinM" Collapsed="true">
-    <Position X="13.25" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GoblinM.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Tavernier.GoblinP" Collapsed="true">
-    <Position X="17.75" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GoblinP.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Tavernier.Item" Collapsed="true">
     <Position X="11.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Tavernier.Magicienne" Collapsed="true">
-    <Position X="11" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Magicienne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tavernier.Nina" Collapsed="true">
@@ -73,7 +52,7 @@
   <Class Name="Tavernier.Weapons" Collapsed="true">
     <Position X="8.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAoBAEAAAYAAAAIAAgIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAoBAEAAAYAAAAIAQAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>

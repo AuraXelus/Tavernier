@@ -1,17 +1,17 @@
 ﻿namespace Tavernier
 {
-    internal class GoblinM : Character
+    internal class MagicGoblin : Character
     {
-        public GoblinM()
+        public MagicGoblin()
         {
-            _Max_HP = 80;
+            _Max_HP = 100;
             _HP = _Max_HP;
 
             _Max_SP = 60;
             _Phys_Atk = 10;
             _Elem_Atk = 25;
 
-            _Phys_Def = 10;
+            _Phys_Def = 5;
             _Elem_Def = 40;
 
             _Accuracy = 70;
