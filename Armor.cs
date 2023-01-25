@@ -23,7 +23,7 @@ namespace Tavernier
 
         }
 
-        public void chose_Armor(string armor_Wanted)
+        public void choose_Armor(string armor_Wanted)
         {
             switch (armor_Wanted)
             {

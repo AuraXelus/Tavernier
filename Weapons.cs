@@ -9,23 +9,25 @@ namespace Tavernier
     internal class Weapons : Item
     {
         protected string _Name = "None";
-        protected int _Damage = 0;
+
+        protected int _Phys_Atk = 0;
+        protected int _Elem_Atk = 0;
         protected int _Critical_Chance = 0;
 
-        protected int _Slash_Dmg = 0;
-        protected int _Thrust_Dmg = 0;
-        protected int _Strike_Dmg = 0;
+        protected bool _Slash_Dmg = false;
+        protected bool _Thrust_Dmg = false;
+        protected bool _Strike_Dmg = false;
 
-        protected int _Fire_Dmg = 0;
-        protected int _Water_Dmg = 0;
-        protected int _Nature_Dmg = 0;
+        protected bool _Fire_Dmg = false;
+        protected bool _Water_Dmg = false;
+        protected bool _Nature_Dmg = false;
 
         public Weapons()
         {
 
         }
 
-        public void chose_Weapon(string weapon_Wanted)
+        public void choose_Weapon(string weapon_Wanted)
         {
             switch (weapon_Wanted)
             {
@@ -34,18 +36,13 @@ namespace Tavernier
                 //1ère arme de Thran
                 case "Hache de guerre":
                     _Name = weapon_Wanted;
-                    _Damage = 25;
-                    _Critical_Chance = 3;
-                    _Slash_Dmg = 40;
+
                     break;
 
                 //2nd arme de Thran
                 case "Magmarteau":
                     _Name = weapon_Wanted;
-                    _Damage = 15;
-                    _Critical_Chance = 3;
-                    _Strike_Dmg = 30;
-                    _Fire_Dmg = 40;
+
                     break;
 
                 //**********| NINA |**********//
@@ -53,18 +50,13 @@ namespace Tavernier
                 //1ère arme de Nina
                 case "épée elfique":
                     _Name = weapon_Wanted;
-                    _Damage = 15;
-                    _Critical_Chance = 40;
-                    _Slash_Dmg = 20;
+
                     break;
 
                 //2nd arme de Nina
                 case "Lance épineuse":
                     _Name = weapon_Wanted;
-                    _Damage = 10;
-                    _Critical_Chance = 3;
-                    _Thrust_Dmg = 50;
-                    _Nature_Dmg = 40;
+
                     break;
 
                 //**********| MAGICIENNE |**********//
@@ -72,25 +64,21 @@ namespace Tavernier
                 //1ère arme de Magicienne
                 case "Baguette de sourcier":
                     _Name = weapon_Wanted;
-                    _Damage = 5;
-                    _Critical_Chance = 2;
-                    _Water_Dmg = 100;
+
                     break;
 
                 //2nd arme de Magicienne
                 case "Baton de feu":
                     _Name = weapon_Wanted;
-                    _Damage = 15;
-                    _Critical_Chance = 3;
-                    _Fire_Dmg = 80;
-                    break;
 
+                    break;
+                
                 default:
                     break;
             }
         }
 
         //Get
-        public int Atk_Phy { get => _Damage; set => _Damage = value; }
+        //public int Atk_Phy { get => _Damage; set => _Damage = value; }
     }
 }

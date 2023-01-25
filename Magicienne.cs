@@ -11,18 +11,21 @@ namespace Tavernier
     {
         public Magicienne()
         {
-            _Max_HP = 70;
+            _Max_HP = 100;
             _HP = _Max_HP;
 
             _Max_SP = 100;
             _Phys_Atk = 30;
-            _Elem_Atk = 90;
+            _Elem_Atk = 50;
 
-            _Accuracy = 85;
-            _Critical_Chance = 10;
+            _Phys_Def = 10;
+            _Elem_Def = 50;
+
+            _Accuracy = 80;
+            _Critical_Chance = 5;
             _Critical_Dmg = 2;
 
-            _Speed = 90;
+            _Speed = 80;
         }
     }
 }
