@@ -17,7 +17,7 @@
             _Max_SP = 40;
             _Elem_Atk = 50;
             _Elem_Def = 55;
-            _Speed = 70;
+            _Speed = 60;
         }
     }
 }

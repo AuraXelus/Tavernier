@@ -14,6 +14,7 @@ namespace Tavernier
         private bool _Skill = false;
         private bool _Bag = false;
         private bool _Escape = false;
+        private bool _Round_Finish = false;
         private int _Meter;    //Si c'est paire c'est à nous de jouer
 
         private bool _Escape_Succes = false;
@@ -34,55 +35,61 @@ namespace Tavernier
                 _Meter++;
                 if (_Meter % 2 == 0)
                 {
-                    display(player, ennemy);
-                    ConsoleKey key = Console.ReadKey(true).Key;
-
-                    switch (key)
+                    _Round_Finish = false;
+                    do
                     {
-                        case ConsoleKey.Enter:
-                            if (_Attack == true)
-                            {
-                                choiceAttack(player, ennemy);
-                            }
-                            else if (_Skill == true)
-                            {
-                                choiceSkill(player, ennemy);
-                            }
-                            else if (_Bag == true)
-                            {
-                                choiceBag(player);
-                            }
-                            else if (_Escape == true)
-                            {
-                                choiceEscape(player, ennemy);
-                            }
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            if (_Skill == true) { _Skill = false; _Attack = true; }
-                            if (_Escape == true) { _Escape = false; _Bag = true; }
-                            break;
-                        case ConsoleKey.UpArrow:
-                            if (_Bag == true) { _Bag = false; _Attack = true; }
-                            if (_Escape == true) { _Escape = false; _Skill = true; }
-                            break;
-                        case ConsoleKey.RightArrow:
-                            if (_Attack == true) { _Attack = false; _Skill = true; }
-                            if (_Bag == true) { _Bag = false; _Escape = true; }
-                            break;
-                        case ConsoleKey.DownArrow:
-                            if (_Attack == true) { _Attack = false; _Bag = true; }
-                            if (_Skill == true) { _Skill = false; _Escape = true; }
-                            break;
-                        default:
-                            break;
-                    }
+                        display(player, ennemy);
+                        ConsoleKey key = Console.ReadKey(true).Key;
+
+                        switch (key)
+                        {
+                            case ConsoleKey.Enter:
+                                if (_Attack == true)
+                                {
+                                    choiceAttack(player, ennemy);
+                                }
+                                else if (_Skill == true)
+                                {
+                                    choiceSkill(player, ennemy);
+                                }
+                                else if (_Bag == true)
+                                {
+                                    choiceBag(player);
+                                }
+                                else if (_Escape == true)
+                                {
+                                    choiceEscape(player, ennemy);
+                                }
+                                _Round_Finish = true;
+                                break;
+                            case ConsoleKey.LeftArrow:
+                                if (_Skill == true) { _Skill = false; _Attack = true; }
+                                if (_Escape == true) { _Escape = false; _Bag = true; }
+                                break;
+                            case ConsoleKey.UpArrow:
+                                if (_Bag == true) { _Bag = false; _Attack = true; }
+                                if (_Escape == true) { _Escape = false; _Skill = true; }
+                                break;
+                            case ConsoleKey.RightArrow:
+                                if (_Attack == true) { _Attack = false; _Skill = true; }
+                                if (_Bag == true) { _Bag = false; _Escape = true; }
+                                break;
+                            case ConsoleKey.DownArrow:
+                                if (_Attack == true) { _Attack = false; _Bag = true; }
+                                if (_Skill == true) { _Skill = false; _Escape = true; }
+                                break;
+                            default:
+                                break;
+                        }
+                        Console.Clear();
+                    } while (_Round_Finish != true);
                 }
                 else if (_Meter % 2 == 1) 
                 {
                     Console.WriteLine("L'ennemi vous attaque, avec une attaque physqieu, l'IA n'est pas faites il vous attaque comme ça en boucle le con");
                     ennemy.attack(player);
+                    Console.Clear();
                 }
-                Console.Clear();
             } while ((player.Alive == true && ennemy.Alive == true) && _Escape_Succes != true);
 
             //End Fight
