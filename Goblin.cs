@@ -1,6 +1,6 @@
 ﻿namespace Tavernier
 {
-    internal class Goblin : Character
+    internal class Goblin : Enemy
     {
         public Goblin()
         {
@@ -20,6 +20,8 @@
             _Critical_Puiss = 2;
 
             _Speed = 70;
+
+            _Exp_Give = 50;
         }
     }
 }
