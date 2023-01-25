@@ -119,20 +119,6 @@
       <FileName>Characters\Ennemy\Ogre.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Tavernier.Orc" Collapsed="true">
-    <Position X="6.5" Y="3.75" Width="1.5" />
-    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
-      <Path>
-        <Point X="5.25" Y="2.062" />
-        <Point X="5.25" Y="4.125" />
-        <Point X="6.5" Y="4.125" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Characters\Ennemy\Orc.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Tavernier.Dryade" Collapsed="true">
     <Position X="2.5" Y="5" Width="1.5" />
     <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
@@ -188,6 +174,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Characters\Player\Pyromancien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tavernier.Orc" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="Tavernier.Character" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.062" />
+        <Point X="5.25" Y="4.125" />
+        <Point X="6.5" Y="4.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Characters\Ennemy\Orc.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
