@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Enemy : Character
+    public class MagicGoblin : Enemy
     {
-        protected int _Exp_Give;
-        protected bool _;
-        
+        public MagicGoblin()
+        {
+            
+        }
 
-        public Enemy() { }
+
     }
 }

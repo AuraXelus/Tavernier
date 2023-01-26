@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Character
+    public class Character
     {
         protected string _Name = "None";
 

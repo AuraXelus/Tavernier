@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Fight_State
+    public class Fight_State
     {
         private bool _Attack = true;
         private bool _Skill = false;

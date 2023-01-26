@@ -7,7 +7,7 @@ using Tavernier;
 
 namespace Tavernier
 {
-    internal class Thran : Character
+    public class Thran : Character
     {
 
         public Thran() 

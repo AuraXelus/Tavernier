@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Skill
+    public class Skill
     {
         private string _Name = "None";
         private int _Number_Skill = 0;
@@ -15,6 +15,7 @@ namespace Tavernier
         private bool _Phys_Atk = false;
         private bool _Elem_Atk = false;
         private float _Modif_dmg = 0;
+
 
         public Skill() { }
 
@@ -36,7 +37,7 @@ namespace Tavernier
                             _Modif_dmg = 120;
                             break;
                         case 2: //60% degats à tous les ennemies
-                            _Name = "Tourbillon";
+                            _Name = "Whirlwind";
                             _Number_Skill = numberSkill;
                             _Point_SP = 40;
                             _Phys_Atk = true;

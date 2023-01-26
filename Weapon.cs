@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Weapon : Item
+    public class Weapon : Item
     {
         protected string _Name = "None";
         protected int _Phys_Atk = 0;
