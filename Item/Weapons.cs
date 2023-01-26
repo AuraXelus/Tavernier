@@ -84,7 +84,9 @@ namespace Tavernier.Item
                 //1ère arme de Benoit
                 case "Orbe de feu":
                     _Name = weapon_Wanted;
-                    _Elem_Atk = 25;
+
+                    _Elem_Atk = 0;
+
                     _Fire_Dmg = true;
 
                     break;
@@ -92,7 +94,9 @@ namespace Tavernier.Item
                 //2nd arme de Benoit
                 case "Baguette de sourcier":
                     _Name = weapon_Wanted;
-                    _Elem_Atk = 40;
+
+                    _Elem_Atk = 0;
+
                     _Ice_Dmg = true;
 
                     break;
@@ -103,7 +107,7 @@ namespace Tavernier.Item
                 case "Branche de bouleau":
                     _Name = weapon_Wanted;
 
-                    _Elem_Atk = 25;
+                    _Elem_Atk = 0;
 
                     _Nature_Dmg = true;
 
@@ -113,7 +117,7 @@ namespace Tavernier.Item
                 case "Sapin":
                     _Name = weapon_Wanted;
 
-                    _Elem_Atk = 25;
+                    _Elem_Atk = 0;
 
                     _Nature_Dmg = true;
 
