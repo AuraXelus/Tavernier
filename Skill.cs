@@ -39,7 +39,7 @@ namespace Tavernier
                         case 2: //60% degats à tous les ennemies
                             _Name = "Whirlwind";
                             _Number_Skill = numberSkill;
-                            _Point_SP = 40;
+                            _Point_SP = 30;
                             _Phys_Atk = true;
                             _Elem_Atk = false;
 

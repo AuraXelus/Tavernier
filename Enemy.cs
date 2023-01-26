@@ -9,9 +9,10 @@ namespace Tavernier
     public class Enemy : Character
     {
         protected int _Exp_Give;
-        protected bool _;
         
 
         public Enemy() { }
+
+
     }
 }

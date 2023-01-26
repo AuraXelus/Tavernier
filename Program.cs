@@ -15,3 +15,10 @@ namespace Tavernier
         }
     }
 }
+
+//Utilisation des faiblesses
+//Ajout de la magie
+//Objet (armes) potions vie, mana,
+//Niveau
+//System d'argent
+//Spécificité des compétence
