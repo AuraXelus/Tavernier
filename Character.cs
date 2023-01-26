@@ -95,4 +95,6 @@ namespace Tavernier
     }
 }
 
-//Objet (armes) potions vie, mana, 
+//Objet (armes) potions vie, mana,
+//Utilisation des faiblesses
+//Ajout de la magie
