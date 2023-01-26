@@ -16,13 +16,13 @@ namespace Tavernier.Characters.Player
             _Max_SP = 80;
             _SP = _Max_SP;
 
-            _Phys_Atk = 30;
-            _Elem_Atk = 40;
+            _Phys_Atk = 40;
+            _Elem_Atk = 30;
 
-            _Phys_Def = 20;
-            _Elem_Def = 20;
+            _Phys_Def = 10;
+            _Elem_Def = 5;
 
-            _Accuracy = 90;
+            _Accuracy = 95;
             _Critical_Chance = 4;
             _Critical_Dmg = 2;
 

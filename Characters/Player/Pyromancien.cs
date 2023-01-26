@@ -16,8 +16,8 @@ namespace Tavernier.Characters.Player
             _Max_SP = 100;
             _SP = _Max_SP;
 
-            _Phys_Atk = 20;
-            _Elem_Atk = 50;
+            _Phys_Atk = 25;
+            _Elem_Atk = 45;
 
             _Phys_Def = 10;
             _Elem_Def = 50;

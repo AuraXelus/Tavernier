@@ -36,6 +36,7 @@ namespace Tavernier.Item
                 case "Casque lourd":
                     _Name = armor_Wanted;
 
+                    //
 
                     break;
 
@@ -43,11 +44,15 @@ namespace Tavernier.Item
                 case "Plastron lourd":
                     _Name = armor_Wanted;
 
+                    //
+
                     break;
 
                 //Jambière
                 case "Jambière lourde":
                     _Name = armor_Wanted;
+
+                    //
 
                     break;
 
@@ -57,6 +62,7 @@ namespace Tavernier.Item
                 case "Capuche sylvestre":
                     _Name = armor_Wanted;
 
+                    //
 
                     break;
 
@@ -64,6 +70,7 @@ namespace Tavernier.Item
                 case "Cuirasse sylvestre":
                     _Name = armor_Wanted;
 
+                    //
 
                     break;
 
@@ -71,6 +78,7 @@ namespace Tavernier.Item
                 case "Pantalon sylvestre":
                     _Name = armor_Wanted;
 
+                    //
 
                     break;
 
@@ -80,6 +88,7 @@ namespace Tavernier.Item
                 case "Capuchon ensorcelée":
                     _Name = armor_Wanted;
 
+                    //
 
                     break;
 
@@ -87,12 +96,15 @@ namespace Tavernier.Item
                 case "Tunique ensorcelée":
                     _Name = armor_Wanted;
 
+                    //
 
                     break;
 
                 //Jambière
                 case "Chausse ensorcelée":
                     _Name = armor_Wanted;
+
+                    //
 
                     break;
 
@@ -101,17 +113,24 @@ namespace Tavernier.Item
                 //Tête
                 case "Bois de cerf":
                     _Name = armor_Wanted;
+
+                    //
+
                     break;
 
                 //Torse
                 case "Tunique de Druide":
                     _Name = armor_Wanted;
 
+                    //
+
                     break;
 
                 //Jambière
                 case "Braies de Druide":
                     _Name = armor_Wanted;
+
+                    //
 
                     break;
 
