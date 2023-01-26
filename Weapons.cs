@@ -89,8 +89,5 @@ namespace Tavernier
                     break;
             }
         }
-
-        //Get
-        public int Atk_Phy { get => _Damage; set => _Damage = value; }
     }
 }
