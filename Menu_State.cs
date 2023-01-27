@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Item
+    internal class Menu_State
     {
-        public void setItem(int numberItem)
-        {
-
-        }
-
     }
-
 }
