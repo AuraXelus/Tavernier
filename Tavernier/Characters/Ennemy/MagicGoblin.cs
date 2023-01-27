@@ -1,9 +1,16 @@
-﻿namespace Tavernier.Characters.Ennemy
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tavernier
 {
-    internal class MagicGoblin : Character
+    public class MagicGoblin : Enemy
     {
         public MagicGoblin()
         {
+            _Name = "Magic Goblin";
             _Max_HP = 100;
             _HP = _Max_HP;
             _Max_SP = 60;
@@ -17,9 +24,17 @@
 
             _Accuracy = 70;
             _Critical_Chance = 3;
-            _Critical_Dmg = 2;
+            _Critical_Puiss = 2;
 
             _Speed = 70;
+
+            _Slash = true;
+            _Thrust = false;
+            _Strike = false;
+
+            _Exp_Give = 50;
         }
+
+
     }
 }

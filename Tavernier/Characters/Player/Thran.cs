@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tavernier;
 
-namespace Tavernier.Characters.Player
+namespace Tavernier
 {
-    internal class Balfis : Character
+    public class Thran : Character
     {
-        public Balfis()
+
+        public Thran() 
         {
+            _Name = "Thran";
+
             _Max_HP = 100;
             _HP = _Max_HP;
             _Max_SP = 70;
@@ -23,9 +27,14 @@ namespace Tavernier.Characters.Player
 
             _Accuracy = 90;
             _Critical_Chance = 2;
-            _Critical_Dmg = 2;
-
+            _Critical_Puiss = 2;
             _Speed = 70;
+
+            _Name_First_Weapon = "Beagener's Axe";
+            _First_Weapon.choseWeapon(_Name_First_Weapon);
+
+            _First_Skill.setSkill("Thran", 1);
+            _Second_Skill.setSkill("Thran", 2);
         }
     }
 }

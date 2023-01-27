@@ -1,9 +1,10 @@
-﻿namespace Tavernier.Characters.Ennemy
+﻿namespace Tavernier
 {
-    internal class WarriorGoblin : Character
+    public class WarriorGoblin : Enemy
     {
         public WarriorGoblin()
         {
+            _Name= "Warrior Goblin";
             _Max_HP = 100;
             _HP = _Max_HP;
             _Max_SP = 60;
@@ -17,9 +18,15 @@
 
             _Accuracy = 70;
             _Critical_Chance = 3;
-            _Critical_Dmg = 2;
+            _Critical_Puiss = 2;
 
             _Speed = 70;
+
+            _Slash = true;
+            _Thrust = false;
+            _Strike = false;
+
+            _Exp_Give = 50;
         }
     }
 }
