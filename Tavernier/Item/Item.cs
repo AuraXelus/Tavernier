@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tavernier
+namespace Tavernier.Item
 {
-    public class Enemy : Character
+    internal class Item
     {
-        protected int _Exp_Give;
-        
-
-        public Enemy() { }
-
 
     }
 }
