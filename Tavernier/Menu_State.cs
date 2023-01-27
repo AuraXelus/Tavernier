@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Enemy : Character
+    internal class Menu_State
     {
-        protected int _Exp_Give;
-        
-
-        public Enemy() { }
-
-
     }
 }

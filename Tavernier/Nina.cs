@@ -30,7 +30,7 @@ namespace Tavernier
             _Speed = 90;
 
             _Name_First_Weapon = "Epee elfique";
-            _First_Weapon.chose_Weapon("Epee elfique");
+            _First_Weapon.choseWeapon("Epee elfique");
         }
     }
 }

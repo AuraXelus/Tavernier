@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Fight_State
+    public class Fight_State
     {
         private bool _Attack = true;
         private bool _Skill = false;
@@ -105,14 +105,12 @@ namespace Tavernier
         public void display(Character player, Character ennemy)
         {
             Console.WriteLine("         |{0}|    -    |HP : {1}|", ennemy.Name, ennemy.HP);
-            Console.WriteLine("        _   ,_,   _\r\n       / `'=) (='` \\\r\n      /.-.-.\\ /.-.-.\\ \r\n      `      \"      `");
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("");
-            }
+            Console.WriteLine("            /(.-\"\"-.)\\\r\n        |\\  \\/      \\/  /|\r\n        | \\ / =.  .= \\ / |\r\n        \\( \\   o\\/o   / )/\r\n         \\_, '-/  \\-' ,_/\r\n           /   \\__/   \\\r\n           \\,___/\\___,/\r\n         ___\\ \\|--|/ /___\r\n       /`    \\      /    `");
             Console.WriteLine("                                                                                                          /\\_[]_/\\\r\n                                                                                                         |] _||_ [|\r\n                                                                                                  ___     \\/ || \\/\r\n                                                                                                 /___\\       ||\r\n                                                                                                (|0 0|)      ||\r\n                                                                                              __/{\\U/}\\_ ___/vvv\r\n                                                                                             / \\  {~}   / _|_P|\r\n                                                                                             | /\\  ~   /_/   []\r\n                                                                                             |_| (____)        \r\n                                                                                             \\_]/______\\               \r\n                                                                                                _\\_||_/_           \r\n                                                                                               (_,_||_,_)");
             Console.WriteLine("");
-            Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}/{2}|", player.Name, player.HP, player.Max_HP);
+            Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+            Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+            Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
             if (_CharacterTurn%2 == 0)
             {
             if (_Attack == true)
@@ -172,16 +170,13 @@ namespace Tavernier
                 //Display
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("         |{0}|    -    |HP : {1}|", ennemy.Name, ennemy.HP);
-                Console.WriteLine("        _   ,_,   _\r\n       / `'=) (='` \\\r\n      /.-.-.\\ /.-.-.\\ \r\n      `      \"      `");
-                for (int i = 0; i < 5; i++)
-                {
-                    Console.WriteLine("");
-                }
+                Console.WriteLine("            /(.-\"\"-.)\\\r\n        |\\  \\/      \\/  /|\r\n        | \\ / =.  .= \\ / |\r\n        \\( \\   o\\/o   / )/\r\n         \\_, '-/  \\-' ,_/\r\n           /   \\__/   \\\r\n           \\,___/\\___,/\r\n         ___\\ \\|--|/ /___\r\n       /`    \\      /    `");
                 Console.WriteLine("                                                                                                          /\\_[]_/\\\r\n                                                                                                         |] _||_ [|\r\n                                                                                                  ___     \\/ || \\/\r\n                                                                                                 /___\\       ||\r\n                                                                                                (|0 0|)      ||\r\n                                                                                              __/{\\U/}\\_ ___/vvv\r\n                                                                                             / \\  {~}   / _|_P|\r\n                                                                                             | /\\  ~   /_/   []\r\n                                                                                             |_| (____)        \r\n                                                                                             \\_]/______\\               \r\n                                                                                                _\\_||_/_           \r\n                                                                                               (_,_||_,_)");
                 Console.WriteLine("");
-                Console.WriteLine("                                                                                       |{0}|    -    |HP : {1}/{2}|", player.Name, player.HP, player.Max_HP);
-                //Display skill
-                if(skill1 == true)
+                Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+                Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+                Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);                //Display skill
+                if (skill1 == true)
                 {
                     Console.WriteLine("                                             |*Skill n°1        |Skill n°2 ");
                     Console.WriteLine("                                             |Skill n°3         |Back ");
@@ -209,17 +204,22 @@ namespace Tavernier
                     case ConsoleKey.Enter:
                         if (skill1 == true)
                         {
-                            if(player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 1); _Round_Finish = true; }
-                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
+                            if (player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 1); _Round_Finish = true; }
+                            else if (player.First_Skill.Point_SP > player.SP) { Console.WriteLine("                       |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
+
+                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
                         }
                         else if (skill2 == true)
                         {
                             if (player.Second_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 2); _Round_Finish = true; }
-                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.Clear(); }
+                            else if (player.Second_Skill.Point_SP > player.SP) { Console.WriteLine("                       |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
+                            else { Console.WriteLine("                       |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
                         }
                         else if (skill3 == true)
                         {
                             if (player.Third_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(ennemy, 3); _Round_Finish = true; }
+                            else if (player.Third_Skill.Point_SP > player.SP) { Console.WriteLine("                       |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
+
                             else { Console.WriteLine("                       |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
                         }
                         else if (back == true)
