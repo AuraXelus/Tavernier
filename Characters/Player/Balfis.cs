@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Player
 {
-    internal class Thran : Character
+    internal class Balfis : Character
     {
-        public Thran()
+        public Balfis()
         {
             _Max_HP = 100;
             _HP = _Max_HP;
