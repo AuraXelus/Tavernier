@@ -50,12 +50,12 @@ namespace Tavernier
                                 }
                                 else if (_Skill == true)
                                 {
-                                    choiceSkill(player, ennemy);//Directement dans choiceSkil
+                                    choiceSkill(player, ennemy);    //Directement dans choiceSkil
                                 }
                                 else if (_Bag == true)
                                 {
                                     choiceBag(player);
-                                    _Round_Finish = true;//Temporaire
+                                    _Round_Finish = true;   //Temporaire
                                 }
                                 else if (_Escape == true)
                                 {
