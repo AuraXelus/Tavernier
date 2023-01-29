@@ -8,6 +8,9 @@ namespace Tavernier
 {
     public class Player : Character
     {
-        public Player() { }
+        public Player()
+        {
+
+        }
     }
 }

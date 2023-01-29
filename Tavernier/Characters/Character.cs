@@ -38,11 +38,9 @@ namespace Tavernier
 
         protected bool _Alive = true;
 
-
-        protected bool _Slash = false;
-        protected bool _Thrust = false;
-        protected bool _Strike = false;
-
+        protected bool _Weakness_Slash = false;
+        protected bool _Weakness_Thrust = false;
+        protected bool _Weakness_Strike = false;
         public Character() 
         {
         
@@ -51,7 +49,18 @@ namespace Tavernier
         public virtual void attack(Character target)
         {
             double damage = (_Phys_Atk + _First_Weapon.Phy_Atk) - target._Phys_Def;
-            damage *= 1.2; //Faiblesse
+            if (_First_Weapon.Slash == true && target.Weakness_Slash == true)
+            {
+                damage *= 1.2;
+            }
+            else if (_First_Weapon.Thrust == true && target.Weakness_Thrust == true)
+            {
+                damage *= 1.2;
+            }
+            else if (_First_Weapon.Strike == true && target.Weakness_Strike == true)
+            {
+                damage *= 1.2;
+            }
             int finalDamage = (int)damage;
             target.receveDammage(finalDamage);
         }
@@ -73,15 +82,15 @@ namespace Tavernier
                 default:
                     break;
             }
-            if (_First_Weapon.Slash == target.Slash == true)
+            if (_First_Weapon.Slash == true && target.Weakness_Slash == true)
             {
                 damage *= 1.2;
             }
-            else if (_First_Weapon.Thrust == target.Thrust == true)
+            else if (_First_Weapon.Thrust == true && target.Weakness_Thrust == true)
             {
                 damage *= 1.2;
             }
-            else if (_First_Weapon.Strike == target.Strike == true)
+            else if (_First_Weapon.Strike == true && target.Weakness_Strike == true)
             {
                 damage *= 1.2;
             }
@@ -128,8 +137,8 @@ namespace Tavernier
         public Skill Second_Skill { get => _Second_Skill; set => _Second_Skill = value; }
         public Skill Third_Skill { get => _Third_Skill;set => _Third_Skill = value; }
 
-        public bool Slash { get => _Slash; set => _Slash = value; }
-        public bool Thrust { get => _Thrust; set => _Thrust = value; }
-        public bool Strike { get => _Strike; set => _Strike = value; }
+        public bool Weakness_Slash { get => _Weakness_Slash; set => _Weakness_Slash = value; }
+        public bool Weakness_Thrust { get => _Weakness_Thrust; set => _Weakness_Thrust = value; }
+        public bool Weakness_Strike { get => _Weakness_Strike; set => _Weakness_Strike = value; }
     }
 }

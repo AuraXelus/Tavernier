@@ -28,9 +28,9 @@ namespace Tavernier
 
             _Speed = 70;
 
-            _Slash = true;
-            _Thrust = false;
-            _Strike = false;
+            _Weakness_Slash = true;
+            _Weakness_Thrust = false;
+            _Weakness_Strike = false;
 
             _Exp_Give = 50;
         }
