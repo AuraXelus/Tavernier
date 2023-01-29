@@ -3,69 +3,121 @@ using System.Data;
 
 namespace Tavernier
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
-        {
-            int x = 0;
-            // personnage nain
-            Console.WriteLine("               /\\_[]_/\\\r\n              |] _||_ [|\r\n       ___     \\/ || \\/\r\n      /___\\       ||\r\n     (|0 0|)      ||\r\n   __/{\\U/}\\_ ___/vvv\r\n  / \\  {~}   / _|_P|\r\n  | /\\  ~   /_/   []\r\n  |_| (____)        \r\n  \\_]/______\\               \r\n     _\\_||_/_           \r\n    (_,_||_,_)");
+        void create_map()
+        { 
+            map_element elem = new map_element();
 
-            // ennemis 1
-            Console.WriteLine("             _/|    _   |\\_\r\n           _/_ |   _|\\\\ | _\\\r\n         _/_/| /  /   \\|\\ |\\_\\_\r\n       _/_/  |/  /  _  \\/\\|  \\_\\_ \r\n     _/_/    ||  | | \\ / ||    \\_\\_\r\n    /_/  | | |\\  | \\_ V  /| | |  \\_\\\r\n   //    ||| | \\_/   \\__/ | |||    \\\\\r\n  // __| ||\\  \\          /  /|| |__ \\\\\r\n //_/ \\|||| \\/\\\\        //\\/ ||||/ \\_\\\\\r\n///    \\\\\\\\/   /        \\   \\////    \\\\\\\r\n|/      \\/    |    |    |     \\/      \\|\r\n              /_|  | |_  \\\r\n             ///_| |_||\\_ \\\r\n             |//||/||\\/||\\|                                     \r\n              / \\/|||/||/\\/                                  \r\n                /|/\\| \\/                      \r\n                \\/  |      ");
-
-            // ennemis 2
-            Console.WriteLine("    _____\r\n    .-,;='';_),-.\r\n     \\_\\(),()/_/\r\n       (,___,)\r\n      ,-/`~`\\-,___\r\n     / /).:.('--._)\r\n    {_[ (_,_)\r\n        | Y |\r\n       /  |  \\\r\n       \"\"\" \"\"\"");
-
-            // personnage elf
-            Console.WriteLine("           .-----.\r\n \\ ' /   _/    )/\r\n- ( ) -('---''--)\r\n / . \\((()\\^_^/)()\r\n  \\\\_\\ (()_)-((()()\r\n   '- \\ )/\\._./(()\r\n     '/\\/( X   ) \\\r\n     (___)|___/ ) \\\r\n          |.#_|(___)\r\n         /\\    \\ ( (_\r\n         \\/\\/\\/\\) \\\\\r\n         | / \\ |\r\n         |(   \\|\r\n        _|_)__|_\\_\r\n        )...()...(\r\n         | (   \\ |     \r\n      .-'__,)  (  \\\r\n                '\\_-,");
-
-            // Map
-            //Console.Write("###############################################################\n");
-            
-            Console.Write("###############################################################\n");
-            Console.Write("#             P                                               #\n");
-            for (int i = 0; i < 5; i++)
+            Console.WriteLine("####################");
+            Console.Write(elem.wall);
+            for (int x = 0; x < 20; x++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int y= 0; y < 20; y++)
                 {
-                    Console.Write("#                                                             #\n");
+                    if (x == elem.player_pos_x && y == elem.player_pos_y)
+                        Console.Write(elem.player);
+                    else
+                        Console.Write(elem.map);
+ 
                 }
 
             }
-            Console.Write("###############################################################\n");
-            /*if (Console.ReadKey().Key == ConsoleKey.UpArrow)
+            Console.Write(elem.wall);
+            Console.WriteLine("####################");
+        }
+
+        public bool valid_move(int x, int y)
+        {
+            map_element elem = new map_element();
+
+            if (x < 0 || x >= 5 || y < 0 || y >= 5)
+                return false;
+            if (x == elem.wall || y == elem.wall)
+                return false;
+
+            return true;
+        }
+
+        void display_map()
+        {
+            map_element elem = new map_element();
+            while (true)
             {
-                Console.Write(perso);
-                x -= 1;
+                ConsoleKey key = Console.ReadKey(true).Key;
+
+                if (key == ConsoleKey.UpArrow)
+                {
+                    if (valid_move(elem.player_pos_x, elem.player_pos_y - 1))
+                    {
+                        elem.player_pos_y--;
+                    }
+                }
+                else if (key == ConsoleKey.DownArrow)
+                {
+                    if (valid_move(elem.player_pos_x, elem.player_pos_y + 1))
+                    {
+                        elem.player_pos_y++;
+                    }
+                }
+                else if (key == ConsoleKey.LeftArrow)
+                {
+                    if (valid_move(elem.player_pos_x - 1, elem.player_pos_y))
+                    {
+                        elem.player_pos_x--;
+                    }
+                }
+                else if (key == ConsoleKey.RightArrow)
+                {
+                    if (valid_move(elem.player_pos_x + 1, elem.player_pos_y))
+                    {
+                        elem.player_pos_x++;
+                    }
+                }
                 Console.Clear();
-                Console.Write(perso);
+                create_map();
+
 
             }
+        }
 
-            else if (Console.ReadKey().Key == ConsoleKey.DownArrow)
-            {
-                Console.Write(perso);
-                x += 1;
-                Console.Clear();
-                Console.Write(perso);
-            }
 
-            else if (Console.ReadKey().Key == ConsoleKey.LeftArrow)
-            {
-                Console.Write(perso);
-                x -= 1;
-                Console.Clear();
-                Console.Write(perso);
-            }
 
-            else if (Console.ReadKey().Key == ConsoleKey.RightArrow)
-            {
-                Console.Write(perso);
-                x += 1;
-                Console.Clear();
-                Console.Write(perso);
-            }*/
+
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+
+            p.create_map();
+            p.display_map();
         }
     }
 }
+
+
+/*
+ 
+ 
+ #############################
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #            P              #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #                           #
+ #############################
+ 
+ 
+  
+ 
+ */
