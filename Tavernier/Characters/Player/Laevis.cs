@@ -24,7 +24,7 @@ namespace Tavernier.Characters.Player
 
             _Accuracy = 85;
             _Critical_Chance = 3;
-            _Critical_Dmg = 2;
+            _Critical_Puiss = 2;
 
             _Speed = 80;
         }

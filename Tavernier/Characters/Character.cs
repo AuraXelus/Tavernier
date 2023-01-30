@@ -21,7 +21,7 @@ namespace Tavernier.Characters
 
         protected int _Accuracy;
         protected int _Critical_Chance;
-        protected int _Critical_Dmg;
+        protected int _Critical_Puiss;
 
         protected int _Speed;
 
