@@ -9,7 +9,7 @@ namespace Tavernier
     public class map_element
     {
         public char wall = '#';
-        public char map = ' ';
+        public char ground = ' ';
         public char player = 'P';
         public int player_pos_x = 1;
         public int player_pos_y = 1;
