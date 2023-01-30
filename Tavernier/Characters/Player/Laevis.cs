@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Player
 {
-    internal class Ailphynna : Character
+    internal class Laevis : Character
     {
-        public Ailphynna()
+        public Laevis()
         {
             _Max_HP = 100;
             _HP = _Max_HP;
