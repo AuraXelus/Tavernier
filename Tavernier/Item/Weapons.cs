@@ -34,68 +34,34 @@ namespace Tavernier.Item
                 //**********| THRAN |**********//
 
                 //1ère arme de Thran
-                case "Hache de guerre":
-                    _Name = weapon_Wanted;
-
-                    _Phys_Atk = 25;
-
-                    _Strike_Dmg = true;
-
-                    break;
-
-                //2nd arme de Thran
-                case "Magmarteau":
+                case "Marteau de guerre":
                     _Name = weapon_Wanted;
 
                     _Phys_Atk = 10;
-                    _Elem_Atk = 10;
 
                     _Strike_Dmg = true;
-                    _Fire_Dmg = true;
 
                     break;
 
                 //**********| NINA |**********//
 
                 //1ère arme de Nina
-                case "épée elfique":
+                case "Epée elfique":
                     _Name = weapon_Wanted;
 
-                    _Phys_Atk = 0;
+                    _Phys_Atk = 15;
 
                     _Slash_Dmg = true;
-
-                    break;
-
-                //2nd arme de Nina
-                case "Lance épineuse":
-                    _Name = weapon_Wanted;
-
-                    _Phys_Atk = 0;
-                    _Elem_Atk = 0;
-
-                    _Thrust_Dmg = true;
-                    _Nature_Dmg = true;
 
                     break;
 
                 //**********| Benoit |**********//
 
                 //1ère arme de Benoit
-                case "Orbe de feu":
+                case "Boule à neige":
                     _Name = weapon_Wanted;
 
-                    _Elem_Atk = 0;
-
-                    _Fire_Dmg = true;
-
-                    break;
-
-                //2nd arme de Benoit
-                case "Baguette de sourcier":
-                    _Name = weapon_Wanted;
-
-                    _Elem_Atk = 0;
+                    _Elem_Atk = 20;
 
                     _Ice_Dmg = true;
 
@@ -107,22 +73,12 @@ namespace Tavernier.Item
                 case "Branche de bouleau":
                     _Name = weapon_Wanted;
 
-                    _Elem_Atk = 0;
+                    _Elem_Atk = 15;
 
                     _Nature_Dmg = true;
 
                     break;
-
-                //2nd arme de Ailphynna
-                case "Sapin":
-                    _Name = weapon_Wanted;
-
-                    _Elem_Atk = 0;
-
-                    _Nature_Dmg = true;
-
-                    break;
-
+           
                 default:
                     break;
             }
