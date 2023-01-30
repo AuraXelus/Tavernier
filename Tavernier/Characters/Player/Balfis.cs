@@ -14,6 +14,8 @@ namespace Tavernier
         {
             _Name = "Balfis";
             _Elem_Type = "Fire";
+            _Lvl = 1;
+            _Exp= 0;
 
             _Max_HP = 100;
             _HP = _Max_HP;
@@ -32,7 +34,7 @@ namespace Tavernier
 
             _Speed = 70;
 
-            _Name_First_Weapon = "Beagener's Axe";
+            _Name_First_Weapon = "Dream crusher";
             _First_Weapon.choseWeapon(_Name_First_Weapon);
 
             _First_Skill.setSkill("Balfis", 1);

@@ -26,19 +26,37 @@ namespace Tavernier
         {
             switch (weapon_Wanted)
             {
-                case "Beagener's Axe":
+                case "Dream crusher":
                     _Name = weapon_Wanted;
                     _Phys_Atk = 15;
                     _Elem_Atk = 0;
+                    _Slash = false;
+                    _Thrust = false;
+                    _Strike = true;
+                    break;
+
+                case "Pony chopper":
+                    _Name = weapon_Wanted;
+                    _Phys_Atk = 20;
+                    _Elem_Atk = 10;
                     _Slash = true;
                     _Thrust = false;
                     _Strike = false;
                     break;
 
-                case "Epee eflfique":
+                case "Astral flake":
                     _Name = weapon_Wanted;
-                    _Phys_Atk = 20;
-                    _Elem_Atk = 10;
+                    _Phys_Atk = 5;
+                    _Elem_Atk = 20;
+                    _Slash = true;
+                    _Thrust = false;
+                    _Strike = false;
+                    break;
+
+                case "Wooden stick":
+                    _Name = weapon_Wanted;
+                    _Phys_Atk = 0;
+                    _Elem_Atk = 15;
                     _Slash = true;
                     _Thrust = false;
                     _Strike = false;
