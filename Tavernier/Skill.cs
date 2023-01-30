@@ -24,7 +24,7 @@ namespace Tavernier
         {
             switch (characterSkill)
             {
-                case "Thran":
+                case "Balfis":
                     switch (numberSkill)
                     {
                         case 1: //Maintenant 120%. Ele fera 75% de degats mais stun l'ennemie 1T

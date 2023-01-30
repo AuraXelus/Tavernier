@@ -9,7 +9,7 @@ namespace Tavernier
         {
             bool endGame = false;
                 Nina Nina = new Nina();
-                Thran Thran = new Thran();
+                Balfis Balfis = new Balfis();
             ConsoleKey key = Console.ReadKey(true).Key;
             do
             {
@@ -28,7 +28,7 @@ namespace Tavernier
                         break;
                     case ConsoleKey.Escape:
                         Menu_State menu = new Menu_State();
-                        menu.run(Thran, Nina);
+                        menu.run(Balfis, Nina);
                         break;
                     case ConsoleKey.Spacebar:
                         break;
@@ -93,9 +93,9 @@ namespace Tavernier
                     case ConsoleKey.E:
                         break;
                     case ConsoleKey.F:
-                        WarriorGoblin Goblin = new WarriorGoblin();
+                        Dragon enemy = new Dragon();
                         Fight_State FirstFight = new Fight_State();
-                        FirstFight.run(Thran, Goblin);
+                        FirstFight.run(Balfis, enemy);
                         break;
                     case ConsoleKey.G:
                         break;

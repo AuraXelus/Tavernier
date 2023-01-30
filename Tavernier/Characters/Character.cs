@@ -15,6 +15,7 @@ namespace Tavernier
         protected int _HP;
         protected int _Max_SP;
         protected int _SP;
+        protected string _Elem_Type = "None";
 
         protected int _Exp;
         protected int _Lvl;
@@ -41,6 +42,10 @@ namespace Tavernier
         protected bool _Weakness_Slash = false;
         protected bool _Weakness_Thrust = false;
         protected bool _Weakness_Strike = false;
+
+        protected bool _Weakness_Fire = false;
+        protected bool _Weakness_Ice = false;
+        protected bool _Weakness_Nature = false;
         public Character() 
         {
         
