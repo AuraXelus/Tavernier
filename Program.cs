@@ -5,81 +5,77 @@ namespace Tavernier
 {
     public class Program
     {
-        void create_map()
+         static char[,] initMap(char [,]map)
         {
-            map_element elem = new map_element();
-
-            for (int y = 0; y < 20; y++)
+            for (int y = 0; y < 10; y++)
             {
-                for (int x = 0; x < 20; x++)
+                for (int x = 0; x < 10; x++)
                 {
-                    if (x == elem.player_pos_x && y == elem.player_pos_y)
-                        Console.Write(elem.player);
-                    else if (x == 0 || x == 19 || y == 0 || y == 19)
-                    {
-                        Console.Write(elem.wall);
+                    if (y == 0 || y == 9) { map[y,x] = '#'; }
+                    else if (x == 0 || x == 9) { map[y, x] = '#'; }
+                    else { map[y, x] = ' '; }
+                }
+            }
+            return map;
+        }
 
-                    }
-                    else
-                        Console.Write(elem.ground);
+        static void run(Player justine, char[,] map)
+        {
+            ConsoleKey key = Console.ReadKey(true).Key;
+
+            if (key == ConsoleKey.UpArrow)
+            {
+                if (map[justine.PosX,justine.PosY-1] != '#') justine.PosY--;
+            }
+            else if (key == ConsoleKey.DownArrow)
+            {
+                if (map[justine.PosX, justine.PosY + 1] != '#') justine.PosY++;
+            }
+            else if (key == ConsoleKey.LeftArrow)
+            {
+                if (map[justine.PosX - 1, justine.PosY] != '#') justine.PosX--;
+            }
+            else if (key == ConsoleKey.RightArrow)
+            {
+                if (map[justine.PosX + 1, justine.PosY] != '#') justine.PosX++;
+            }
+        }
+
+        static void diplayMap(Player justine, char[,] map)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 10; x++)
+                {                    
+                    map = initMap(map);
+                    if (justine.PosX == x && justine.PosY == y) { map[y,x] = 'P'; }
+
+                    if (y == 0 || y == 9) { Console.Write(map[y, x]); }
+                    else if (x == 0 || x == 9) { Console.Write(map[y, x]); }
+                    else { Console.Write(map[y, x]); }
+
+
                 }
                 Console.WriteLine();
             }
         }
-
-        public bool valid_move(int x, int y)
-        {
-            map_element elem = new map_element();
-
-            if (x < 0 || x >= 1 || y < 0 || y >= 20)
-                return false;
-            if (x == '#' || y == '#')
-                return false;
-
-            return true;
-        }
-
-        void display_map()
-        {
-            map_element elem = new map_element();
-            while (true)
-            {
-                ConsoleKey key = Console.ReadKey(true).Key;
-
-                if (key == ConsoleKey.UpArrow)
-                {
-                    if (valid_move(elem.player_pos_x, elem.player_pos_y - 1))
-                        elem.player_pos_y--;
-                }
-                else if (key == ConsoleKey.DownArrow)
-                {
-                    if (valid_move(elem.player_pos_x, elem.player_pos_y + 1))
-                        elem.player_pos_y++;
-                }
-                else if (key == ConsoleKey.LeftArrow)
-                {
-                    if (valid_move(elem.player_pos_x - 1, elem.player_pos_y))
-                        elem.player_pos_x--;
-                }
-                else if (key == ConsoleKey.RightArrow)
-                {
-                    if (valid_move(elem.player_pos_x + 1, elem.player_pos_x))
-                        elem.player_pos_x++;
-                }
-                Console.Clear();
-                create_map();
-
-            }
-        }
         static void Main(string[] args)
         {
-            Program p = new Program();
-            p.create_map();
-            p.display_map();
+            bool fin = false;
+            char[,] map = new char[10,10];
+            Player justine = new Player();
+            map = initMap(map);
+            diplayMap(justine, map);
+            do
+            {
+            run(justine, map);
+            diplayMap(justine, map);
+            }while(fin == false);
         }
     }
 }
 
+//Si on veut quelque chose de durable sur la map ça va être compliqué
 
 /*
  
