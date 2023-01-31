@@ -2,6 +2,8 @@ using NUnit.Framework.Internal;
 using System.Reflection.PortableExecutable;
 using System.Threading;
 using Tavernier;
+using Tavernier.Characters;
+using Tavernier.Characters.Player;
 
 namespace test_unitaire
 {
@@ -14,7 +16,10 @@ namespace test_unitaire
         [TestCase(200, false)]
         public void attack_life(int life, bool expected)
         {
-            
+            Balfis balfis = new Balfis();
+
+            balfis = 100;
+            Assert.That(result, Is.EqualTo(expected));
         }
 
 
