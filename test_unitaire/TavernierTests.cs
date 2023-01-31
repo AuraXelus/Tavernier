@@ -1,25 +1,30 @@
+using NUnit.Framework.Internal;
 using System.Reflection.PortableExecutable;
+using System.Threading;
 using Tavernier;
 
 namespace test_unitaire
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        [TestCase(-1, false)]
+        [TestCase(0, true)]
+        [TestCase(100, true)]
+        [TestCase(200, false)]
+        public void attack_life(int life, bool expected)
         {
+            
         }
 
+
         [Test]
-        public void Test1()
+        [TestCase(-1, false)]
+        [TestCase(0, true)]
+        [TestCase(100, true)]
+        [TestCase(200, false)]
+        public void attack_damage(int damage, bool expected)
         {
-            Assert.Pass();
-
-            //Verifier les dégâts / et les points de vie                                                                                
-            Character charac_Thran = new Thran();
-
-            double max_damage = 100;
-            double min_damage = 0;
 
         }
     }

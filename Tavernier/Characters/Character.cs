@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters
 {
-    internal class Character
+    public class Character
     {
         protected int _Max_HP;
         protected int _HP;
