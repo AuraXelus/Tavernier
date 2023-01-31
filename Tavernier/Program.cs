@@ -8,8 +8,10 @@ namespace Tavernier
         static void Main(string[] args)
         {
             bool endGame = false;
-                Nina Nina = new Nina();
-                Balfis Balfis = new Balfis();
+            Nina Nina = new Nina();
+            Balfis Balfis = new Balfis();
+            Elizendre Elizendre= new Elizendre();
+            Laevis Laevis = new Laevis();
             ConsoleKey key = Console.ReadKey(true).Key;
             do
             {
@@ -93,9 +95,9 @@ namespace Tavernier
                     case ConsoleKey.E:
                         break;
                     case ConsoleKey.F:
-                        Dragon enemy = new Dragon();
+                        Goblin enemy = new Goblin();
                         Fight_State FirstFight = new Fight_State();
-                        FirstFight.run(Balfis, enemy);
+                        FirstFight.run(Nina, enemy);
                         break;
                     case ConsoleKey.G:
                         break;
@@ -318,9 +320,8 @@ namespace Tavernier
     }
 }
 
-//Utilisation des faiblesses
-//Ajout de la magie
 //Objet (armes) potions vie, mana,
+//Sprite par personnage
 //Niveau
 //System d'argent
 //Spécificité des compétence

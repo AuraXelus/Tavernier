@@ -50,6 +50,83 @@ namespace Tavernier
                     }
                     break;
 
+                case "Nina":
+                    switch (numberSkill)
+                    {
+                        case 1: //Maintenant 120%. Ele fera 75% de degats mais stun l'ennemie 1T
+                            _Name = "Weapon Enchantment";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 40;
+                            _Phys_Atk = false;
+                            _Elem_Atk = true;
+
+                            _Modif_dmg = 150;
+                            break;
+                        case 2: //60% degats à tous les ennemies
+                            _Name = "Piercing sword";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 5;
+                            _Phys_Atk = true;
+                            _Elem_Atk = false;
+
+                            _Modif_dmg = 110;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+                case "Elizendre":
+                    switch (numberSkill)
+                    {
+                        case 1: //Maintenant 120%. Ele fera 75% de degats mais stun l'ennemie 1T
+                            _Name = "Frost Shard";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 10;
+                            _Phys_Atk = false;
+                            _Elem_Atk = true;
+
+                            _Modif_dmg = 130;
+                            break;
+                        case 2: //60% degats à tous les ennemies
+                            _Name = "Blizzard";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 30;
+                            _Phys_Atk = false;
+                            _Elem_Atk = true;
+
+                            _Modif_dmg = 150;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+                case "Laevis":
+                    switch (numberSkill)
+                    {
+                        case 1: //Maintenant 120%. Ele fera 75% de degats mais stun l'ennemie 1T
+                            _Name = "Stick hit";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 10;
+                            _Phys_Atk = true;
+                            _Elem_Atk = false;
+
+                            _Modif_dmg = 105;
+                            break;
+                        case 2: //60% degats à tous les ennemies
+                            _Name = "Tree power";
+                            _Number_Skill = numberSkill;
+                            _Point_SP = 30;
+                            _Phys_Atk = false;
+                            _Elem_Atk = true;
+
+                            _Modif_dmg = 110;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }

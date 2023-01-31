@@ -30,6 +30,12 @@ namespace Tavernier
             _Critical_Puiss = 2;
 
             _Speed = 90;
+
+            _Name_First_Weapon = "Pony chopper";
+            _First_Weapon.choseWeapon(_Name_First_Weapon);
+
+            _First_Skill.setSkill("Nina", 1);
+            _Second_Skill.setSkill("Nina", 2);
         }
     }
 }

@@ -29,6 +29,12 @@ namespace Tavernier
             _Critical_Puiss = 2;
 
             _Speed = 80;
+
+            _Name_First_Weapon = "Wooden stick";
+            _First_Weapon.choseWeapon(_Name_First_Weapon);
+
+            _First_Skill.setSkill("Laevis", 1);
+            _Second_Skill.setSkill("Laevis", 2);
         }
     }
 }

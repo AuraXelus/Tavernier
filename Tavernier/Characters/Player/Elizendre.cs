@@ -29,6 +29,12 @@ namespace Tavernier
             _Critical_Puiss = 2;
 
             _Speed = 80;
+
+            _Name_First_Weapon = "Astral flake";
+            _First_Weapon.choseWeapon(_Name_First_Weapon);
+
+            _First_Skill.setSkill("Elizendre", 1);
+            _Second_Skill.setSkill("Elizendre", 2);
         }
     }
 }

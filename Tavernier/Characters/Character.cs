@@ -81,31 +81,64 @@ namespace Tavernier
                         damage = (_Phys_Atk + _First_Weapon.Phy_Atk);
                         damage *= (_First_Skill.Modif_dmg / 100);
                         _SP -= _First_Skill.Point_SP;
+                        if (_First_Weapon.Slash == true && target.Weakness_Slash == true) { damage *= 1.2; }
+                        else if (_First_Weapon.Thrust == true && target.Weakness_Thrust == true)
+                        {
+                            damage *= 1.2;
+                        }
+                        else if (_First_Weapon.Strike == true && target.Weakness_Strike == true)
+                        {
+                            damage *= 1.2;
+                        }
+                        damage -= target.Phys_Def;
+                    }
+                    else if (_First_Skill.Elem_Atk == true)
+                    {
+                        damage = (_Elem_Atk + _First_Weapon.Elem_Atk);
+                        damage *= (_First_Skill.Modif_dmg / 100);
+                        _SP -= _First_Skill.Point_SP;
+                        if(_Elem_Type == "Fire" && target.Weakness_Fire == true) { damage *= 1.3; }
+                        if (_Elem_Type == "Ice" && target.Weakness_Ice == true) { damage *= 1.3; }
+                        if (_Elem_Type == "Natue" && target.Weakness_Nature == true) { damage *= 1.3; }
+                        damage -= target.Elem_Def;
                     }
                     break;
                 case 2:
-                    //damage *= (_Second_Skill.Modif_dmg / 100);
-                    damage = 10;
-                    _SP -= _Second_Skill.Point_SP;
+                    if (_Second_Skill.Phys_Atk == true)
+                    {
+                        damage = (_Phys_Atk + _First_Weapon.Phy_Atk);
+                        damage *= (_Second_Skill.Modif_dmg / 100);
+                        _SP -= _Second_Skill.Point_SP;
+                        if ((_First_Weapon.Slash == true && target.Weakness_Slash == true))
+                        {
+                            damage *= 1.2;
+                        }
+                        else if (_First_Weapon.Thrust == true && target.Weakness_Thrust == true)
+                        {
+                            damage *= 1.2;
+                        }
+                        else if (_First_Weapon.Strike == true && target.Weakness_Strike == true)
+                        {
+                            damage *= 1.2;
+                        }
+                        damage -= target.Phys_Def;
+                    }
+                    else if (_Second_Skill.Elem_Atk == true)
+                    {
+                        damage = (_Elem_Atk + _First_Weapon.Elem_Atk);
+                        damage *= (_Second_Skill.Modif_dmg / 100);
+                        _SP -= _Second_Skill.Point_SP;
+                        if (_Elem_Type == "Fire" && target.Weakness_Fire == true) { damage *= 1.3; }
+                        else if (_Elem_Type == "Ice" && target.Weakness_Ice == true) { damage *= 1.3; }
+                        else if (_Elem_Type == "Natue" && target.Weakness_Nature == true) { damage *= 1.3; }
+                        damage -= target.Elem_Def;
+                    }
                     break;
 
                 default:
                     break;
             }
-            if (_First_Weapon.Slash == true && target.Weakness_Slash == true)
-            {
-                damage *= 1.2;
-            }
-            else if (_First_Weapon.Thrust == true && target.Weakness_Thrust == true)
-            {
-                damage *= 1.2;
-            }
-            else if (_First_Weapon.Strike == true && target.Weakness_Strike == true)
-            {
-                damage *= 1.2;
-            }
             int finalDamage = (int)damage; //Round celling floor
-            finalDamage -= target._Phys_Def;
             target.receveDammage(finalDamage);
         }
 
@@ -139,6 +172,9 @@ namespace Tavernier
         protected int Lvl { get => _Lvl; set => _Lvl = value; }
 
         public int Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
+        public int Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
+        public int Phys_Def { get => _Phys_Def; set => _Phys_Def = value; }
+        public int Elem_Def { get => _Elem_Def; set => _Elem_Def = value; }
         public int Speed { get => _Speed; set => _Speed = value; }
         public Weapon First_Weapon { get => _First_Weapon; set => _First_Weapon = value; }
         public bool Alive { get => _Alive; set => _Alive = value; }
@@ -150,5 +186,8 @@ namespace Tavernier
         public bool Weakness_Slash { get => _Weakness_Slash; set => _Weakness_Slash = value; }
         public bool Weakness_Thrust { get => _Weakness_Thrust; set => _Weakness_Thrust = value; }
         public bool Weakness_Strike { get => _Weakness_Strike; set => _Weakness_Strike = value; }
+        public bool Weakness_Fire { get => _Weakness_Fire; set => _Weakness_Fire = value; }
+        public bool Weakness_Ice { get => _Weakness_Ice; set => _Weakness_Ice = value; }
+        public bool Weakness_Nature { get => _Weakness_Nature; set => _Weakness_Nature = value; }
     }
 }
