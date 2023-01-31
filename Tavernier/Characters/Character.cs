@@ -72,7 +72,7 @@ namespace Tavernier
 
         public virtual void useSkill(Character target, int numberSkill)
         {
-            double damage;
+            double damage = 0;
             switch (numberSkill)
             {
                 case 1:
@@ -84,7 +84,8 @@ namespace Tavernier
                     }
                     break;
                 case 2:
-                    damage *= (_Second_Skill.Modif_dmg / 100);
+                    //damage *= (_Second_Skill.Modif_dmg / 100);
+                    damage = 10;
                     _SP -= _Second_Skill.Point_SP;
                     break;
 
