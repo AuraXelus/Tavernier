@@ -97,7 +97,7 @@ namespace Tavernier
                     case ConsoleKey.F:
                         Goblin enemy = new Goblin();
                         Fight_State FirstFight = new Fight_State();
-                        FirstFight.run(Nina, enemy);
+                        FirstFight.run(Laevis, enemy);
                         break;
                     case ConsoleKey.G:
                         break;
@@ -321,7 +321,6 @@ namespace Tavernier
 }
 
 //Objet (armes) potions vie, mana,
-//Sprite par personnage
+//Fiche personnage
+//Sprite par personnage OK (ajouter espace)
 //Niveau
-//System d'argent
-//Spécificité des compétence

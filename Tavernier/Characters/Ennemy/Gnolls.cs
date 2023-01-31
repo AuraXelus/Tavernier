@@ -30,6 +30,7 @@ namespace Tavernier
 
             _Speed = 90;
 
+            _Sprite = "         .';:;'.\r\n        /_' _' /\\   __\r\n        ;a/ e= J/-'\"  '.\r\n        \\ ~_   (  -'  ( ;_ ,.\r\n         L~\"'_.    -.  \\ ./  )\r\n         ,'-' '-._  _;  )'   (\r\n       .' .'   _.'\")  \\  \\(  |\r\n      /  (  .-'   __\\{`', \\  |\r\n     / .'  /  _.-'   \"  ; /  |\r\n    / /    '-._'-,     / / \\ (\r\n __/ (_    ,;' .-'    / /  /_'-._";
 
             _Weakness_Slash = false;
             _Weakness_Thrust = false;
@@ -38,6 +39,8 @@ namespace Tavernier
             _Weakness_Fire = false;
             _Weakness_Ice = false;
             _Weakness_Nature = true;
+
+            _Exp_Give = 25;
         }
     }
 }

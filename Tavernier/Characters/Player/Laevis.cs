@@ -29,6 +29,8 @@ namespace Tavernier
             _Critical_Puiss = 2;
 
             _Speed = 80;
+                                                                                       
+            _Sprite = "\t\t\t\t                                                                _ .-'\r\n\t\t\t\t                                                                _`\\`\r\n\t\t\t\t                                                            `._/` ;_.  \\,\r\n\t\t\t\t                                                               `. /  _ /`\r\n\t\t\t\t                                                                 ;_ _,;\r\n\t\t\t\t                                                               _/ , , /_,\r\n\t\t\t\t                                                               `\"\\ _  |'\r\n\t\t\t\t                                                               _=}  ` ;/\r\n\t\t\t\t                                                              .'    `. `-._\r\n\t\t\t\t                                                           ,_/ ,| '    {  `.\r\n\t\t\t\t                                                            ] ',/  ; , ;\\ , \\_\r\n\t\t\t\t                                                            `._L`\\  `  \\ `.` :`";
 
             _Name_First_Weapon = "Wooden stick";
             _First_Weapon.choseWeapon(_Name_First_Weapon);

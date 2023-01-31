@@ -31,6 +31,8 @@ namespace Tavernier
 
             _Speed = 90;
 
+            _Sprite = "                                                                                               .---.    .-'.\r\n                                                                                          ( (-/==^==.  /    ) ))\r\n                                                                                            /|))è é()./   .'\r\n                                                                                           ('-((\\_/( ))..' /\r\n                                                                                            \\ '-;_.-. ) ))\r\n                                                                                             '-(_ _)_\\ ) )).'\r\n                                                                                              / ) (/_ ) \\\r\n                                                                                          (( ( /\\_/\\,/|  ) ))\r\n                                                                                              /  .  '.'.' \r\n                                                                                             (  .\\  . '.___.\r\n                                                                                              \\_| \\  '.___/\r\n                                                                                               \\'._;.___) ";
+
             _Name_First_Weapon = "Pony chopper";
             _First_Weapon.choseWeapon(_Name_First_Weapon);
 

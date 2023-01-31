@@ -46,6 +46,8 @@ namespace Tavernier
         protected bool _Weakness_Fire = false;
         protected bool _Weakness_Ice = false;
         protected bool _Weakness_Nature = false;
+
+        protected string _Sprite = "None";
         public Character() 
         {
         
@@ -189,5 +191,7 @@ namespace Tavernier
         public bool Weakness_Fire { get => _Weakness_Fire; set => _Weakness_Fire = value; }
         public bool Weakness_Ice { get => _Weakness_Ice; set => _Weakness_Ice = value; }
         public bool Weakness_Nature { get => _Weakness_Nature; set => _Weakness_Nature = value; }
+
+        public string Sprite { get => _Sprite; set => _Sprite = value;}
     }
 }

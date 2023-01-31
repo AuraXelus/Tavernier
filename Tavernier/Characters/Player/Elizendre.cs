@@ -30,6 +30,8 @@ namespace Tavernier
 
             _Speed = 80;
 
+            _Sprite = "                                                                                                     .-----.\r\n                                                                                           \\ ' /   _/    )/\r\n                                                                                          - ( ) -('---''--)\r\n                                                                                           / . \\((()\\^_^/)()\r\n                                                                                            \\\\_\\ (()_)-((()()\r\n                                                                                             '- \\ )/\\._./(()\r\n                                                                                               '/\\/( X   ) \\\r\n                                                                                               (___)|___/ ) \\\r\n                                                                                                    |.#_|(___)\r\n                                                                                                   /\\    \\ ( (_\r\n                                                                                                   \\/\\/\\/\\) \\\\\r\n                                                                                                   | / \\ |";
+
             _Name_First_Weapon = "Astral flake";
             _First_Weapon.choseWeapon(_Name_First_Weapon);
 
