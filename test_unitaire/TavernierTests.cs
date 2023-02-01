@@ -40,11 +40,6 @@ namespace test_unitaire
                 Assert.That(player.HP, Is.EqualTo(player.Max_HP));
         }
 
-        [Test]
-        [TestCase()]
-        public virtual void attack(Character target)
-        {
-        }
     }
 }
 
