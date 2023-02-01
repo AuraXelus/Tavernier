@@ -25,5 +25,7 @@ namespace test_unitaire
 
             Assert.That(player.HP, Is.EqualTo(life-damage));
         }
+
+        
     }
 }
