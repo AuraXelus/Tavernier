@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Item
 {
-    internal class Armors : Item
+    internal class Armors
     {
         protected string _Name = "None";
 

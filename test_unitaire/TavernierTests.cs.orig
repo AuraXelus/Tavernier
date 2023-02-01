@@ -11,16 +11,23 @@ namespace test_unitaire
     public class Tests
     {
         [Test]
+
         [TestCase(-1)]
         [TestCase(0)]
         [TestCase(100)]
         [TestCase(200)]
         public void receveDammage(int damage)
         {
+<<<<<<< HEAD
             Character player = new Character();
             int life = player.HP;
+
             player.receveDammage(damage);
+
             Assert.That(player.HP, Is.EqualTo(life-damage));
+=======
+            Assert.Pass();
+>>>>>>> origin/Ahor
         }
 
         

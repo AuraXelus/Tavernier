@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
+<<<<<<< HEAD
+    public class Troll : Character
+=======
     public class Troll : Enemy
+>>>>>>> origin/Ahor
     {
         public Troll() 
         {

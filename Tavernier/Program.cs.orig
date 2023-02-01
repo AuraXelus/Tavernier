@@ -8,8 +8,14 @@ namespace Tavernier
     {
         static void Main(string[] args)
         {
-            bool endGame = false;
+<<<<<<< HEAD
+            Balfis balfis = new Balfis();
             Nina nina = new Nina();
+            Elizendre elizendre = new Elizendre();
+            Laevis laevis = new Laevis();
+=======
+            bool endGame = false;
+            Nina Nina = new Nina();
             Balfis Balfis = new Balfis();
             Elizendre Elizendre= new Elizendre();
             Laevis Laevis = new Laevis();
@@ -317,6 +323,7 @@ namespace Tavernier
                 }
                 Console.Clear();
             } while (endGame == false);
+>>>>>>> origin/Ahor
         }
     }
 }

@@ -4,28 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tavernier.Characters.Ennemy
+namespace Tavernier
 {
-    internal class Ogre : Character
+    internal class Ogre : Enemy
     {
-        public Ogre()
+        public Ogre() 
         {
-            _Max_HP = 150;
+            Name = "Ogre";
+            _Elem_Type = "Ice";
+
+            _Max_HP = 250;
             _HP = _Max_HP;
-            _Max_SP = 80;
+            _Max_SP = 0;
             _SP = _Max_SP;
 
-            _Phys_Atk = 50;
-            _Elem_Atk = 60;
+            _Phys_Atk = 35;
+            _Elem_Atk = 30;
 
-            _Phys_Def = 100;
-            _Elem_Def = 50;
+            _Phys_Def = 5;
+            _Elem_Def = 5;
 
-            _Accuracy = 95;
-            _Critical_Chance = 5;
-            _Critical_Dmg = 2;
+            _Accuracy = 90;
+            _Critical_Chance = 2;
+            _Critical_Puiss = 2;
 
-            _Speed = 40;
+            _Speed = 70;
+
+            _Sprite = "             ,      ,\r\n            /(.-\"\"-.)\\\r\n        |\\  \\/      \\/  /|\r\n        | \\ / =.  .= \\ / |\r\n        \\( \\   o\\/o   / )/\r\n         \\_, '-/  \\-' ,_/\r\n           /   \\__/   \\\r\n           \\ \\__/\\__/ /\r\n         ___\\ \\|--|/ /___\r\n       /`    \\      /    `\\\r\n      /       '----'       \\";
+
+
+            _Weakness_Slash = false;
+            _Weakness_Thrust = true;
+            _Weakness_Strike = false;
+
+            _Weakness_Fire = false;
+            _Weakness_Ice = false;
+            _Weakness_Nature = true;
+
+            _Exp_Give = 40;
         }
     }
 }

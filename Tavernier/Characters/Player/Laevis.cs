@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tavernier.Characters.Player
+namespace Tavernier
 {
-    internal class Laevis : Character
+    public class Laevis : Player
     {
-        public Laevis()
+        public Laevis() 
         {
+            Name = "Laevis";
+            _Elem_Type = "Nature";
+
             _Max_HP = 100;
             _HP = _Max_HP;
             _Max_SP = 100;
@@ -24,9 +26,17 @@ namespace Tavernier.Characters.Player
 
             _Accuracy = 85;
             _Critical_Chance = 3;
-            _Critical_Dmg = 2;
+            _Critical_Puiss = 2;
 
             _Speed = 80;
+                                                                                       
+            _Sprite = "\t\t\t\t                                                                _ .-'\r\n\t\t\t\t                                                                _`\\`\r\n\t\t\t\t                                                            `._/` ;_.  \\,\r\n\t\t\t\t                                                               `. /  _ /`\r\n\t\t\t\t                                                                 ;_ _,;\r\n\t\t\t\t                                                               _/ , , /_,\r\n\t\t\t\t                                                               `\"\\ _  |'\r\n\t\t\t\t                                                               _=}  ` ;/\r\n\t\t\t\t                                                              .'    `. `-._\r\n\t\t\t\t                                                           ,_/ ,| '    {  `.\r\n\t\t\t\t                                                            ] ',/  ; , ;\\ , \\_\r\n\t\t\t\t                                                            `._L`\\  `  \\ `.` :`";
+
+            _Name_First_Weapon = "Wooden stick";
+            _First_Weapon.choseWeapon(_Name_First_Weapon);
+
+            _First_Skill.setSkill("Laevis", 1);
+            _Second_Skill.setSkill("Laevis", 2);
         }
     }
 }

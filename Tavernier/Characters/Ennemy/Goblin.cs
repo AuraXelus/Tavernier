@@ -6,41 +6,41 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Troll : Enemy
+    internal class Goblin : Enemy
     {
-        public Troll() 
+        public Goblin() 
         {
-            Name = "Troll";
+            Name = "Goblin";
             _Elem_Type = "Nature";
 
-            _Max_HP = 150;
+            _Max_HP = 85;
             _HP = _Max_HP;
             _Max_SP = 0;
             _SP = _Max_SP;
 
-            _Phys_Atk = 0;
-            _Elem_Atk = 60;
+            _Phys_Atk = 30;
+            _Elem_Atk = 50;
 
             _Phys_Def = 10;
             _Elem_Def = 5;
 
-            _Accuracy = 80;
-            _Critical_Chance = 2;
+            _Accuracy = 85;
+            _Critical_Chance = 3;
             _Critical_Puiss = 2;
 
-            _Speed = 70;
+            _Speed = 80;
 
             _Sprite = "             ,      ,\r\n            /(.-\"\"-.)\\\r\n        |\\  \\/      \\/  /|\r\n        | \\ / =.  .= \\ / |\r\n        \\( \\   o\\/o   / )/\r\n         \\_, '-/  \\-' ,_/\r\n           /   \\__/   \\\r\n           \\ \\__/\\__/ /\r\n         ___\\ \\|--|/ /___\r\n       /`    \\      /    `\\\r\n      /       '----'       \\";
 
-            _Weakness_Slash = true;
+            _Weakness_Slash = false;
             _Weakness_Thrust = false;
-            _Weakness_Strike = false;
+            _Weakness_Strike = true;
 
             _Weakness_Fire = true;
             _Weakness_Ice = false;
             _Weakness_Nature = false;
 
-            _Exp_Give = 40;
+            _Exp_Give = 15;
         }
     }
 }
