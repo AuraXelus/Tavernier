@@ -333,8 +333,8 @@ namespace Tavernier
 
         public void drawingOfMonster()
         {
-            stockRandom = random.Next(5);
-            if (stockRandom == 0)
+            stockRandom = random.Next(10);
+            if (stockRandom <= 1)
             {
                 stockRandom = random.Next(20);
 
