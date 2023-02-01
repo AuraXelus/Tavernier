@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Security.Cryptography;
+using Tavernier.Characters.Player;
 
 namespace Tavernier
 {
@@ -7,11 +8,10 @@ namespace Tavernier
     {
         static void Main(string[] args)
         {
-            Nina Nina = new Nina();
-            Thran Thran = new Thran();
-            WarriorGoblin Goblin = new WarriorGoblin();
-            Fight_State FirstFight= new Fight_State();
-            FirstFight.run(Thran, Goblin);
+            Balfis balfis = new Balfis();
+            Nina nina = new Nina();
+            Elizendre elizendre = new Elizendre();
+            Laevis laevis = new Laevis();
         }
     }
 }

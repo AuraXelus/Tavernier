@@ -4,33 +4,26 @@ using System.Threading;
 using Tavernier;
 using Tavernier.Characters;
 using Tavernier.Characters.Player;
+using Tavernier.Characters.Ennemy;
 
 namespace test_unitaire
 {
     public class Tests
     {
         [Test]
-        [TestCase(-1, false)]
-        [TestCase(0, true)]
-        [TestCase(100, true)]
-        [TestCase(200, false)]
-        public void attack_life(int life, bool expected)
+
+        [TestCase(-1)]
+        [TestCase(0)]
+        [TestCase(100)]
+        [TestCase(200)]
+        public void receveDammage(int damage)
         {
-            Balfis balfis = new Balfis();
+            Character player = new Character();
+            int life = player.HP;
 
-            balfis = 100;
-            Assert.That(result, Is.EqualTo(expected));
-        }
+            player.receveDammage(damage);
 
-
-        [Test]
-        [TestCase(-1, false)]
-        [TestCase(0, true)]
-        [TestCase(100, true)]
-        [TestCase(200, false)]
-        public void attack_damage(int damage, bool expected)
-        {
-
+            Assert.That(player.HP, Is.EqualTo(life-damage));
         }
     }
 }
