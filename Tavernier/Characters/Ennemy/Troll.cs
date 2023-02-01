@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Ennemy
 {
-    internal class Troll : Character
+    internal class Troll : Player
     {
         public Troll()
         {

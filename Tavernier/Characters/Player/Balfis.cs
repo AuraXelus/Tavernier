@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Player
 {
-    internal class Balfis : Character
+    internal class Balfis : Player
     {
         public Balfis()
         {

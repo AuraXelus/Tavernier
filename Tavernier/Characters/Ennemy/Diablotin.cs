@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Ennemy
 {
-    internal class Diablotin : Character
+    internal class Diablotin : Player
     {
         public Diablotin()
         {

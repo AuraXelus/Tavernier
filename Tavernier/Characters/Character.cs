@@ -30,7 +30,7 @@ namespace Tavernier.Characters
 
         }
 
-        public virtual void attack(Character target)
+        public virtual void attack(Player target)
         {
             target.receveDammage(_Phys_Atk);
         }
