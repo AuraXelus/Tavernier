@@ -15,7 +15,7 @@ namespace Tavernier
             Laevis_Character Laevis = new Laevis_Character();
             Map_State map = new Map_State();
             map.initMap();
-            map.runMap();
+            //map.runMap();
             ConsoleKey key = Console.ReadKey(true).Key;
             do
             {
