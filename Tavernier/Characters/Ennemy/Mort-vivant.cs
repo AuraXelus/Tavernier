@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Ennemy
 {
-    internal class Draugr : Player
+    internal class Draugr : Character
     {
         public Draugr()
         {

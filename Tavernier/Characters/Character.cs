@@ -30,16 +30,6 @@ namespace Tavernier.Characters
 
         }
 
-        public virtual void attack(Player target)
-        {
-            target.receveDammage(_Phys_Atk);
-        }
-
-        public virtual void receveDammage(int damage)
-        {
-            _HP -= (damage - _Phys_Def);
-        }
-
         //Get
         public int Max_HP { get => _Max_HP; set => _Max_HP = value; }
         public int HP { get => _HP; set => _HP = value; }

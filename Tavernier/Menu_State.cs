@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tavernier.Characters;
 
 namespace Tavernier
 {
@@ -10,7 +11,7 @@ namespace Tavernier
     {
         public Menu_State() { }
 
-        public void run(Player player1, Player player2)
+        public void run(Character player1, Character player2)
         {
             bool endMenu = false;
             do
@@ -72,7 +73,7 @@ namespace Tavernier
             Console.Clear();
         }
 
-        public void displayTeam(Player player1, Player player2)
+        public void displayTeam(Character player1, Character player2)
         {
             Console.WriteLine("                                                         |TEAM|");
             Console.WriteLine("{0}", player1.Name);

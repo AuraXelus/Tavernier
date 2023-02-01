@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Security.Cryptography;
 using Tavernier.Characters.Ennemy;
+using Tavernier.Characters.Player;
 
 namespace Tavernier
 {
@@ -9,10 +10,12 @@ namespace Tavernier
         static void Main(string[] args)
         {
             bool endGame = false;
-            Nina Nina = new Nina();
-            Balfis Balfis = new Balfis();
-            Elizendre Elizendre = new Elizendre();
-            Laevis Laevis = new Laevis();
+
+            Nina nina = new Nina();
+            Balfis balfis = new Balfis();
+            Elizendre elizendre = new Elizendre();
+            Laevis laevis = new Laevis();
+
             ConsoleKey key = Console.ReadKey(true).Key;
             do
             {
@@ -31,7 +34,7 @@ namespace Tavernier
                         break;
                     case ConsoleKey.Escape:
                         Menu_State menu = new Menu_State();
-                        menu.run(Balfis, Nina);
+                        menu.run(balfis, nina);
                         break;
                     case ConsoleKey.Spacebar:
                         break;
@@ -96,9 +99,6 @@ namespace Tavernier
                     case ConsoleKey.E:
                         break;
                     case ConsoleKey.F:
-                        Goblin enemy = new Goblin();
-                        Fight_State FirstFight = new Fight_State();
-                        FirstFight.run(Laevis, enemy);
                         break;
                     case ConsoleKey.G:
                         break;

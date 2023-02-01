@@ -1,6 +1,6 @@
 ﻿namespace Tavernier.Characters.Ennemy
 {
-    internal class Goblin : Player
+    internal class Goblin : Character
     {
         public Goblin()
         {

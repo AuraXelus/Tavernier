@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Player
 {
-    internal class Nina : Player
+    internal class Nina : Character
     {
         public Nina()
         {

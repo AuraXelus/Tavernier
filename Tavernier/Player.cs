@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tavernier.Characters;
 
 namespace Tavernier
 {
-    public class Player
+    public class Player : Character
     {
-        private char playerChar = 'P';
-        private int posX = 1;
-        private int posY = 1;
+        public Player()
+        {
 
-        public Player() { }
-
-        public char PlayerChar { get => playerChar; set => playerChar = value; }
-        public int PosX { get => posX; set => posX = value; }
-        public int PosY { get => posY; set => posY = value; }
+        }
     }
 }

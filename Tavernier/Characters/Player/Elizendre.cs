@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier.Characters.Player
 {
-    internal class Elizendre : Player
+    internal class Elizendre : Character
     {
         public Elizendre()
         {
