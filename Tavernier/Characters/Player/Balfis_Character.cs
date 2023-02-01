@@ -7,10 +7,10 @@ using Tavernier;
 
 namespace Tavernier
 {
-    public class Balfis : Player
+    public class Balfis_Character : Character
     {
 
-        public Balfis() 
+        public Balfis_Character() 
         {
             _Name = "Balfis";
             _Elem_Type = "Fire";

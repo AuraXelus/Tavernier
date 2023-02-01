@@ -13,4 +13,10 @@
     <None Remove="Characters\Item\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="map.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

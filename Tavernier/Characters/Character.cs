@@ -53,6 +53,79 @@ namespace Tavernier
         
         }
 
+        public void receveExp(int expReceve)
+        {
+            _Exp += expReceve;
+            if(_Exp >= 25 && _Lvl == 1) winLvl();
+            if(_Exp >= 75 && _Lvl == 2) winLvl();
+            if(_Exp >= 150 && _Lvl == 3) winLvl();
+            if(_Exp >= 300 &&  _Lvl == 4) winLvl();
+            if(_Exp >= 500 && _Lvl == 5) winLvl();
+        }
+
+        public void winLvl()
+        {
+            _Lvl += 1;
+            _Exp = 0;
+            switch (_Name)
+            {
+                case "Balfis":
+                    _Max_HP += 10;
+                    _Max_SP += 2;
+                    _Phys_Atk += 2;
+                    _Elem_Atk += 1;
+                    if(_Lvl%2 == 0) { _Phys_Def += 4; }
+                    else { _Phys_Def += 3; }
+                    _Elem_Def += 2;
+                    if (_Lvl % 2 == 0) { _Accuracy += 2; }
+                    else { _Accuracy += 1; }
+                    if (_Lvl % 2 == 0) { _Critical_Chance += 1; }
+                    _Speed += 1;
+                    break;
+
+                case "Nina":
+                    _Max_HP += 6;
+                    _Max_SP += 2;
+                    _Phys_Atk += 4;
+                    _Elem_Atk += 2;
+                    _Phys_Def += 2;
+                    _Elem_Def += 1;
+                    if (_Lvl % 2 == 0) { _Accuracy += 1; }
+                    _Critical_Chance+= 1;
+                    if (_Lvl % 2 == 0) { _Speed += 1; }
+                    break;
+
+                case "Elizendre":
+                    _Max_HP += 4;
+                    _Max_SP += 5;
+                    _Phys_Atk += 1;
+                    _Elem_Atk += 3;
+                    _Phys_Def += 2;
+                    _Elem_Def += 2;
+                    _Accuracy+= 2;
+                    if (_Lvl % 2 == 0) { _Critical_Chance += 1; }
+                    _Speed += 1;
+                    break;
+
+                case "Laevis":
+                    _Max_HP += 4;
+                    _Max_SP += 5;
+                    _Phys_Atk += 1;
+                    _Elem_Atk += 3;
+                    _Phys_Def += 1;
+                    _Elem_Def += 2;
+                    _Accuracy += 1;
+                    if (_Lvl % 2 == 0) { _Critical_Chance += 1; }
+                    _Speed += 1;
+                    break;
+
+                default:
+                    break;
+            }
+            healMax();
+
+        }
+
         public virtual void attack(Character target)
         {
             double damage = (_Phys_Atk + _First_Weapon.Phy_Atk) - target._Phys_Def;
@@ -162,16 +235,27 @@ namespace Tavernier
             _HP = _Max_HP;
         }
 
+        public virtual void recoverSP(int SPrecover)
+        {
+            _SP += SPrecover;
+            if (_HP > _Max_HP) { _HP = _Max_HP; }
+        }
+
+        public virtual void SPMax()
+        {
+            _HP = _Max_HP;
+        }
+
         //Get
         public string Name { get => _Name; set => _Name = value; }
         public int Max_HP { get => _Max_HP; set => _Max_HP = value; }
         public int HP { get => _HP; set => _HP = value; }
         public int Max_SP { get => _Max_SP; set => _Max_SP = value; }
         public int SP { get => _SP; set => _SP = value; }
+        public string Elem_Type { get => _Elem_Type; set => _Elem_Type = value; }
 
-
-        protected int Exp { get => _Exp; set => _Exp = value; }
-        protected int Lvl { get => _Lvl; set => _Lvl = value; }
+        public int Exp { get => _Exp; set => _Exp = value; }
+        public int Lvl { get => _Lvl; set => _Lvl = value; }
 
         public int Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public int Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }

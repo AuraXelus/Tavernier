@@ -7,11 +7,15 @@ namespace Tavernier
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             bool endGame = false;
-            Nina Nina = new Nina();
-            Balfis Balfis = new Balfis();
-            Elizendre Elizendre= new Elizendre();
-            Laevis Laevis = new Laevis();
+            Nina_Character Nina = new Nina_Character();
+            Balfis_Character Balfis = new Balfis_Character();
+            Elizendre_Character Elizendre= new Elizendre_Character();
+            Laevis_Character Laevis = new Laevis_Character();
+            Map_State map = new Map_State();
+            map.initMap();
+            map.runMap();
             ConsoleKey key = Console.ReadKey(true).Key;
             do
             {
@@ -30,7 +34,7 @@ namespace Tavernier
                         break;
                     case ConsoleKey.Escape:
                         Menu_State menu = new Menu_State();
-                        menu.run(Balfis, Nina);
+                        menu.run(Balfis, Nina, Elizendre, Laevis);
                         break;
                     case ConsoleKey.Spacebar:
                         break;
@@ -97,13 +101,22 @@ namespace Tavernier
                     case ConsoleKey.F:
                         Goblin enemy = new Goblin();
                         Fight_State FirstFight = new Fight_State();
-                        FirstFight.run(Laevis, enemy);
+                        FirstFight.runFight(Laevis, enemy);
                         break;
                     case ConsoleKey.G:
+                        Goblin enemy2 = new Goblin();
+                        Fight_State FirstFight2 = new Fight_State();
+                        FirstFight2.runFight(Nina, enemy2);
                         break;
                     case ConsoleKey.H:
+                        Goblin enemy3 = new Goblin();
+                        Fight_State FirstFight3 = new Fight_State();
+                        FirstFight3.runFight(Balfis, enemy3);
                         break;
                     case ConsoleKey.I:
+                        Goblin enemy4 = new Goblin();
+                        Fight_State FirstFight4 = new Fight_State();
+                        FirstFight4.runFight(Elizendre, enemy4);
                         break;
                     case ConsoleKey.J:
                         break;
@@ -320,7 +333,14 @@ namespace Tavernier
     }
 }
 
-//Objet (armes) potions vie, mana,
-//Fiche personnage
-//Sprite par personnage OK (ajouter espace)
-//Niveau
+//Ahor :
+//Utilister bag avec popo
+
+
+//Alexis :
+
+//Juliette :
+//Test unitaire combat
+
+//BONUS :
+//NEXT LVL EXP

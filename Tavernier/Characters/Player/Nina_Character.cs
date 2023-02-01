@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Nina : Player
+    public class Nina_Character : Character
     {
-        public Nina()
+        public Nina_Character()
         {
             Name = "Nina";
             _Elem_Type = "Nature";

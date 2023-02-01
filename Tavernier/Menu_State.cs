@@ -10,7 +10,7 @@ namespace Tavernier
     {
         public Menu_State() { }
 
-        public void run(Player player1, Player player2)
+        public void run(Character player1, Character player2, Character elizendre, Character laevis)
         {
             bool endMenu = false;
             do
@@ -72,12 +72,14 @@ namespace Tavernier
             Console.Clear();
         }
 
-        public void displayTeam(Player player1, Player player2)
+        public void displayTeam(Character balfis, Character player2)
         {
+            Console.Clear();
             Console.WriteLine("                                                         |TEAM|");
-            Console.WriteLine("{0}", player1.Name);
-            Console.WriteLine("");
-            Console.WriteLine("{0}", player2.Name);
+            Console.WriteLine("|{0}", balfis.Name);
+            Console.WriteLine();
+            Console.WriteLine("|{0}/{1}", balfis.HP ,balfis.Max_HP);
+            Console.ReadKey(true);
         }
     }
 }
