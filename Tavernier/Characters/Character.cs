@@ -168,15 +168,19 @@ namespace Tavernier
         public int HP { get => _HP; set => _HP = value; }
         public int Max_SP { get => _Max_SP; set => _Max_SP = value; }
         public int SP { get => _SP; set => _SP = value; }
+        public string Elem_Type { get => _Elem_Type; set => _Elem_Type = value; }
 
 
-        protected int Exp { get => _Exp; set => _Exp = value; }
-        protected int Lvl { get => _Lvl; set => _Lvl = value; }
+        public int Exp { get => _Exp; set => _Exp = value; }
+        public int Lvl { get => _Lvl; set => _Lvl = value; }
 
         public int Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public int Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
         public int Phys_Def { get => _Phys_Def; set => _Phys_Def = value; }
         public int Elem_Def { get => _Elem_Def; set => _Elem_Def = value; }
+        public int Accuracy { get => _Accuracy; set => _Accuracy = value; }
+        public int Critical_Chance { get => _Critical_Chance; set => _Critical_Chance = value; }
+        public int Critical_Puiss { get => _Critical_Puiss; set => _Critical_Puiss = value; }
         public int Speed { get => _Speed; set => _Speed = value; }
         public Weapon First_Weapon { get => _First_Weapon; set => _First_Weapon = value; }
         public bool Alive { get => _Alive; set => _Alive = value; }

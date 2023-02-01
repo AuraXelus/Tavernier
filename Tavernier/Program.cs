@@ -30,7 +30,7 @@ namespace Tavernier
                         break;
                     case ConsoleKey.Escape:
                         Menu_State menu = new Menu_State();
-                        menu.run(Balfis, Nina);
+                        menu.run(Balfis, Elizendre, Laevis, Nina);
                         break;
                     case ConsoleKey.Spacebar:
                         break;
