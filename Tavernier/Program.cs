@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Security.Cryptography;
-using Tavernier.Characters.Player;
+using Tavernier;
 
 namespace Tavernier
 {
@@ -31,7 +31,7 @@ namespace Tavernier
                         break;
                     case ConsoleKey.Escape:
                         Menu_State menu = new Menu_State();
-                        menu.run(Balfis, Nina);
+                        menu.run(Balfis, nina);
                         break;
                     case ConsoleKey.Spacebar:
                         break;

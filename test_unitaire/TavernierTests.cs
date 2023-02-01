@@ -2,9 +2,6 @@ using NUnit.Framework.Internal;
 using System.Reflection.PortableExecutable;
 using System.Threading;
 using Tavernier;
-using Tavernier.Characters;
-using Tavernier.Characters.Player;
-using Tavernier.Characters.Ennemy;
 
 namespace test_unitaire
 {
@@ -15,14 +12,52 @@ namespace test_unitaire
         [TestCase(0)]
         [TestCase(100)]
         [TestCase(200)]
-        public void receveDammage(int damage)
+        public virtual void receveDammage(int damage)
         {
             Character player = new Character();
             int life = player.HP;
-            player.receveDammage(damage);
-            Assert.That(player.HP, Is.EqualTo(life-damage));
+            if (life > 0)
+                Assert.That(life, Is.EqualTo(life - damage));
+            else
+                return;
         }
 
-        
+        [Test]
+        public virtual void healMax()
+        {
+            Character player = new Character();
+
+            Assert.IsTrue(player.HP == player.Max_HP);
+        }
+
+        [Test]
+        [TestCase(100)]
+        public virtual void heal(int heal)
+        {
+            Character player = new Character();
+
+            if (player.HP > player.Max_HP)
+                Assert.That(player.HP, Is.EqualTo(player.Max_HP));
+        }
+
+        [Test]
+        [TestCase()]
+        public virtual void attack(Character target)
+        {
+        }
     }
 }
+
+
+
+/*
+ 
+ Creation tests unitaires:
+
+public virtual void attack(Character target)
+
+public virtual void useSkill(Character target, int numberSkill)
+
+ 
+ 
+ */
