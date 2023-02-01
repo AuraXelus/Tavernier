@@ -15,7 +15,7 @@ namespace Tavernier
 
         private bool _Fin = false;
 
-        private char _Behind_player = ' ';
+        private char _Behind_Player = ' ';
         private int _Player_PosX = 1;
         private int _Player_PosY = 1;
 
@@ -40,10 +40,10 @@ namespace Tavernier
         public void runMap()
         {
             displayMap();
-            do
-            {
-                movePlayer();
-            } while (_Fin == false);
+            //do
+            //{
+            //    //movePlayer();
+            //} while (_Fin == false);
         }
 
         public void displayMap()
@@ -59,30 +59,31 @@ namespace Tavernier
             }
         }
         
-        public void movePlayer()
+        public void movePlayer(ConsoleKey key)
         {
-            ConsoleKey key = Console.ReadKey(true).Key;
             Console.SetCursorPosition(_Player_PosX, _Player_PosY);
-            Console.Write(_Behind_player);
-            if (key == ConsoleKey.UpArrow)
+            Console.Write(_Behind_Player);
+            if (key == ConsoleKey.UpArrow || key == ConsoleKey.Z)
             {
                 if (_Map[_Player_PosY - 1, _Player_PosX] != '|' && _Map[_Player_PosY - 1, _Player_PosX] != '-') _Player_PosY--;
             }
-            else if (key == ConsoleKey.DownArrow)
+            else if (key == ConsoleKey.DownArrow || key == ConsoleKey.S)
             {
                 if (_Map[_Player_PosY + 1, _Player_PosX] != '|' && _Map[_Player_PosY + 1, _Player_PosX] != '-') _Player_PosY++;
             }
-            else if (key == ConsoleKey.LeftArrow)
+            else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.Q)
             {
                 if (_Map[_Player_PosY, _Player_PosX - 1] != '|' && _Map[_Player_PosY, _Player_PosX - 1] != '-') _Player_PosX--;
             }
-            else if (key == ConsoleKey.RightArrow)
+            else if (key == ConsoleKey.RightArrow || key == ConsoleKey.D)
             {
                 if (_Map[_Player_PosY, _Player_PosX + 1] != '|' && _Map[_Player_PosY, _Player_PosX + 1] != '-') _Player_PosX++;
             }
-            _Behind_player = _Map[_Player_PosY, _Player_PosX];
+            _Behind_Player = _Map[_Player_PosY, _Player_PosX];
             Console.SetCursorPosition(_Player_PosX, _Player_PosY);
             Console.Write('P');
         }
+
+        public char Behind_Player { get => _Behind_Player; set => _Behind_Player = value; }
     }
 }

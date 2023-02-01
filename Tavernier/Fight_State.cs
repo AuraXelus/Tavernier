@@ -25,6 +25,7 @@ namespace Tavernier
 
         public void runFight(Character player, Character enemy)
         {
+            Console.Clear();
             //Init Fight
             if (player.Speed >= enemy.Speed) { _CharacterTurn = 0; }
             else { _CharacterTurn = 1; }
