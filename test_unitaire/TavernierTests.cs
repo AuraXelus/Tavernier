@@ -53,17 +53,3 @@ namespace test_unitaire
 
     }
 }
-
-
-/*
- 
- Creation tests unitaires:
-
-
-public virtual void useSkill(Character target, int numberSkill)
-
-                 - attack
-
- 
- 
- */
