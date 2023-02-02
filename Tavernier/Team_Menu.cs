@@ -6,39 +6,33 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Menu_State
+    internal class Team_Menu
     {
-        public Menu_State() { }
+        public Team_Menu() { }
 
         public void run(Player balfis, Player elizendre, Player laevis, Player nina, Skill Sbalfis, Skill Selizendre, Skill Slaevis, Skill Snina)
         {
             bool endMenu = false;
             do
             {
-                Console.WriteLine("                                                         |MENU|");
+                Console.WriteLine("                                                         |TEAM|");
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("|1-Continue");
+                Console.WriteLine("|1-Team stats");
                 Console.WriteLine("");
-                Console.WriteLine("|2-Inventory");
-                Console.WriteLine("");
-                Console.WriteLine("|3-My team");
-                Console.WriteLine("");
-                Console.WriteLine("|4-Save");
+                Console.WriteLine("|2-Skills");
                 ConsoleKey key = Console.ReadKey(true).Key;
                 switch (key)
                 {
                     case ConsoleKey.NumPad0:
                         break;
                     case ConsoleKey.NumPad1:
-                        endMenu = true;
+                        displayTeam(balfis, elizendre, laevis, nina);
                         break;
                     case ConsoleKey.NumPad2:
-                        displayInventory();
+                        displaySkills(Sbalfis, Selizendre, Slaevis, Snina);
                         break;
                     case ConsoleKey.NumPad3:
-                        Team_Menu menu = new Team_Menu();
-                        menu.run(balfis, elizendre, laevis, nina, Sbalfis, Selizendre, Slaevis, Snina);
                         break;
                     case ConsoleKey.NumPad4:
                         break;
@@ -55,22 +49,8 @@ namespace Tavernier
                     default:
                         break;
                 }
-                Console.SetCursorPosition(0,0) ;
+                Console.SetCursorPosition(0, 0);
             } while (endMenu == false);
-        }
-
-        public void displayInventory()
-        {
-            Console.WriteLine("                                                         |INVENTORY|");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("|Heal potion : {0}", 0);
-            Console.WriteLine("");
-            Console.WriteLine("|SP potion : {0}", 0);
-            Console.WriteLine("");
-            Console.WriteLine("|Buff : {0}", 0);
-            Console.ReadKey(true);
-            Console.Clear();
         }
 
         public void displayTeam(Player balfis, Player elizendre, Player laevis, Player nina)
@@ -79,7 +59,7 @@ namespace Tavernier
             Console.WriteLine("    |{0}| lvl. {1}               |{2}| lvl. {3}              |{4}| lvl. {5}                 |{6}| lvl. {7}", balfis.Name, balfis.Lvl, elizendre.Name, elizendre.Lvl, laevis.Name, laevis.Lvl, nina.Name, nina.Lvl);
             Console.WriteLine("");
             Console.WriteLine("                                                        |GENERAL|");
-            Console.WriteLine("Elemental type | {0}          Elemental type | {1}           Elemental type | {2}        Elemental type | {3}", balfis.Elem_Type,  elizendre.Elem_Type, laevis.Elem_Type, nina.Elem_Type);
+            Console.WriteLine("Elemental type | {0}          Elemental type | {1}           Elemental type | {2}        Elemental type | {3}", balfis.Elem_Type, elizendre.Elem_Type, laevis.Elem_Type, nina.Elem_Type);
             Console.WriteLine("------------------------       ------------------------       ------------------------       ------------------------");
             Console.WriteLine("HP | {0}/{1}                   HP | {2}/{3}                   HP | {4}/{5}                   HP | {6}/{7}", balfis.HP, balfis.Max_HP, elizendre.HP, elizendre.Max_HP, laevis.HP, laevis.Max_HP, nina.HP, nina.Max_HP);
             Console.WriteLine("------------------------       ------------------------       ------------------------       ------------------------");
@@ -103,6 +83,18 @@ namespace Tavernier
             Console.WriteLine("Critical probability | {0}       Critical probability | {1}       Critical probability | {2}       Critical probability | {3}", balfis.Critical_Chance, elizendre.Critical_Chance, laevis.Critical_Chance, nina.Critical_Chance);
             Console.WriteLine("------------------------       ------------------------       ------------------------       ------------------------");
             Console.WriteLine("Critical damage | {0}            Critical damage | {1}            Critical damage | {2}            Critical damage | {3}", balfis.Critical_Puiss, elizendre.Critical_Puiss, laevis.Critical_Puiss, nina.Critical_Puiss);
+            Console.ReadKey(true);
+            Console.Clear();
+        }
+
+        public void displaySkills(Skill Sbalfis, Skill Selizendre, Skill Slaevis, Skill Snina)
+        {
+            Console.Clear();
+            Console.WriteLine("    |{0}|               |{2}|              |{4}|                 |{6}|", Sbalfis.Name, Selizendre.Name, Slaevis.Name, Snina.Name);
+            Console.WriteLine("------------------------       ------------------------       ------------------------       ------------------------");
+            Console.WriteLine("    {0} | SP {1}               {2} | SP {3}              {4} | SP {5}                 {6} | SP {7}", Sbalfis.Name, Sbalfis.Point_SP, Selizendre.Name, Selizendre.Point_SP, Slaevis.Name,Slaevis.Point_SP, Snina.Name, Snina.Point_SP);
+
+
             Console.ReadKey(true);
             Console.Clear();
         }
