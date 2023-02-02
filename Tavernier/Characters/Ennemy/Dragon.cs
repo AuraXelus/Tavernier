@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    internal class Dragon : Enemy
+    public class Dragon : Enemy
     {
         public Dragon() 
         {

@@ -8,50 +8,61 @@ namespace test_unitaire
     public class Tests
     {
         [Test]
-        [TestCase(-1)]
-        [TestCase(0)]
-        [TestCase(100)]
-        [TestCase(200)]
-        public virtual void receveDammage(int damage)
+        [TestCase(1, 99)]
+        [TestCase(100, 0)]
+        [TestCase(200, 0)]
+        public void receveDammage(int damage, int expected)
         {
-            Character player = new Character();
-            int life = player.HP;
-            if (life > 0)
-                Assert.That(life, Is.EqualTo(life - damage));
-            else
-                return;
+            Balfis player = new Balfis();
+
+            player.receveDammage(damage);
+
+            Assert.That(player.HP, Is.EqualTo(expected));
         }
 
         [Test]
-        public virtual void healMax()
-        {
-            Character player = new Character();
+        [TestCase(50, 10, 60)]
+        [TestCase(60, 20, 60)]
+        [TestCase(20, 50, 100)]
 
-            Assert.IsTrue(player.HP == player.Max_HP);
+        public void HealTest(int damage, int heal, int expected)
+        {
+            Balfis player = new Balfis();
+
+            player.receveDammage(damage);
+            player.heal(heal);
+            Assert.That(player.HP, Is.EqualTo(expected));
         }
 
         [Test]
-        [TestCase(100)]
-        public virtual void heal(int heal)
+        [TestCase(99, 1)]
+        [TestCase(0, 100)]
+        [TestCase(0, 200)]
+        public void chekAttack(int damage, int expected)
         {
-            Character player = new Character();
+            Balfis player = new Balfis();
+            Dragon target = new Dragon();
+            Dragon target_test = new Dragon();
 
-            if (player.HP > player.Max_HP)
-                Assert.That(player.HP, Is.EqualTo(player.Max_HP));
+            double result = (player.Phys_Atk + player.First_Weapon.Phy_Atk) - target.Phys_Def;
+            target.receveDammage((int)result);
+            player.attack(target_test);
+
+            Assert.IsTrue(target.HP == target_test.HP);
         }
 
     }
 }
 
 
-
 /*
  
  Creation tests unitaires:
 
-public virtual void attack(Character target)
 
 public virtual void useSkill(Character target, int numberSkill)
+
+                 - attack
 
  
  

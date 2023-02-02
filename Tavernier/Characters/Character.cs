@@ -147,9 +147,11 @@ namespace Tavernier
 
         public virtual void receveDammage(int damage)
         {
-            if(damage <= 0) { _HP--; } else { _HP -= damage; }
+            if(damage <= 0) { _HP--; } 
+            else { _HP -= damage; }
 
-            if(_HP <= 0) { _Alive = false; }
+            if(_HP <= 0) 
+            { _HP = 0; _Alive = false; }
         }
 
         public virtual void heal(int heal)
