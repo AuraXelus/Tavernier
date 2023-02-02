@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Linq;
 
 namespace Tavernier
 {
@@ -10,12 +14,14 @@ namespace Tavernier
     {
         private bool _end_Game = false;
 
-        private Balfis_Character Balfis = new Balfis_Character();
-        private Nina_Character Nina = new Nina_Character();
-        private Elizendre_Character Elizendre = new Elizendre_Character();
-        private Laevis_Character Laevis = new Laevis_Character();
+        public Balfis_Character? Balfis { get; set; }
+        public Nina_Character? Nina { get; set; }
+        public Elizendre_Character? Elizendre { get; set; }
+        public Laevis_Character? Laevis { get; set; }
 
         private Map_State _map = new Map_State();
+        private int player_posX { get; set; }
+        private int player_posY { get; set; }
 
         private Fight_State _fight = new Fight_State();
         private Character _playerSelected = new Character();
@@ -25,7 +31,21 @@ namespace Tavernier
 
         private int _stockRandom = 0;
         private Random random = new Random();
-        public Game_State() { }
+
+        public Game_State() 
+        {
+            SerializeTheObject loadSave;
+            string loadString;
+            loadString = File.ReadAllText("save.json");
+            loadSave = JsonSerializer.Deserialize<SerializeTheObject>(loadString);
+            Balfis = loadSave.balfis_Save;
+            Nina = loadSave.nina_Save;
+            Elizendre = loadSave.elizendre_Save;
+            Laevis = loadSave.laevis_Save;
+            //player_posX = loadSave.player_posX_Save;
+            //player_posY = loadSave.player_posY_Save;
+
+        }
 
         public void run()
         {
@@ -52,6 +72,10 @@ namespace Tavernier
 
                     case ConsoleKey.Escape:
                         _menu.run(Balfis, Nina, Elizendre, Laevis);
+                        break;
+
+                    case ConsoleKey.J:
+                        save();
                         break;
 
                     //case ConsoleKey.Backspace:
@@ -124,8 +148,7 @@ namespace Tavernier
                     //    break;
                     //case ConsoleKey.I:
                     //    break;
-                    //case ConsoleKey.J:
-                    //    break;
+
                     //case ConsoleKey.K:
                     //    break;
                     //case ConsoleKey.L:
@@ -443,6 +466,15 @@ namespace Tavernier
 
         }
 
+        public void save()
+        {
+            SerializeTheObject save = new SerializeTheObject(Balfis, Nina, Elizendre, Laevis);
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string SaveString = JsonSerializer.Serialize(save, options);
+            File.WriteAllText("save.json", SaveString);
+        }
+        
         //Get
         public Character balfis { get => Balfis; }
         public Character nina { get => Nina; }

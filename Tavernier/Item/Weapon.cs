@@ -68,6 +68,7 @@ namespace Tavernier
         }
 
         //Get
+        public string Name { get => _Name; set => _Name = value; }
         public int Phy_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public int Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
 
