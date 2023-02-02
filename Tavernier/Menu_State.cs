@@ -81,5 +81,6 @@ namespace Tavernier
             Console.WriteLine("|{0}/{1}", balfis.HP ,balfis.Max_HP);
             Console.ReadKey(true);
         }
+
     }
 }

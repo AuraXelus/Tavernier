@@ -18,8 +18,8 @@ namespace Tavernier
             _Max_SP = 0;
             _SP = _Max_SP;
 
-            _Phys_Atk = 10;
-            _Elem_Atk = 10;
+            _Phys_Atk = 20;
+            _Elem_Atk = 25;
 
             _Phys_Def = 5;
             _Elem_Def = 5;
@@ -30,7 +30,7 @@ namespace Tavernier
 
             _Speed = 80;
 
-            _Sprite = " .-.\r\n     (o.o)\r\n      |=|\r\n     __|__\r\n   //.=|=.\\\\\r\n  // .=|=. \\\\\r\n  \\\\ .=|=. //\r\n   \\\\(_=_)//\r\n    (:| |:)\r\n     || ||\r\n     () ()";
+            _Sprite = "     .-.\r\n     (o.o)\r\n      |=|\r\n     __|__\r\n   //.=|=.\\\\\r\n  // .=|=. \\\\\r\n  \\\\ .=|=. //\r\n   \\\\(_=_)//\r\n    (:| |:)\r\n     || ||\r\n     () ()";
 
             _Weakness_Slash = false;
             _Weakness_Thrust = true;

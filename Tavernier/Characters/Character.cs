@@ -146,6 +146,14 @@ namespace Tavernier
             return damage;
         }
 
+        public virtual double damageAttackElem(Character target)
+        {
+            double damage = (_Elem_Atk + _First_Weapon.Elem_Atk);
+            damage -= target.Elem_Def;
+            if (damage <= 0) damage = 0;
+            return damage;
+        }
+
         public virtual void attack(Character target)
         {
             double damage;
@@ -157,6 +165,21 @@ namespace Tavernier
         public virtual void criticalAttack(Character target)
         {
             double damage = damageAttack(target);
+            damage *= _Critical_Puiss;
+            int finalDamage = (int)damage;
+            target.receveDammage(finalDamage);
+        }
+
+        public virtual void attackElem(Character target)
+        {
+            double damage = damageAttackElem(target);
+            int finalDamage = (int)damage;
+            target.receveDammage(finalDamage);
+        }
+
+        public virtual void criticalAttackElem(Character target)
+        {
+            double damage = damageAttackElem(target);
             damage *= _Critical_Puiss;
             int finalDamage = (int)damage;
             target.receveDammage(finalDamage);
@@ -254,6 +277,14 @@ namespace Tavernier
             if(damage <= 0) { _HP--; } else { _HP -= damage; }
 
             if(_HP <= 0) { _HP = 0; _Alive = false; }
+        }
+
+        public virtual string choiceIA(Character target)
+        {
+            double damagePhys = damageAttack(target);
+            double damageElem = damageAttackElem(target);
+            if(damagePhys >= damageElem) { return "Phys"; }
+            else { return "Elem"; }
         }
 
         public virtual void heal(int heal)

@@ -21,6 +21,7 @@ namespace Tavernier
         private Random random = new Random();
 
         private bool _Escape_Succes = false;
+        private bool _Change_Character = false;
         public Fight_State()
         {
 
@@ -31,6 +32,7 @@ namespace Tavernier
             Console.Clear();
             //Init Fight
             _Escape_Succes = false;
+            _Change_Character = false;
             if (player.Speed >= enemy.Speed) { _CharacterTurn = 0; }
             else { _CharacterTurn = 1; }
 
@@ -101,23 +103,42 @@ namespace Tavernier
                     stockRandom = random.Next(1, 101);
                     if (stockRandom <= enemy.Critical_Chance)
                     {
-                        enemy.criticalAttack(player);
-                        Console.WriteLine("                                               |Enemy use  a critical attack|");
-                        Console.WriteLine("                                                  |You receve {0} damages|", enemy.damageAttack(player) * enemy.Critical_Puiss);
+                        if(enemy.choiceIA(player) == "Phys") 
+                        { 
+                            enemy.criticalAttack(player);
+                            Console.WriteLine("                                               |Enemy use  a critical attack|");
+                            Console.WriteLine("                                                  |You receve {0} damages|", enemy.damageAttack(player) * enemy.Critical_Puiss);
+                        }
+                        else 
+                        { 
+                            enemy.criticalAttack(player);
+                            Console.WriteLine("                                              |Enemy use  a critical attack elem|");
+                            Console.WriteLine("                                                  |You receve {0} damages|", enemy.damageAttackElem(player) * enemy.Critical_Puiss);
+                        }
+
                     }
                     else
                     {
+                        if(enemy.choiceIA(player) == "Phys")
+                        {
                         enemy.attack(player);
                         Console.WriteLine("                                                |Enemy use a normal attack|");
                         Console.WriteLine("                                                 |You receve {0} damages|", enemy.damageAttack(player));
+                        }
+                        else
+                        {
+                            enemy.attackElem(player);
+                            Console.WriteLine("                                              |Enemy use a normal attack elem|");
+                            Console.WriteLine("                                                 |You receve {0} damages|", enemy.damageAttackElem(player));
+                        }
                     }
                     Console.ReadKey(true);
                     Console.Clear();
                 }
 
-                if(player.Alive == false)
+                if(player.Alive == false || _Change_Character == true)
                 {
-
+                    return;
                 }
                 _CharacterTurn++;
             } while (enemy.Alive == true && _Escape_Succes != true);
@@ -381,8 +402,11 @@ namespace Tavernier
                         }
                         else if (changeCharacter == true)
                         {
-                            Console.WriteLine("                                                |CHANGER DE CHARACTER|");
+                            _Change_Character = true;
                             choiceSkillOk = true;
+                            _Round_Finish = true;
+                            Console.Clear();
+                            return;
                         }
                         else if (back == true)
                         {
@@ -413,7 +437,6 @@ namespace Tavernier
             } while (choiceSkillOk != true);
             Console.Clear();
             Console.ReadKey(true);
-            Console.Clear();
         }
 
         public void choiceEscape(Character player, Character enemy)

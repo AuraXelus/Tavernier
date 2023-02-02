@@ -372,12 +372,76 @@ namespace Tavernier
                     Draugr enemy= new Draugr();
                     _enemySelected = enemy;
                 }
-                _fight.runFight(_playerSelected, _enemySelected);
-                Console.Clear();
+                do      //FIGHT
+                {                    
+                    chooseCharacter();
+                    _fight.runFight(_playerSelected, _enemySelected);
+                    Console.Clear();
+                } while (_enemySelected.Alive == true);
                 _map.displayMap();
             }
         }
 
+        public void chooseCharacter()
+        {
+            bool changeFinish = false;
+            do
+            {                
+                Console.Clear();
+                Console.WriteLine("1-Balfis");
+                Console.WriteLine();
+                Console.WriteLine("2-Nina");
+                Console.WriteLine();
+                Console.WriteLine("3-Elizendre");
+                Console.WriteLine();
+                Console.WriteLine("4-Laevis");
+                ConsoleKey key = Console.ReadKey(true).Key;
+                switch (key)
+                {
+                    case ConsoleKey.NumPad0:
+                        break;
+
+                    case ConsoleKey.NumPad1:
+                        if(Balfis.Alive == true) { _playerSelected = Balfis; changeFinish = true; }
+                        else { Console.WriteLine("This Character is dead"); }
+                        break;
+
+                    case ConsoleKey.NumPad2:
+                        if (Nina.Alive == true) { _playerSelected = Nina; changeFinish = true; }
+                        else { Console.WriteLine("This Character is dead"); }
+                        break;
+
+                    case ConsoleKey.NumPad3:
+                        if (Elizendre.Alive == true) { _playerSelected = Elizendre; changeFinish = true; }
+                        else { Console.WriteLine("This Character is dead"); }
+                        break;
+
+                    case ConsoleKey.NumPad4:
+                        if (Laevis.Alive == true) { _playerSelected = Laevis; changeFinish = true; }
+                        else { Console.WriteLine("This Character is dead"); }
+                        break;
+
+                    case ConsoleKey.NumPad5:
+                        break;
+
+                    case ConsoleKey.NumPad6:
+                        break;
+
+                    case ConsoleKey.NumPad7:
+                        break;
+
+                    case ConsoleKey.NumPad8:
+                        break;
+
+                    case ConsoleKey.NumPad9:
+                        break;
+
+                    default:
+                        break;
+                }
+            }while(changeFinish != true);
+
+        }
 
         //Get
         public Character balfis { get => Balfis; }
