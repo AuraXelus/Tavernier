@@ -349,4 +349,5 @@ namespace Tavernier
 
 //BONUS :
 //NEXT LVL EXP
+//Appuier sur espace début de combat
 

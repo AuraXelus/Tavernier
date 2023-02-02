@@ -67,6 +67,7 @@ namespace Tavernier
                                     _Round_Finish = true;
                                 }
                                 break;
+
                             case ConsoleKey.LeftArrow:
                                 if (_Skill == true) { _Skill = false; _Attack = true; }
                                 if (_Escape == true) { _Escape = false; _Bag = true; }
@@ -113,8 +114,13 @@ namespace Tavernier
                     Console.ReadKey(true);
                     Console.Clear();
                 }
+
+                if(player.Alive == false)
+                {
+
+                }
                 _CharacterTurn++;
-            } while ((player.Alive == true && enemy.Alive == true) && _Escape_Succes != true);
+            } while (enemy.Alive == true && _Escape_Succes != true);
 
             //End Fight
             if(player.Alive == true)  
@@ -178,13 +184,13 @@ namespace Tavernier
             if(stockRandom <= player.Critical_Chance) 
             {
                 player.criticalAttack(enemy);
-                Console.WriteLine("                                               |You use a critical attack|");
+                Console.WriteLine("                                                |You do a critical attack|");
                 Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy)*player.Critical_Puiss);
             }
             else
             {
                 player.attack(enemy);
-                Console.WriteLine("                                                |You use a normal attack|");
+                Console.WriteLine("                                                |You attack your ennemy|");
                 Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy));
             }
             Console.ReadKey(true);
@@ -214,17 +220,17 @@ namespace Tavernier
                 if (skill1 == true)
                 {
                     Console.WriteLine("                                        |*{0}        |{1} ", player.First_Skill.Name, player.Second_Skill.Name);
-                    Console.WriteLine("                                                     |Back ");
+                    Console.WriteLine("                                                 |Back ");
                 }
                 else if (skill2 == true)
                 {
                     Console.WriteLine("                                        |{0}        |*{1} ", player.First_Skill.Name, player.Second_Skill.Name);
-                    Console.WriteLine("                                                     |Back ");
+                    Console.WriteLine("                                                 |Back ");
                 }
                 else if (back == true)
                 {
                     Console.WriteLine("                                        |{0}        |{1} ", player.First_Skill.Name, player.Second_Skill.Name);
-                    Console.WriteLine("                                                     |*Back ");
+                    Console.WriteLine("                                                 |*Back ");
                 }
 
                 //Choose and action
@@ -232,17 +238,62 @@ namespace Tavernier
                 switch (key)
                 {
                     case ConsoleKey.Enter:
+                        Console.Clear();
                         if (skill1 == true)
                         {
-                            if (player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(enemy, 1); _Round_Finish = true; }
-                            else if (player.First_Skill.Point_SP > player.SP) { Console.WriteLine("                                                |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
-                            else { Console.WriteLine("                                                |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
+                            if(player.SP < player.First_Skill.Point_SP) { Console.WriteLine("                                                |You don't have enough SP|"); }
+                            else
+                            {
+                                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                                Console.WriteLine(enemy.Sprite);
+                                Console.WriteLine(player.Sprite);
+                                Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+                                Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+                                Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+                                stockRandom = random.Next(1, 101);
+                                if (stockRandom <= player.Critical_Chance)
+                                {
+                                    player.criticalSkill(enemy, 1);
+                                    Console.WriteLine("                                        |You use {0} and do critical damage|", player.First_Skill.Name);
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy) * player.Critical_Puiss);
+                                }
+                                else
+                                {
+                                    player.skill(enemy, 1);
+                                    Console.WriteLine("                                              |You use {0}|", player.First_Skill.Name);
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy));
+                                }
+                                choiceSkillOk = true;
+                                _Round_Finish = true;
+                            }
                         }
                         else if (skill2 == true)
                         {
-                            if (player.Second_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(enemy, 2); _Round_Finish = true; }
-                            else if (player.Second_Skill.Point_SP > player.SP) { Console.WriteLine("                                                |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
-                            else { Console.WriteLine("                                                |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
+                            if (player.SP < player.Second_Skill.Point_SP) { Console.WriteLine("                                                |You don't have enough SP|"); }
+                            else
+                            {
+                                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                                Console.WriteLine(enemy.Sprite);
+                                Console.WriteLine(player.Sprite);
+                                Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+                                Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+                                Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+                                stockRandom = random.Next(1, 101);
+                                if (stockRandom <= player.Critical_Chance)
+                                {
+                                    player.criticalSkill(enemy, 2);
+                                    Console.WriteLine("                                        |You use {0} and do critical damage|", player.Second_Skill.Name);
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy) * player.Critical_Puiss);
+                                }
+                                else
+                                {
+                                    player.skill(enemy, 2);
+                                    Console.WriteLine("                                              |You use {0}|", player.Second_Skill.Name);
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy));
+                                }
+                                choiceSkillOk = true;
+                                _Round_Finish = true;
+                            }
                         }
                         else if (back == true)
                         {
@@ -251,6 +302,7 @@ namespace Tavernier
                             return;
                         }
                         break;
+
                     case ConsoleKey.LeftArrow:
                         if (skill2 == true) { skill2 = false; skill1 = true; }
                         break;
@@ -268,16 +320,6 @@ namespace Tavernier
                         break;
                 }
                 } while (choiceSkillOk != true) ;
-            Console.Clear();
-
-            Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
-            Console.WriteLine(enemy.Sprite);
-            Console.WriteLine(player.Sprite);
-            Console.WriteLine("                                                                                       |{0}|  ", player.Name);
-            Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
-            Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
-            if(skill1 == true) Console.WriteLine("                                             |You use {0}|", player.First_Skill.Name);
-            else if (skill2 == true) Console.WriteLine("                                             |You use {0}|", player.Second_Skill.Name);
             Console.ReadKey(true);
             Console.Clear();
 

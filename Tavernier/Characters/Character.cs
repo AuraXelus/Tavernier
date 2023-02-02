@@ -128,7 +128,7 @@ namespace Tavernier
 
         public virtual double damageAttack(Character target)
         {
-            double damage = (_Phys_Atk + _First_Weapon.Phy_Atk) - target._Phys_Def;
+            double damage = (_Phys_Atk + _First_Weapon.Phy_Atk);
             if (_First_Weapon.Slash == true && target.Weakness_Slash == true)
             {
                 damage *= 1.2;
@@ -141,6 +141,8 @@ namespace Tavernier
             {
                 damage *= 1.2;
             }
+            damage -= target._Phys_Def;
+            if (damage <= 0) damage = 0;
             return damage;
         }
 
@@ -154,14 +156,13 @@ namespace Tavernier
 
         public virtual void criticalAttack(Character target)
         {
-            double damage;
-            damage = damageAttack(target);
+            double damage = damageAttack(target);
             damage *= _Critical_Puiss;
             int finalDamage = (int)damage;
             target.receveDammage(finalDamage);
         }
 
-        public virtual void useSkill(Character target, int numberSkill)
+        public virtual double damageSkill(Character target, int numberSkill)
         {
             double damage = 0;
             switch (numberSkill)
@@ -229,7 +230,22 @@ namespace Tavernier
                 default:
                     break;
             }
-            int finalDamage = (int)damage; //Round celling floor
+            return damage;
+
+        }
+
+        public virtual void skill(Character target, int numberSkill)
+        {
+            double damage = damageSkill(target, numberSkill);
+            int finalDamage = (int)damage;
+            target.receveDammage(finalDamage);
+        }
+
+        public virtual void criticalSkill(Character target, int numberSkill)
+        {
+            double damage = damageSkill(target, numberSkill);
+            damage *= _Critical_Puiss;
+            int finalDamage = (int)damage;
             target.receveDammage(finalDamage);
         }
 

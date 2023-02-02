@@ -8,31 +8,31 @@ namespace Tavernier
 {
     public class Game_State
     {
-        private bool _End_Game = false;
+        private bool _end_Game = false;
 
         private Balfis_Character Balfis = new Balfis_Character();
         private Nina_Character Nina = new Nina_Character();
         private Elizendre_Character Elizendre = new Elizendre_Character();
         private Laevis_Character Laevis = new Laevis_Character();
 
-        private Map_State map = new Map_State();
+        private Map_State _map = new Map_State();
 
-        private Fight_State fight = new Fight_State();
-        private Character playerSelected = new Character();
-        private Character enemySelected = new Character();
+        private Fight_State _fight = new Fight_State();
+        private Character _playerSelected = new Character();
+        private Character _enemySelected = new Character();
 
-        private Menu_State menu = new Menu_State();
+        private Menu_State _menu = new Menu_State();
 
-        private int stockRandom = 0;
+        private int _stockRandom = 0;
         private Random random = new Random();
         public Game_State() { }
 
         public void run()
         {
             Console.CursorVisible = false;
-            map.initMap();
-            map.displayMap();
-            playerSelected = Balfis;
+            _map.initMap();
+            _map.displayMap();
+            _playerSelected = Balfis;
             do
             {
                 ConsoleKey key= Console.ReadKey(true).Key;
@@ -46,8 +46,12 @@ namespace Tavernier
                     case ConsoleKey.Z:
                     case ConsoleKey.D:
                     case ConsoleKey.S:
-                        map.movePlayer(key);
-                        if(map.Behind_Player == '#') drawingOfMonster();
+                        _map.movePlayer(key);
+                        if(_map.Behind_Player == '#') drawingOfMonster();
+                        break;
+
+                    case ConsoleKey.Escape:
+                        _menu.run(Balfis, Nina, Elizendre, Laevis);
                         break;
 
                     //case ConsoleKey.Backspace:
@@ -59,8 +63,6 @@ namespace Tavernier
                     //case ConsoleKey.Enter:
                     //    break;
                     //case ConsoleKey.Pause:
-                    //    break;
-                    //case ConsoleKey.Escape:
                     //    break;
                     //case ConsoleKey.Spacebar:
                     //    break;
@@ -112,7 +114,6 @@ namespace Tavernier
                     //    break;
                     //case ConsoleKey.C:
                     //    break;
-
                     //case ConsoleKey.E:
                     //    break;
                     //case ConsoleKey.F:
@@ -137,10 +138,8 @@ namespace Tavernier
                     //    break;
                     //case ConsoleKey.P:
                     //    break;
-
                     //case ConsoleKey.R:
                     //    break;
-
                     //case ConsoleKey.T:
                     //    break;
                     //case ConsoleKey.U:
@@ -153,7 +152,6 @@ namespace Tavernier
                     //    break;
                     //case ConsoleKey.Y:
                     //    break;
-
                     //case ConsoleKey.LeftWindows:
                     //    break;
                     //case ConsoleKey.RightWindows:
@@ -329,55 +327,65 @@ namespace Tavernier
                     default:
                         break;
                 }
-            } while(_End_Game != true);
+            } while(_end_Game != true);
         }
 
         public void drawingOfMonster()
         {
-            stockRandom = random.Next(10);
-            if (stockRandom == 0)
+            _stockRandom = random.Next(10);
+            if (_stockRandom == 0)
             {
-                stockRandom = random.Next(20);
+                _stockRandom = random.Next(20);
 
-                if(stockRandom <= 3)        //Imp
+                if(_stockRandom <= 3)        //Imp
                 {
                     Imp enemy= new Imp();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                else if(stockRandom <= 7)   //Goblin
+                else if(_stockRandom <= 7)   //Goblin
                 {
                     Goblin enemy= new Goblin();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                else if(stockRandom == 8)   //Gnolls
+                else if(_stockRandom == 8)   //Gnolls
                 {
                     Gnolls enemy = new Gnolls();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                else if(stockRandom <= 11)  //Orc
+                else if(_stockRandom <= 11)  //Orc
                 {
                     Orc enemy= new Orc();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                else if(stockRandom <= 14)  //Troll
+                else if(_stockRandom <= 14)  //Troll
                 {
                     Troll enemy = new Troll();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                else if(stockRandom <= 17)  //Ogre
+                else if(_stockRandom <= 17)  //Ogre
                 {
                     Ogre enemy= new Ogre();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                else if(stockRandom <= 19)  //Draugr
+                else if(_stockRandom <= 19)  //Draugr
                 {
                     Draugr enemy= new Draugr();
-                    enemySelected = enemy;
+                    _enemySelected = enemy;
                 }
-                fight.runFight(playerSelected, enemySelected);
+                _fight.runFight(_playerSelected, _enemySelected);
                 Console.Clear();
-                map.displayMap();
+                _map.displayMap();
             }
         }
+
+
+        //Get
+        public Character balfis { get => Balfis; }
+        public Character nina { get => Nina; }
+        public Character elizendre { get => Elizendre; }
+        public Character laevis { get => Laevis; }
+
+
+        public Character playerSelected { get => _playerSelected; set => _playerSelected = value; }
     }
 }
