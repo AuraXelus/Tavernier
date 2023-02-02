@@ -32,6 +32,7 @@ namespace Tavernier
             Console.CursorVisible = false;
             map.initMap();
             map.displayMap();
+            playerSelected = Balfis;
             do
             {
                 ConsoleKey key= Console.ReadKey(true).Key;
@@ -334,7 +335,7 @@ namespace Tavernier
         public void drawingOfMonster()
         {
             stockRandom = random.Next(10);
-            if (stockRandom <= 1)
+            if (stockRandom == 0)
             {
                 stockRandom = random.Next(20);
 
@@ -373,8 +374,9 @@ namespace Tavernier
                     Draugr enemy= new Draugr();
                     enemySelected = enemy;
                 }
-                playerSelected = Nina;
                 fight.runFight(playerSelected, enemySelected);
+                Console.Clear();
+                map.displayMap();
             }
         }
     }

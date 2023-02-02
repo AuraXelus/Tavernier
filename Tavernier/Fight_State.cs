@@ -17,6 +17,9 @@ namespace Tavernier
         private bool _Round_Finish = false;
         private int _CharacterTurn;    //Si c'est paire c'est à nous de jouer
 
+        private int stockRandom = 0;
+        private Random random = new Random();
+
         private bool _Escape_Succes = false;
         public Fight_State()
         {
@@ -27,6 +30,7 @@ namespace Tavernier
         {
             Console.Clear();
             //Init Fight
+            _Escape_Succes = false;
             if (player.Speed >= enemy.Speed) { _CharacterTurn = 0; }
             else { _CharacterTurn = 1; }
 
@@ -162,7 +166,6 @@ namespace Tavernier
             bool choiceSkillOk = false;
             bool skill1 = true;
             bool skill2 = false;
-            bool skill3 = false;
             bool back = false;
             Console.Clear();
             do
@@ -177,23 +180,18 @@ namespace Tavernier
                 Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
                 if (skill1 == true)
                 {
-                    Console.WriteLine("                                             |*Skill n°1        |Skill n°2 ");
-                    Console.WriteLine("                                             |Skill n°3         |Back ");
+                    Console.WriteLine("                                        |*{0}        |{1} ", player.First_Skill.Name, player.Second_Skill.Name);
+                    Console.WriteLine("                                                     |Back ");
                 }
                 else if (skill2 == true)
                 {
-                    Console.WriteLine("                                             |Skill n°1         |*Skill n°2 ");
-                    Console.WriteLine("                                             |Skill n°3         |Back ");
-                }
-                else if (skill3 == true)
-                {
-                    Console.WriteLine("                                             |Skill n°1         |Skill n°2 ");
-                    Console.WriteLine("                                             |*Skill n°3        |Back ");
+                    Console.WriteLine("                                        |{0}        |*{1} ", player.First_Skill.Name, player.Second_Skill.Name);
+                    Console.WriteLine("                                                     |Back ");
                 }
                 else if (back == true)
                 {
-                    Console.WriteLine("                                             |Skill n°1         |Skill n°2 ");
-                    Console.WriteLine("                                             |Skill n°3         |*Back ");
+                    Console.WriteLine("                                        |{0}        |{1} ", player.First_Skill.Name, player.Second_Skill.Name);
+                    Console.WriteLine("                                                     |*Back ");
                 }
 
                 //Choose and action
@@ -205,20 +203,12 @@ namespace Tavernier
                         {
                             if (player.First_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(enemy, 1); _Round_Finish = true; }
                             else if (player.First_Skill.Point_SP > player.SP) { Console.WriteLine("                                                |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
-
                             else { Console.WriteLine("                                                |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
                         }
                         else if (skill2 == true)
                         {
                             if (player.Second_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(enemy, 2); _Round_Finish = true; }
                             else if (player.Second_Skill.Point_SP > player.SP) { Console.WriteLine("                                                |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
-                            else { Console.WriteLine("                                                |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
-                        }
-                        else if (skill3 == true)
-                        {
-                            if (player.Third_Skill.Name != "None") { choiceSkillOk = true; player.useSkill(enemy, 3); _Round_Finish = true; }
-                            else if (player.Third_Skill.Point_SP > player.SP) { Console.WriteLine("                                                |You don't have enough SP|"); Console.ReadKey(true); Console.Clear(); }
-
                             else { Console.WriteLine("                                                |You don't learn this skill|"); Console.ReadKey(true); Console.Clear(); }
                         }
                         else if (back == true)
@@ -230,18 +220,15 @@ namespace Tavernier
                         break;
                     case ConsoleKey.LeftArrow:
                         if (skill2 == true) { skill2 = false; skill1 = true; }
-                        if (back == true) { back = false; skill3 = true; }
                         break;
                     case ConsoleKey.UpArrow:
-                        if (skill3 == true) { skill3 = false; skill1 = true; }
-                        if (back == true) { back = false; skill2 = true; }
+                        if (back == true) { back = false; skill1 = true; }
                         break;
                     case ConsoleKey.RightArrow:
                         if (skill1 == true) { skill1 = false; skill2 = true; }
-                        if (skill3 == true) { skill3 = false; back = true; }
                         break;
                     case ConsoleKey.DownArrow:
-                        if (skill1 == true) { skill1 = false; skill3 = true; }
+                        if (skill1 == true) { skill1 = false; back = true; }
                         if (skill2 == true) { skill2 = false; back = true; }
                         break;
                     default:
@@ -249,7 +236,15 @@ namespace Tavernier
                 }
                 } while (choiceSkillOk != true) ;
             Console.Clear();
-            Console.WriteLine("                                                |Vous utiliser votre compétence|");
+
+            Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+            Console.WriteLine(enemy.Sprite);
+            Console.WriteLine(player.Sprite);
+            Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+            Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+            Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+            if(skill1 == true) Console.WriteLine("                                             |You use {0}|", player.First_Skill.Name);
+            else if (skill2 == true) Console.WriteLine("                                             |You use {0}|", player.Second_Skill.Name);
             Console.ReadKey(true);
             Console.Clear();
 
@@ -302,14 +297,17 @@ namespace Tavernier
                         if (useHeal == true)
                         {
                             Console.WriteLine("                                                |You use heal potion|");
+                            choiceSkillOk = true;
                         }
                         else if (useSP == true)
                         {
                             Console.WriteLine("                                                |You use SP potion|");
+                            choiceSkillOk = true;
                         }
                         else if (changeCharacter == true)
                         {
                             Console.WriteLine("                                                |CHANGER DE CHARACTER|");
+                            choiceSkillOk = true;
                         }
                         else if (back == true)
                         {
@@ -339,24 +337,31 @@ namespace Tavernier
                 }
             } while (choiceSkillOk != true);
             Console.Clear();
-            Console.WriteLine("                         |Vous utiliser votre compétence|");
             Console.ReadKey(true);
             Console.Clear();
         }
 
-        public void choiceEscape(Character player, Character ennemy)
+        public void choiceEscape(Character player, Character enemy)
         {
+            stockRandom = random.Next(100);
             Console.Clear();
-            Console.WriteLine("                                             ANIMATION DE FOU");
-            Console.WriteLine("                                             Tu fuis le combat");
-            Console.WriteLine("                                             VICTIME");
-            Console.WriteLine("                                             VICTIME");
+            Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+            Console.WriteLine(enemy.Sprite);
+            Console.WriteLine(player.Sprite);
+            Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+            Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+            Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+            if(stockRandom <= player.Speed)
+            {
+                Console.WriteLine("                                                |Your run away from the fight|");
+                _Escape_Succes = true;
+            }
+            else 
+            {
+                Console.WriteLine("                                                |Your miss your escape|");
+            }
             Console.ReadKey(true);
             Console.Clear();
-            //Du coup ça le fait 
-            _Escape_Succes = true;
         }
     }
 }
-
-//Bag ou //Oui alors tout à fait mon cher Henry je suis totalement en train de faire semblant de travailler 
