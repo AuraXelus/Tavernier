@@ -47,6 +47,8 @@ namespace Tavernier
                         Console.WriteLine("|1-Team stats");
                         Console.WriteLine("");
                         Console.WriteLine("|2-Skills");
+                        Console.WriteLine("");
+                        Console.WriteLine("|3-Weapons");
 
                         ConsoleKey Tkey = Console.ReadKey(true).Key;
 
@@ -58,6 +60,11 @@ namespace Tavernier
                         else if (Tkey == ConsoleKey.NumPad2)
                         {
                             displaySkills(balfis, elizendre, laevis, nina);
+                        }
+
+                        else if (Tkey == ConsoleKey.NumPad3)
+                        {
+                            displayWeapons(balfis, elizendre, laevis, nina);
                         }
 
                         break;
@@ -126,17 +133,41 @@ namespace Tavernier
             Console.WriteLine("                                                        |SKILLS|");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("       |{0}|                      |{1}|                       |{2}|                         |{3}|", balfis.Name, elizendre.Name, laevis.Name, nina.Name);
+            Console.WriteLine("       |{0}|                       |{1}|                      |{2}|                         |{3}|", balfis.Name, elizendre.Name, laevis.Name, nina.Name);
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("{0} | {1}                     {2} | {3}                {4} | {5}                  {6} | {7}", balfis.First_Skill.Name, balfis.First_Skill.Point_SP, elizendre.First_Skill.Name, elizendre.First_Skill.Point_SP, laevis.First_Skill.Name, laevis.First_Skill.Point_SP, nina.First_Skill.Name, nina.First_Skill.Point_SP);
+            Console.WriteLine("       |{0}|                      |{1}|                    |{2}|                |{3}|", balfis.First_Skill.Name, elizendre.First_Skill.Name, laevis.First_Skill.Name, nina.First_Skill.Name);
+            Console.WriteLine("");
+            Console.WriteLine("Cost | {0}                       Cost | {1}                       Cost | {2}                       Cost | {3}", balfis.First_Skill.Point_SP, elizendre.First_Skill.Point_SP, laevis.First_Skill.Point_SP, nina.First_Skill.Point_SP);
             Console.WriteLine("----------------------          ----------------------          ----------------------          ----------------------");
             Console.WriteLine("Physical damage | {0}           Elemental damage | {1}          Physical damage | {2}           Elemental damage | {3}", balfis.First_Skill.Modif_dmg, elizendre.First_Skill.Modif_dmg, laevis.First_Skill.Modif_dmg, nina.First_Skill.Modif_dmg);
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("{0} | {1}                  {2} | {3}                   {4} | {5}                 {6} | {7}", balfis.Second_Skill.Name, balfis.Second_Skill.Point_SP, elizendre.Second_Skill.Name, elizendre.Second_Skill.Point_SP, laevis.Second_Skill.Name, laevis.Second_Skill.Point_SP, nina.Second_Skill.Name, nina.Second_Skill.Point_SP);
+            Console.WriteLine("     |{0}|                      |{1}|                     |{2}|                  |{3}|", balfis.Second_Skill.Name, elizendre.Second_Skill.Name, laevis.Second_Skill.Name, nina.Second_Skill.Name);
+            Console.WriteLine("");
+            Console.WriteLine("Cost | {0}                       Cost | {1}                       Cost | {2}                       Cost | {3}", balfis.Second_Skill.Point_SP, elizendre.Second_Skill.Point_SP, laevis.Second_Skill.Point_SP, nina.Second_Skill.Point_SP);
             Console.WriteLine("----------------------          ----------------------          ----------------------          ----------------------");
             Console.WriteLine("Physical damage | {0}            Elemental damage | {1}          Elemental damage | {2}          Physical damage | {3}", balfis.Second_Skill.Modif_dmg, elizendre.Second_Skill.Modif_dmg, laevis.Second_Skill.Modif_dmg, nina.Second_Skill.Modif_dmg);
+            Console.ReadKey(true);
+            Console.Clear();
+        }
+
+        public void displayWeapons(Player balfis, Player elizendre, Player laevis, Player nina)
+        {
+            Console.Clear();
+            Console.WriteLine("                                                        |WEAPONS|");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("       |{0}|                       |{1}|                      |{2}|                         |{3}|", balfis.Name, elizendre.Name, laevis.Name, nina.Name);
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("   |{0}|                  |{1}|                  |{2}|                  |{3}|", balfis.First_Weapon.Name, elizendre.First_Weapon.Name, laevis.First_Weapon.Name, nina.First_Weapon.Name);
+            Console.WriteLine("");
+            Console.WriteLine("Type | Strike                   Type | Slash                    Type | Slash                    Type | Slash");
+            Console.WriteLine("----------------------          ----------------------          ----------------------          ----------------------");
+            Console.WriteLine("Physical damage | {0}            Physical damage | {1}             Elemental damage | {2}           Physical damage | {3}", balfis.First_Weapon.Phy_Atk, elizendre.First_Weapon.Phy_Atk, laevis.First_Weapon.Elem_Atk, nina.First_Weapon.Phy_Atk);
+            Console.WriteLine("----------------------          ----------------------          ----------------------          ----------------------");
+            Console.WriteLine("                                Elemental damage | {0}                                           Elemental damage | {1}", elizendre.First_Weapon.Elem_Atk, nina.First_Weapon.Elem_Atk);
             Console.ReadKey(true);
             Console.Clear();
         }

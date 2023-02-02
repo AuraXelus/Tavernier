@@ -23,7 +23,7 @@ namespace Tavernier
 
         }
 
-        public void run(Character player, Character ennemy)
+        public void run(Player player, Player ennemy)
         {
             //Init Fight
             if (player.Speed >= ennemy.Speed) { _CharacterTurn = 0; }
@@ -102,7 +102,7 @@ namespace Tavernier
             else { Console.WriteLine("Congratulation. Your become defeated your first ennemy."); }
         }
 
-        public void display(Character player, Character enemy)
+        public void display(Player player, Player enemy)
         {
             Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
             Console.WriteLine(enemy.Sprite);
@@ -139,7 +139,7 @@ namespace Tavernier
             }
         }
 
-        public void choiceAttack(Character player, Character ennemy)
+        public void choiceAttack(Player player, Player ennemy)
         {
             Console.Clear();
             Console.WriteLine("                                             ANIMATION DE FOU");
@@ -151,7 +151,7 @@ namespace Tavernier
             player.attack(ennemy);
         }
 
-        public void choiceSkill(Character player, Character enemy)
+        public void choiceSkill(Player player, Player enemy)
         {
             bool choiceSkillOk = false;
             bool skill1 = true;
@@ -249,7 +249,7 @@ namespace Tavernier
 
         }
 
-        public void choiceBag(Character player)
+        public void choiceBag(Player player)
         {
             Console.Clear();
             Console.WriteLine("                                             ANIMATION DE FOU");
@@ -260,7 +260,7 @@ namespace Tavernier
             Console.Clear();
         }
 
-        public void choiceEscape(Character player, Character ennemy)
+        public void choiceEscape(Player player, Player ennemy)
         {
             Console.Clear();
             Console.WriteLine("                                             ANIMATION DE FOU");

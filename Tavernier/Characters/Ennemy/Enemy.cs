@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tavernier
 {
-    public class Enemy : Character
+    public class Enemy : Player
     {
         protected int _Exp_Give;
 
