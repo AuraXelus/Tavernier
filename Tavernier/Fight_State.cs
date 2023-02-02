@@ -276,13 +276,13 @@ namespace Tavernier
                                 {
                                     player.criticalSkill(enemy, 1);
                                     Console.WriteLine("                                        |You use {0} and do critical damage|", player.First_Skill.Name);
-                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy) * player.Critical_Puiss);
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", Math.Floor(player.damageSkill(enemy, 1) * player.Critical_Puiss));
                                 }
                                 else
                                 {
                                     player.skill(enemy, 1);
                                     Console.WriteLine("                                              |You use {0}|", player.First_Skill.Name);
-                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy));
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", Math.Floor(player.damageSkill(enemy, 1)));
                                 }
                                 choiceSkillOk = true;
                                 _Round_Finish = true;
@@ -304,13 +304,13 @@ namespace Tavernier
                                 {
                                     player.criticalSkill(enemy, 2);
                                     Console.WriteLine("                                        |You use {0} and do critical damage|", player.Second_Skill.Name);
-                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy) * player.Critical_Puiss);
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", Math.Floor(player.damageSkill(enemy, 2) * player.Critical_Puiss));
                                 }
                                 else
                                 {
                                     player.skill(enemy, 2);
                                     Console.WriteLine("                                              |You use {0}|", player.Second_Skill.Name);
-                                    Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy));
+                                    Console.WriteLine("                                              |The enemy receve {0} damages|", Math.Floor(player.damageSkill(enemy, 2)));
                                 }
                                 choiceSkillOk = true;
                                 _Round_Finish = true;

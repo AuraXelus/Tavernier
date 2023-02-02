@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Linq;
 
 namespace Tavernier
 {
@@ -14,10 +11,10 @@ namespace Tavernier
     {
         private bool _end_Game = false;
 
-        public Balfis_Character? Balfis { get; set; }
-        public Nina_Character? Nina { get; set; }
-        public Elizendre_Character? Elizendre { get; set; }
-        public Laevis_Character? Laevis { get; set; }
+        private Balfis_Character Balfis = new Balfis_Character();
+        private Nina_Character Nina = new Nina_Character();
+        private Elizendre_Character Elizendre = new Elizendre_Character();
+        private Laevis_Character Laevis = new Laevis_Character();
 
         private Map_State _map = new Map_State();
         private int player_posX { get; set; }
@@ -42,9 +39,8 @@ namespace Tavernier
             Nina = loadSave.nina_Save;
             Elizendre = loadSave.elizendre_Save;
             Laevis = loadSave.laevis_Save;
-            //player_posX = loadSave.player_posX_Save;
-            //player_posY = loadSave.player_posY_Save;
-
+            player_posX = loadSave.player_posX_Save;
+            player_posY = loadSave.player_posY_Save;
         }
 
         public void run()
@@ -76,6 +72,10 @@ namespace Tavernier
 
                     case ConsoleKey.J:
                         save();
+                        break;
+
+                    case ConsoleKey.N:
+                        resetSave();
                         break;
 
                     //case ConsoleKey.Backspace:
@@ -155,8 +155,7 @@ namespace Tavernier
                     //    break;
                     //case ConsoleKey.M:
                     //    break;
-                    //case ConsoleKey.N:
-                    //    break;
+
                     //case ConsoleKey.O:
                     //    break;
                     //case ConsoleKey.P:
@@ -468,13 +467,25 @@ namespace Tavernier
 
         public void save()
         {
-            SerializeTheObject save = new SerializeTheObject(Balfis, Nina, Elizendre, Laevis);
+            SerializeTheObject save = new SerializeTheObject { balfis_Save = Balfis, nina_Save = Nina, elizendre_Save = Elizendre, laevis_Save = Laevis, player_posX_Save = player_posX, player_posY_Save = player_posY};
 
             var options = new JsonSerializerOptions { WriteIndented = true };
             string SaveString = JsonSerializer.Serialize(save, options);
             File.WriteAllText("save.json", SaveString);
         }
-        
+
+        private void resetSave()
+        {
+            Balfis_Character B = new Balfis_Character();
+            Nina_Character N = new Nina_Character();
+            Elizendre_Character E = new Elizendre_Character();
+            Laevis_Character L= new Laevis_Character();
+            SerializeTheObject save = new SerializeTheObject { balfis_Save = B, nina_Save = N, elizendre_Save = E, laevis_Save = L, player_posX_Save = 1, player_posY_Save = 1 };
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string SaveString = JsonSerializer.Serialize(save, options);
+            File.WriteAllText("save.json", SaveString);
+        }
         //Get
         public Character balfis { get => Balfis; }
         public Character nina { get => Nina; }
