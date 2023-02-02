@@ -131,11 +131,9 @@ namespace Tavernier
                     break;
             }
         }
-
         public string Name { get => _Name; set => _Name = value; }
         public int Number_Skill { get => _Number_Skill; set => _Number_Skill = value; }
         public int Point_SP { get => _Point_SP; set => _Point_SP = value; }
-
         public bool Phys_Atk { get => _Phys_Atk; set => _Phys_Atk = value; }
         public bool Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
         public float Modif_dmg { get => _Modif_dmg; set => _Modif_dmg = value; }
