@@ -126,7 +126,7 @@ namespace Tavernier
 
         }
 
-        public virtual void attack(Character target)
+        public virtual double damageAttack(Character target)
         {
             double damage = (_Phys_Atk + _First_Weapon.Phy_Atk) - target._Phys_Def;
             if (_First_Weapon.Slash == true && target.Weakness_Slash == true)
@@ -141,6 +141,22 @@ namespace Tavernier
             {
                 damage *= 1.2;
             }
+            return damage;
+        }
+
+        public virtual void attack(Character target)
+        {
+            double damage;
+            damage = damageAttack(target);
+            int finalDamage = (int)damage;
+            target.receveDammage(finalDamage);
+        }
+
+        public virtual void criticalAttack(Character target)
+        {
+            double damage;
+            damage = damageAttack(target);
+            damage *= _Critical_Puiss;
             int finalDamage = (int)damage;
             target.receveDammage(finalDamage);
         }
@@ -238,12 +254,12 @@ namespace Tavernier
         public virtual void recoverSP(int SPrecover)
         {
             _SP += SPrecover;
-            if (_HP > _Max_HP) { _HP = _Max_HP; }
+            if (_SP > _Max_SP) { _SP = _Max_SP; }
         }
 
         public virtual void SPMax()
         {
-            _HP = _Max_HP;
+            _SP = _Max_SP;
         }
 
         //Get
@@ -261,6 +277,8 @@ namespace Tavernier
         public int Elem_Atk { get => _Elem_Atk; set => _Elem_Atk = value; }
         public int Phys_Def { get => _Phys_Def; set => _Phys_Def = value; }
         public int Elem_Def { get => _Elem_Def; set => _Elem_Def = value; }
+        public int Critical_Puiss { get => _Critical_Puiss; set => _Critical_Puiss = value; }
+        public int Critical_Chance { get => _Critical_Chance; set => _Critical_Chance = value; }
         public int Speed { get => _Speed; set => _Speed = value; }
         public Weapon First_Weapon { get => _First_Weapon; set => _First_Weapon = value; }
         public bool Alive { get => _Alive; set => _Alive = value; }

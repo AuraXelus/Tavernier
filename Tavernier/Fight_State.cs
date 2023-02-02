@@ -37,12 +37,12 @@ namespace Tavernier
             //Fight
             do
             {
-                if (_CharacterTurn % 2 == 0)
+                if (_CharacterTurn % 2 == 0)    //Player turn
                 {
                     _Round_Finish = false;
                     do
                     {
-                        display(player, enemy);
+                        displayChoice(player, enemy);
                         ConsoleKey key = Console.ReadKey(true).Key;
 
                         switch (key)
@@ -55,7 +55,7 @@ namespace Tavernier
                                 }
                                 else if (_Skill == true)
                                 {
-                                    choiceSkill(player, enemy);    //Directement dans choiceSkil
+                                    choiceSkill(player, enemy);
                                 }
                                 else if (_Bag == true)
                                 {
@@ -89,12 +89,27 @@ namespace Tavernier
                         Console.SetCursorPosition(0, 0);
                     } while (_Round_Finish != true);
                 }
-                else if (_CharacterTurn % 2 == 1)
+                else if (_CharacterTurn % 2 == 1)   //Enemy turn
                 {
-                    display(player, enemy);
-                    Console.ReadKey(true);
-                    Console.WriteLine("L'ennemi vous attaque, avec une attaque physqieu, l'IA n'est pas faites il vous attaque comme ça en boucle le con");
-                    enemy.attack(player);
+                    Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                    Console.WriteLine(enemy.Sprite);
+                    Console.WriteLine(player.Sprite);
+                    Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+                    Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+                    Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+                    stockRandom = random.Next(1, 101);
+                    if (stockRandom <= enemy.Critical_Chance)
+                    {
+                        enemy.criticalAttack(player);
+                        Console.WriteLine("                                               |Enemy use  a critical attack|");
+                        Console.WriteLine("                                                  |You receve {0} damages|", enemy.damageAttack(player) * enemy.Critical_Puiss);
+                    }
+                    else
+                    {
+                        enemy.attack(player);
+                        Console.WriteLine("                                                |Enemy use a normal attack|");
+                        Console.WriteLine("                                                 |You receve {0} damages|", enemy.damageAttack(player));
+                    }
                     Console.ReadKey(true);
                     Console.Clear();
                 }
@@ -102,11 +117,21 @@ namespace Tavernier
             } while ((player.Alive == true && enemy.Alive == true) && _Escape_Succes != true);
 
             //End Fight
-            if (_Escape_Succes == true) { Console.WriteLine("Tu réussie à fuire (enculé)"); }
-            else { Console.WriteLine("Congratulation. Your become defeated your first ennemy."); }
+            if(player.Alive == true)  
+            {
+                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                Console.WriteLine(enemy.Sprite);
+                Console.WriteLine(player.Sprite);
+                Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+                Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+                Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+                Console.WriteLine("                                                |Congratulation. Your defeated your ennemy|");
+                Console.ReadKey(true);
+                Console.Clear();
+            }
         }
 
-        public void display(Character player, Character enemy)
+        public void displayChoice(Character player, Character enemy)
         {
             Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
             Console.WriteLine(enemy.Sprite);
@@ -137,10 +162,6 @@ namespace Tavernier
                 Console.WriteLine("                                             |Bag              |*Escape ");
             }
             }
-            else if (_CharacterTurn % 2 == 1)
-            {
-                Console.WriteLine("                                                |Ennmy turn");
-            }
         }
 
         public void choiceAttack(Character player, Character enemy)
@@ -153,12 +174,24 @@ namespace Tavernier
             Console.WriteLine("                                                                                       |{0}|  ", player.Name);
             Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
             Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
-            Console.Write("                                                |You attack");
+            stockRandom = random.Next(1, 101);
+            if(stockRandom <= player.Critical_Chance) 
+            {
+                player.criticalAttack(enemy);
+                Console.WriteLine("                                               |You use a critical attack|");
+                Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy)*player.Critical_Puiss);
+            }
+            else
+            {
+                player.attack(enemy);
+                Console.WriteLine("                                                |You use a normal attack|");
+                Console.WriteLine("                                              |The enemy receve {0} damages|", player.damageAttack(enemy));
+            }
             Console.ReadKey(true);
             Console.Clear();
             //Du coup ça le fait 
 
-            player.attack(enemy);
+
         }
 
         public void choiceSkill(Character player, Character enemy)
@@ -358,7 +391,7 @@ namespace Tavernier
             }
             else 
             {
-                Console.WriteLine("                                                |Your miss your escape|");
+                Console.WriteLine("                                                    |Your miss your escape|");
             }
             Console.ReadKey(true);
             Console.Clear();
