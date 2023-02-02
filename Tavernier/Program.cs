@@ -336,9 +336,9 @@ namespace Tavernier
 
 //Ahor :
 //Utilister bag avec popo
-//Pendant les combat mettre les degat infliger
+//Pendant les combat mettre les degats infliger pour les skill
 //Quand il est mort il ne paut pas être rapeller
-//Faire l'accuracy et les critique
+//Faire l'accuracy
 //Mettre un systeme de quête
 
 
