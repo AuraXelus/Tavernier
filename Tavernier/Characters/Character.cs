@@ -124,6 +124,7 @@ namespace Tavernier
                     break;
             }
             healMax();
+            SPMax();
 
         }
 

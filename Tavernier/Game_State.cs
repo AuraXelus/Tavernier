@@ -372,7 +372,11 @@ namespace Tavernier
             {
                 Console.Clear();
                 Console.SetCursorPosition(55, 4);
-                Console.Write("GAME OVER");
+                Console.Write(" _____   ___  ___  ___ _____   _____  _   _ ___________ \r\n|  __ \\ / _ \\ |  \\/  ||  ___| |  _  || | | |  ___| ___ \\\r\n| |  \\// /_\\ \\| .  . || |__   | | | || | | | |__ | |_/ /\r\n| | __ |  _  || |\\/| ||  __|  | | | || | | |  __||    / \r\n| |_\\ \\| | | || |  | || |___  \\ \\_/ /\\ \\_/ / |___| |\\ \\ \r\n \\____/\\_| |_/\\_|  |_/\\____/   \\___/  \\___/\\____/\\_| \\_|");
+                Console.SetCursorPosition(55, 6);
+                Console.WriteLine("Try again!");
+                Console.WriteLine("You can reload your next charge");
+
                 Console.ReadKey(true);
             }
             else
@@ -431,7 +435,7 @@ namespace Tavernier
                     chooseCharacter();
                     _fight.runFight(_playerSelected, _enemySelected);
                     Console.Clear();
-                    if(Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; }
+                    if(Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; _enemySelected.Alive = false; }
                 } while (_enemySelected.Alive == true);
 
                 _map.displayMap();
@@ -447,8 +451,9 @@ namespace Tavernier
                 chooseCharacter();
                 _fight.runFight(_playerSelected, _enemySelected);
                 Console.Clear();
-                if (Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; }
+                if (Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; _enemySelected.Alive = false; }
             } while (_enemySelected.Alive == true);
+            _end_Game = true;
         }
 
         public void chooseCharacter()
