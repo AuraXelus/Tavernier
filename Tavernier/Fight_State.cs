@@ -156,7 +156,9 @@ namespace Tavernier
                 Console.WriteLine("                                                |Congratulation. Your defeated your ennemy|");
                 Console.ReadKey(true);
                 Console.Clear();
+                player.receveExp(enemy.Exp_Give);
             }
+            
         }
 
         public void displayChoice(Character player, Character enemy)
@@ -438,8 +440,8 @@ namespace Tavernier
                 }
             } while (choiceSkillOk != true);
             _Round_Finish = true;
-            Console.Clear();
             Console.ReadKey(true);
+            Console.Clear();
         }
 
         public void choiceEscape(Character player, Character enemy)

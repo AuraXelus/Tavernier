@@ -8,8 +8,6 @@ namespace Tavernier
 {
     public class Enemy : Character
     {
-        protected int _Exp_Give;
-
         public Enemy() { }
 
 

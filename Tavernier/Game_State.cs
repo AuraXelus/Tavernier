@@ -398,7 +398,7 @@ namespace Tavernier
                     chooseCharacter();
                     _fight.runFight(_playerSelected, _enemySelected);
                     Console.Clear();
-                } while (_enemySelected.Alive == true || _fight.Escape_Success == true);
+                } while (_enemySelected.Alive == true);
                 _map.displayMap();
             }
         }
