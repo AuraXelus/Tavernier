@@ -195,7 +195,7 @@ namespace Tavernier
                     {
                         damage = (_Phys_Atk + _First_Weapon.Phy_Atk);
                         damage *= (_First_Skill.Modif_dmg / 100);
-                        _SP -= _First_Skill.Point_SP;
+                        _SP -= _First_Skill.Point_SP/2;
                         if (_First_Weapon.Slash == true && target.Weakness_Slash == true) { damage *= 1.2; }
                         else if (_First_Weapon.Thrust == true && target.Weakness_Thrust == true)
                         {
@@ -211,19 +211,20 @@ namespace Tavernier
                     {
                         damage = (_Elem_Atk + _First_Weapon.Elem_Atk);
                         damage *= (_First_Skill.Modif_dmg / 100);
-                        _SP -= _First_Skill.Point_SP;
+                        _SP -= _First_Skill.Point_SP / 2;
                         if(_Elem_Type == "Fire" && target.Weakness_Fire == true) { damage *= 1.3; }
                         if (_Elem_Type == "Ice" && target.Weakness_Ice == true) { damage *= 1.3; }
                         if (_Elem_Type == "Natue" && target.Weakness_Nature == true) { damage *= 1.3; }
                         damage -= target.Elem_Def;
                     }
                     break;
+
                 case 2:
                     if (_Second_Skill.Phys_Atk == true)
                     {
                         damage = (_Phys_Atk + _First_Weapon.Phy_Atk);
                         damage *= (_Second_Skill.Modif_dmg / 100);
-                        _SP -= _Second_Skill.Point_SP;
+                        _SP -= _Second_Skill.Point_SP / 2;
                         if ((_First_Weapon.Slash == true && target.Weakness_Slash == true))
                         {
                             damage *= 1.2;
@@ -242,7 +243,7 @@ namespace Tavernier
                     {
                         damage = (_Elem_Atk + _First_Weapon.Elem_Atk);
                         damage *= (_Second_Skill.Modif_dmg / 100);
-                        _SP -= _Second_Skill.Point_SP;
+                        _SP -= _Second_Skill.Point_SP / 2;
                         if (_Elem_Type == "Fire" && target.Weakness_Fire == true) { damage *= 1.3; }
                         else if (_Elem_Type == "Ice" && target.Weakness_Ice == true) { damage *= 1.3; }
                         else if (_Elem_Type == "Natue" && target.Weakness_Nature == true) { damage *= 1.3; }

@@ -112,7 +112,7 @@ namespace Tavernier
                         }
                         else 
                         { 
-                            enemy.criticalAttack(player);
+                            enemy.criticalAttackElem(player);
                             Console.WriteLine("                                              |Enemy use  a critical attack elem|");
                             Console.WriteLine("                                                  |You receve {0} damages|", enemy.damageAttackElem(player) * enemy.Critical_Puiss);
                         }
@@ -394,18 +394,19 @@ namespace Tavernier
                         if (useHeal == true)
                         {
                             Console.WriteLine("                                                |You use heal potion|");
+                            player.healMax();
                             choiceSkillOk = true;
                         }
                         else if (useSP == true)
                         {
                             Console.WriteLine("                                                |You use SP potion|");
+                            player.SPMax();
                             choiceSkillOk = true;
                         }
                         else if (changeCharacter == true)
                         {
                             _Change_Character = true;
                             choiceSkillOk = true;
-                            _Round_Finish = true;
                             Console.Clear();
                             return;
                         }
@@ -436,6 +437,7 @@ namespace Tavernier
                         break;
                 }
             } while (choiceSkillOk != true);
+            _Round_Finish = true;
             Console.Clear();
             Console.ReadKey(true);
         }
