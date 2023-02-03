@@ -84,6 +84,9 @@ namespace Tavernier
             Console.Write('P');
         }
 
+        //Get
         public char Behind_Player { get => _Behind_Player; set => _Behind_Player = value; }
+        public int Player_PosX { get => _Player_PosX; set => _Player_PosX = value; }
+        public int Player_PosY { get => _Player_PosY; set => _Player_PosY = value; }
     }
 }

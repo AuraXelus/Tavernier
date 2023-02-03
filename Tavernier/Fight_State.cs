@@ -20,8 +20,9 @@ namespace Tavernier
         private int stockRandom = 0;
         private Random random = new Random();
 
-        private bool _Escape_Succes = false;
+        private bool _Escape_Success = false;
         private bool _Change_Character = false;
+
         public Fight_State()
         {
 
@@ -31,7 +32,7 @@ namespace Tavernier
         {
             Console.Clear();
             //Init Fight
-            _Escape_Succes = false;
+            _Escape_Success = false;
             _Change_Character = false;
             if (player.Speed >= enemy.Speed) { _CharacterTurn = 0; }
             else { _CharacterTurn = 1; }
@@ -141,7 +142,7 @@ namespace Tavernier
                     return;
                 }
                 _CharacterTurn++;
-            } while (enemy.Alive == true && _Escape_Succes != true);
+            } while (enemy.Alive == true && _Escape_Success != true);
 
             //End Fight
             if(player.Alive == true)  
@@ -452,7 +453,7 @@ namespace Tavernier
             if(stockRandom <= player.Speed)
             {
                 Console.WriteLine("                                                |Your run away from the fight|");
-                _Escape_Succes = true;
+                _Escape_Success = true;
             }
             else 
             {
@@ -461,5 +462,8 @@ namespace Tavernier
             Console.ReadKey(true);
             Console.Clear();
         }
+
+        //Get
+        public bool Escape_Success { get => _Escape_Success; set => _Escape_Success = value;}
     }
 }

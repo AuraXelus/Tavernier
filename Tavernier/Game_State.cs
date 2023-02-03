@@ -17,8 +17,6 @@ namespace Tavernier
         private Laevis_Character Laevis = new Laevis_Character();
 
         private Map_State _map = new Map_State();
-        private int player_posX { get; set; }
-        private int player_posY { get; set; }
 
         private Fight_State _fight = new Fight_State();
         private Character _playerSelected = new Character();
@@ -39,8 +37,8 @@ namespace Tavernier
             Nina = loadSave.nina_Save;
             Elizendre = loadSave.elizendre_Save;
             Laevis = loadSave.laevis_Save;
-            player_posX = loadSave.player_posX_Save;
-            player_posY = loadSave.player_posY_Save;
+            _map.Player_PosX = loadSave.player_posX_Save;
+            _map.Player_PosY = loadSave.player_posY_Save;
         }
 
         public void run()
@@ -68,6 +66,7 @@ namespace Tavernier
 
                     case ConsoleKey.Escape:
                         _menu.run(Balfis, Nina, Elizendre, Laevis);
+                        _map.displayMap();
                         break;
 
                     case ConsoleKey.J:
@@ -399,7 +398,7 @@ namespace Tavernier
                     chooseCharacter();
                     _fight.runFight(_playerSelected, _enemySelected);
                     Console.Clear();
-                } while (_enemySelected.Alive == true);
+                } while (_enemySelected.Alive == true || _fight.Escape_Success == true);
                 _map.displayMap();
             }
         }
@@ -424,21 +423,25 @@ namespace Tavernier
                         break;
 
                     case ConsoleKey.NumPad1:
+                    case ConsoleKey.A:
                         if(Balfis.Alive == true) { _playerSelected = Balfis; changeFinish = true; }
                         else { Console.WriteLine("This Character is dead"); }
                         break;
 
                     case ConsoleKey.NumPad2:
+                    case ConsoleKey.Z:
                         if (Nina.Alive == true) { _playerSelected = Nina; changeFinish = true; }
                         else { Console.WriteLine("This Character is dead"); }
                         break;
 
                     case ConsoleKey.NumPad3:
+                    case ConsoleKey.E:
                         if (Elizendre.Alive == true) { _playerSelected = Elizendre; changeFinish = true; }
                         else { Console.WriteLine("This Character is dead"); }
                         break;
 
                     case ConsoleKey.NumPad4:
+                    case ConsoleKey.R:
                         if (Laevis.Alive == true) { _playerSelected = Laevis; changeFinish = true; }
                         else { Console.WriteLine("This Character is dead"); }
                         break;
@@ -467,7 +470,7 @@ namespace Tavernier
 
         public void save()
         {
-            SerializeTheObject save = new SerializeTheObject { balfis_Save = Balfis, nina_Save = Nina, elizendre_Save = Elizendre, laevis_Save = Laevis, player_posX_Save = player_posX, player_posY_Save = player_posY};
+            SerializeTheObject save = new SerializeTheObject { balfis_Save = Balfis, nina_Save = Nina, elizendre_Save = Elizendre, laevis_Save = Laevis, player_posX_Save = _map.Player_PosX, player_posY_Save = _map.Player_PosY};
 
             var options = new JsonSerializerOptions { WriteIndented = true };
             string SaveString = JsonSerializer.Serialize(save, options);

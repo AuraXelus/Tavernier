@@ -326,6 +326,7 @@ namespace Tavernier
         public int Elem_Def { get => _Elem_Def; set => _Elem_Def = value; }
         public int Critical_Puiss { get => _Critical_Puiss; set => _Critical_Puiss = value; }
         public int Critical_Chance { get => _Critical_Chance; set => _Critical_Chance = value; }
+        public int Accuracy { get => _Accuracy; set => _Accuracy = value; }
         public int Speed { get => _Speed; set => _Speed = value; }
         public Weapon First_Weapon { get => _First_Weapon; set => _First_Weapon = value; }
         public bool Alive { get => _Alive; set => _Alive = value; }
