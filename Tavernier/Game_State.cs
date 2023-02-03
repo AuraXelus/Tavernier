@@ -372,7 +372,7 @@ namespace Tavernier
             {
                 Console.Clear();
                 Console.SetCursorPosition(55, 4);
-                Console.Write(" _____   ___  ___  ___ _____   _____  _   _ ___________ \r\n|  __ \\ / _ \\ |  \\/  ||  ___| |  _  || | | |  ___| ___ \\\r\n| |  \\// /_\\ \\| .  . || |__   | | | || | | | |__ | |_/ /\r\n| | __ |  _  || |\\/| ||  __|  | | | || | | |  __||    / \r\n| |_\\ \\| | | || |  | || |___  \\ \\_/ /\\ \\_/ / |___| |\\ \\ \r\n \\____/\\_| |_/\\_|  |_/\\____/   \\___/  \\___/\\____/\\_| \\_|");
+                Console.WriteLine("|Game Over|");
                 Console.SetCursorPosition(55, 6);
                 Console.WriteLine("Try again!");
                 Console.WriteLine("You can reload your next charge");
