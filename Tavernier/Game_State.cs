@@ -462,6 +462,9 @@ namespace Tavernier
             do
             {                
                 Console.Clear();
+                Console.WriteLine("                             |CHOOSE YOUR CHARACTER|");
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine("1-Balfis");
                 Console.WriteLine();
                 Console.WriteLine("2-Nina");
