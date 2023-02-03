@@ -12,6 +12,8 @@ namespace Tavernier
         {
             Name = "Laevis";
             _Elem_Type = "Nature";
+            _Lvl = 1;
+            _Exp = 0;
 
             _Max_HP = 100;
             _HP = _Max_HP;

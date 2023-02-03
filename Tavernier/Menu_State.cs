@@ -11,7 +11,7 @@ namespace Tavernier
     {
         public Menu_State() { }
 
-        public void run(Character balfis, Character elizendre, Character laevis, Character nina)
+        public void run(Character balfis, Character nina, Character elizendre, Character laevis)
         {
             bool endMenu = false;
             Console.Clear();
@@ -59,17 +59,17 @@ namespace Tavernier
 
                         if (Tkey == ConsoleKey.NumPad1 || Tkey == ConsoleKey.A)
                         {
-                            displayTeamStats(balfis, elizendre, laevis, nina);
+                            displayTeamStats(balfis, nina, elizendre, laevis);
                         }
 
                         else if (Tkey == ConsoleKey.NumPad2 || Tkey == ConsoleKey.Z)
                         {
-                            displaySkills(balfis, elizendre, laevis, nina);
+                            displaySkills(balfis, nina, elizendre, laevis);
                         }
 
                         else if (Tkey == ConsoleKey.NumPad3 || Tkey == ConsoleKey.E)
                         {
-                            displayWeapons(balfis, elizendre, laevis, nina);
+                            displayWeapons(balfis, nina, elizendre, laevis);
                         }
 
                         break;

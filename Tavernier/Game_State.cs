@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Tavernier
 {
@@ -39,6 +40,23 @@ namespace Tavernier
             Laevis = loadSave.laevis_Save;
             _map.Player_PosX = loadSave.player_posX_Save;
             _map.Player_PosY = loadSave.player_posY_Save;
+
+            string[] text = File.ReadAllLines("intro.txt");
+            char[,] castle = new char[29, 120];
+            for (int y = 0; y < 29; y++)
+            {
+                string line = text[y];
+                for (int x = 0; x < 120; x++)
+                {
+                    char c = line[x];
+                    Console.Write(c);
+                }
+                Console.WriteLine();
+            }
+            Console.SetCursorPosition(1, 4);
+            Console.WriteLine("Hello adventurer. Thank you for accepting my quest.Your goal is to go kill the dragon to save my sweetheart. Good luck");
+            Console.ReadKey(true);
+            Console.Clear();
         }
 
         public void run()
@@ -399,6 +417,7 @@ namespace Tavernier
                     _fight.runFight(_playerSelected, _enemySelected);
                     Console.Clear();
                 } while (_enemySelected.Alive == true);
+
                 _map.displayMap();
             }
         }

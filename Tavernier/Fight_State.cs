@@ -63,6 +63,7 @@ namespace Tavernier
                                 else if (_Bag == true)
                                 {
                                     choiceBag(player, enemy);
+                                    if (_Change_Character == true) return;
                                 }
                                 else if (_Escape == true)
                                 {
@@ -145,7 +146,11 @@ namespace Tavernier
             } while (enemy.Alive == true && _Escape_Success != true);
 
             //End Fight
-            if(player.Alive == true)  
+            if(_Escape_Success == true)
+            {
+                enemy.Alive = false;
+            }
+            else if(player.Alive == true)
             {
                 Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
                 Console.WriteLine(enemy.Sprite);
@@ -154,9 +159,10 @@ namespace Tavernier
                 Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
                 Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
                 Console.WriteLine("                                                |Congratulation. Your defeated your ennemy|");
+                Console.WriteLine("                                                             |You win {0} exp|", enemy.Exp_Give);
+                player.receveExp(enemy.Exp_Give);
                 Console.ReadKey(true);
                 Console.Clear();
-                player.receveExp(enemy.Exp_Give);
             }
             
         }
