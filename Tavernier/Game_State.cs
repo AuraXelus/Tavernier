@@ -432,7 +432,7 @@ namespace Tavernier
                     _fight.runFight(_playerSelected, _enemySelected);
                     Console.Clear();
                     if(Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; }
-                } while (_enemySelected.Alive == true || _end_Game == true);
+                } while (_enemySelected.Alive == true);
 
                 _map.displayMap();
             }
@@ -448,7 +448,7 @@ namespace Tavernier
                 _fight.runFight(_playerSelected, _enemySelected);
                 Console.Clear();
                 if (Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; }
-            } while (_enemySelected.Alive == true || _end_Game == true);
+            } while (_enemySelected.Alive == true);
         }
 
         public void chooseCharacter()
