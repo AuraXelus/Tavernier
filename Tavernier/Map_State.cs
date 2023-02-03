@@ -16,8 +16,8 @@ namespace Tavernier
         private bool _Fin = false;
 
         private char _Behind_Player = ' ';
-        private int _Player_PosX = 1;
-        private int _Player_PosY = 1;
+        private int _Player_PosX = 64;
+        private int _Player_PosY = 27;
 
         public Map_State() { }
 

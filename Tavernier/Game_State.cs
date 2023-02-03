@@ -80,6 +80,7 @@ namespace Tavernier
                     case ConsoleKey.S:
                         _map.movePlayer(key);
                         if(_map.Behind_Player == '#') drawingOfMonster();
+                        else if (_map.Behind_Player == '@') endBoss();
                         break;
 
                     case ConsoleKey.Escape:
@@ -367,6 +368,20 @@ namespace Tavernier
                         break;
                 }
             } while(_end_Game != true);
+            if (Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(55, 4);
+                Console.Write("GAME OVER");
+                Console.ReadKey(true);
+            }
+            else
+            {
+                Console.Clear();
+                Console.SetCursorPosition(40, 4);
+                Console.Write("CONGRATULATION YOU DEFEAT THE DRAGON");
+                Console.ReadKey(true);
+            }
         }
 
         public void drawingOfMonster()
@@ -412,14 +427,28 @@ namespace Tavernier
                     _enemySelected = enemy;
                 }
                 do      //FIGHT
-                {                    
+                {
                     chooseCharacter();
                     _fight.runFight(_playerSelected, _enemySelected);
                     Console.Clear();
-                } while (_enemySelected.Alive == true);
+                    if(Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; }
+                } while (_enemySelected.Alive == true || _end_Game == true);
 
                 _map.displayMap();
             }
+        }
+
+        public void endBoss()
+        {
+            Dragon boss = new Dragon();
+            _enemySelected= boss;
+            do      //FIGHT
+            {
+                chooseCharacter();
+                _fight.runFight(_playerSelected, _enemySelected);
+                Console.Clear();
+                if (Balfis.Alive == false && Nina.Alive == false && Elizendre.Alive == false && Laevis.Alive == false) { _end_Game = true; }
+            } while (_enemySelected.Alive == true || _end_Game == true);
         }
 
         public void chooseCharacter()
@@ -502,7 +531,7 @@ namespace Tavernier
             Nina_Character N = new Nina_Character();
             Elizendre_Character E = new Elizendre_Character();
             Laevis_Character L= new Laevis_Character();
-            SerializeTheObject save = new SerializeTheObject { balfis_Save = B, nina_Save = N, elizendre_Save = E, laevis_Save = L, player_posX_Save = 1, player_posY_Save = 1 };
+            SerializeTheObject save = new SerializeTheObject { balfis_Save = B, nina_Save = N, elizendre_Save = E, laevis_Save = L, player_posX_Save = 64, player_posY_Save = 27 };
 
             var options = new JsonSerializerOptions { WriteIndented = true };
             string SaveString = JsonSerializer.Serialize(save, options);

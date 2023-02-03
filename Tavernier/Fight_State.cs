@@ -452,6 +452,21 @@ namespace Tavernier
 
         public void choiceEscape(Character player, Character enemy)
         {
+            if(enemy.Name == "Dragon")
+            {
+                Console.Clear();
+                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                Console.WriteLine(enemy.Sprite);
+                Console.WriteLine(player.Sprite);
+                Console.WriteLine("                                                                                       |{0}|  ", player.Name);
+                Console.WriteLine("                                                                                       |HP : {0}/{1}| ", player.HP, player.Max_HP);
+                Console.WriteLine("                                                                                       |SP : {0}/{1}| ", player.SP, player.Max_SP);
+                Console.WriteLine("                                                |Your run away from the fight|");
+                Console.ReadKey(true);
+                Console.Clear();
+            }
+            else
+            {
             stockRandom = random.Next(100);
             Console.Clear();
             Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
@@ -471,6 +486,7 @@ namespace Tavernier
             }
             Console.ReadKey(true);
             Console.Clear();
+            }
         }
 
         //Get
