@@ -96,7 +96,7 @@ namespace Tavernier
                 }
                 else if (_CharacterTurn % 2 == 1)   //Enemy turn
                 {
-                    Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                    Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                     Console.WriteLine(enemy.Sprite);
                     Console.WriteLine(player.Sprite);
                     Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -152,7 +152,7 @@ namespace Tavernier
             }
             else if(player.Alive == true)
             {
-                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                 Console.WriteLine(enemy.Sprite);
                 Console.WriteLine(player.Sprite);
                 Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -169,7 +169,7 @@ namespace Tavernier
 
         public void displayChoice(Character player, Character enemy)
         {
-            Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+            Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
             Console.WriteLine(enemy.Sprite);
             Console.WriteLine(player.Sprite);
             Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -204,7 +204,7 @@ namespace Tavernier
         {
             Console.Clear();
             Console.SetCursorPosition(0, 0);
-            Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+            Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
             Console.WriteLine(enemy.Sprite);
             Console.WriteLine(player.Sprite);
             Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -241,7 +241,7 @@ namespace Tavernier
             {
                 //Display
                 Console.SetCursorPosition(0, 0);
-                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                 Console.WriteLine(enemy.Sprite);
                 Console.WriteLine(player.Sprite);
                 Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -274,7 +274,7 @@ namespace Tavernier
                             if(player.SP < player.First_Skill.Point_SP) { Console.WriteLine("                                                |You don't have enough SP|"); }
                             else
                             {
-                                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                                Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                                 Console.WriteLine(enemy.Sprite);
                                 Console.WriteLine(player.Sprite);
                                 Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -302,7 +302,7 @@ namespace Tavernier
                             if (player.SP < player.Second_Skill.Point_SP) { Console.WriteLine("                                                |You don't have enough SP|"); }
                             else
                             {
-                                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                                Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                                 Console.WriteLine(enemy.Sprite);
                                 Console.WriteLine(player.Sprite);
                                 Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -367,7 +367,7 @@ namespace Tavernier
             {
                 //Display
                 Console.SetCursorPosition(0, 0);
-                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                 Console.WriteLine(enemy.Sprite);
                 Console.WriteLine(player.Sprite);
                 Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -455,7 +455,7 @@ namespace Tavernier
             if(enemy.Name == "Dragon")
             {
                 Console.Clear();
-                Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+                Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
                 Console.WriteLine(enemy.Sprite);
                 Console.WriteLine(player.Sprite);
                 Console.WriteLine("                                                                                       |{0}|  ", player.Name);
@@ -469,7 +469,7 @@ namespace Tavernier
             {
             stockRandom = random.Next(100);
             Console.Clear();
-            Console.WriteLine("         |{0}|    -    |HP : {1}|", enemy.Name, enemy.HP);
+            Console.WriteLine("         |{0}|    -    |HP : {1}|    -    |{2}", enemy.Name, enemy.HP, enemy.Elem_Type);
             Console.WriteLine(enemy.Sprite);
             Console.WriteLine(player.Sprite);
             Console.WriteLine("                                                                                       |{0}|  ", player.Name);
